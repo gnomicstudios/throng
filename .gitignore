@@ -1,0 +1,10 @@
+# -*- mode: sh; -*-
+
+# Ignore VS2010 build files:
+*.suo
+*.cachefile
+
+# Ignore the contents of the '/bin' and '/obj' directories:
+bin/
+obj/
+
