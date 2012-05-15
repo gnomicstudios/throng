@@ -43,6 +43,15 @@ namespace Gnomic.Core
         LeftThumbstickDown,
         LeftThumbstickRight
     }
+	public enum GenericTouchInput
+	{
+		TapAnywhere = 0,
+		TapLeftSide,
+		TapRightSide,
+		TouchAnywhere,
+		TouchLeftSide,
+		TouchRightSide, 
+	}
     public enum ButtonGeneric
     {
         #region Keyboard
@@ -667,6 +676,16 @@ namespace Gnomic.Core
         MouseRight,
         #endregion
 
+		#region Touch
+		TapAnywhere 		= 320,
+		TapLeftSide,
+		TapRightSide,
+		TouchAnywhere,
+		TouchLeftSide,
+		TouchRightSide, 
+
+		#endregion
+
         #region Gamepad0
         Pad0DPadUp              = 400,
         Pad0DPadDown,
@@ -1163,7 +1182,7 @@ namespace Gnomic.Core
             currentMouseState = Mouse.GetState();
 
 #if WINDOWS_PHONE
-            TouchTwinStick.Update();
+            TouchTwinStick.Update(dt);
             lastPadState[0] = CurrentPadState[0];
             CurrentPadState[0] = TouchTwinStick.GetGamePadState();
 
@@ -1411,7 +1430,7 @@ namespace Gnomic.Core
                     return true;
                 }
             }
-            else // if (btnID < 400)
+            else if (btnID < 320)
             {
                 if (MouseDown((MouseButton)(btnID - 300)))
                 {
@@ -1419,13 +1438,40 @@ namespace Gnomic.Core
                     return true;
                 }
             }
+#if WINDOWS_PHONE
+			else
+			{
+				GenericTouchInput touchInput = (GenericTouchInput)(btnID - 320);
+				if (touchInput == GenericTouchInput.TouchAnywhere)
+				{
+					return TouchTwinStick.TouchCount > 0;
+				}
+				else if (touchInput == GenericTouchInput.TouchLeftSide)
+				{
+					return TouchTwinStick.UsingLeftStick;
+				}
+				else if (touchInput == GenericTouchInput.TouchRightSide)
+				{
+					return TouchTwinStick.UsingRightStick;
+				}
+			}
+#endif
             return false;
         }
 
         public static bool ButtonJustDownGeneric(ButtonGeneric b)
         {
             int btnID = (int)b;
-            if (btnID < 300)
+            if (btnID >= 400)
+            {
+				int padId = (btnID - 400) / 100;
+				if (PadJustDown(padId, (GamePadButton)(btnID % 100)))
+				{
+					lastPlayerId = padId;
+					return true;
+				}
+            }
+			else if (btnID < 300)
             {
                 if (KeyJustDown((Keys)btnID))
                 {
@@ -1433,30 +1479,46 @@ namespace Gnomic.Core
                     return true;
                 }
             }
-            else if (btnID < 400)
+			else if (btnID < 320)
             {
-                if (MouseJustDown((MouseButton)(btnID - 300)))
-                {
-                    lastPlayerId = 10; //Mouse;
-                    return true;
-                }
+				if (MouseJustDown((MouseButton)(btnID - 300)))
+				{
+					lastPlayerId = 10; //Mouse;
+					return true;
+				}
             }
-            else 
-            {
-                int padId = (btnID - 400) / 100;
-                if (PadJustDown(padId, (GamePadButton)(btnID % 100)))
-                {
-                    lastPlayerId = padId;
-                    return true;
-                }
-            }
-
+#if WINDOWS_PHONE
+			else // if (btnID < 400)
+			{
+				GenericTouchInput touchInput = (GenericTouchInput)(btnID - 320);
+				if (touchInput == GenericTouchInput.TouchAnywhere)
+				{
+					return TouchTwinStick.JustTouched;
+				}
+				else if (touchInput == GenericTouchInput.TouchLeftSide)
+				{
+					return TouchTwinStick.JustTouched &&
+						TouchTwinStick.leftStickStartRegion.Contains((int)TouchTwinStick.TouchStartPos.X, (int)TouchTwinStick.TouchStartPos.Y);
+				}
+				else if (touchInput == GenericTouchInput.TouchRightSide)
+				{
+					return TouchTwinStick.JustTouched &&
+						TouchTwinStick.rightStickStartRegion.Contains((int)TouchTwinStick.TouchStartPos.X, (int)TouchTwinStick.TouchStartPos.Y);
+				}
+			}
+#endif
             return false;
         }
         public static bool ButtonJustUpGeneric(ButtonGeneric b)
         {
             int btnID = (int)b;
-            if (btnID < 300)
+
+			if (btnID >= 400)
+            {
+                lastPlayerId = (btnID - 400) / 100;
+                return PadJustUp(lastPlayerId, (GamePadButton)(btnID % 100));
+            }
+            else if (btnID < 300)
             {
                 if (KeyJustUp((Keys)btnID))
                 {
@@ -1464,7 +1526,7 @@ namespace Gnomic.Core
                     return true;
                 }
             }
-            else if (btnID < 400)
+			else if (btnID < 320)
             {
                 if (MouseJustUp((MouseButton)(btnID - 300)))
                 {
@@ -1472,12 +1534,26 @@ namespace Gnomic.Core
                     return true;
                 }
             }
-            else
-            {
-                lastPlayerId = (btnID - 400) / 100;
-                return PadJustUp(lastPlayerId, (GamePadButton)(btnID % 100));
-            }
-
+#if WINDOWS_PHONE
+			else // if (btnID < 400)
+			{
+				GenericTouchInput touchInput = (GenericTouchInput)(btnID - 320);
+				if (touchInput == GenericTouchInput.TapAnywhere)
+				{
+					return TouchTwinStick.JustTapped;
+				}
+				else if (touchInput == GenericTouchInput.TapLeftSide)
+				{
+					return TouchTwinStick.JustTapped &&
+						TouchTwinStick.leftStickStartRegion.Contains((int)TouchTwinStick.TapPosition.X, (int)TouchTwinStick.TapPosition.Y);
+				}
+				else if (touchInput == GenericTouchInput.TapRightSide)
+				{
+					return TouchTwinStick.JustTapped &&
+						TouchTwinStick.rightStickStartRegion.Contains((int)TouchTwinStick.TapPosition.X, (int)TouchTwinStick.TapPosition.Y);
+				}
+			}
+#endif
             return false;
         }
 
@@ -1716,6 +1792,12 @@ namespace Gnomic.Core
 #endif
             ButtonMappings.Add((int)MenuInputs.Exit, exitBtns.ToArray());
         }
+		public static void AddGenericMapping(MenuInputs menuInput, ButtonGeneric button)
+		{
+			List<ButtonGeneric> buttons = new List<ButtonGeneric>(ButtonMappings[(int)menuInput]);
+			buttons.Add(button);
+			ButtonMappings[(int)menuInput] = buttons.ToArray();
+		}
     }
 
 

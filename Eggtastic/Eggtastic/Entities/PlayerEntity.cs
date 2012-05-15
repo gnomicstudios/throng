@@ -243,7 +243,7 @@ namespace Eggtastic
 
         public void SwitchToIdleOrMoving(State state)
         {
-            Trace.Assert(state == State.Idle || state == State.Moving);
+            Debug.Assert(state == State.Idle || state == State.Moving);
             CurrentState = state;
             PlayNewCharacterAnimation();
         }
@@ -356,23 +356,23 @@ namespace Eggtastic
                 case State.Idle:
                 case State.Moving:
                     {
-                        if (Input.KeyDown(Keys.W) || Input.KeyDown(Keys.Up))
+                        if (Input.ButtonDownMapped((int)Controls.Up))
                         {
                             MoveUp();
                         }
-                        if (Input.KeyDown(Keys.S) || Input.KeyDown(Keys.Down))
+						if (Input.ButtonDownMapped((int)Controls.Down))
                         {
                             MoveDown();
                         }
-                        if (Input.KeyDown(Keys.A) || Input.KeyDown(Keys.Left))
+						if (Input.ButtonDownMapped((int)Controls.Left))
                         {
                             MoveLeft();
                         }
-                        if (Input.KeyDown(Keys.D) || Input.KeyDown(Keys.Right))
+						if (Input.ButtonDownMapped((int)Controls.Right))
                         {
                             MoveRight();
                         }
-                        if (Input.KeyDown(Keys.Space))
+						if (Input.ButtonDownMapped((int)Controls.Suck))
                         {
                             SwitchToSucking();
                             goto case State.Sucking;
@@ -381,7 +381,7 @@ namespace Eggtastic
                     }
                 case State.Sucking:
                     {
-                        if (Input.KeyDown(Keys.Space))
+						if (Input.ButtonDownMapped((int)Controls.Suck))
                         {
                             SuckIn();
                         }

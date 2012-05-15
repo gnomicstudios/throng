@@ -31,7 +31,7 @@ namespace Eggtastic
         {
             base.Update(gameTime);
 
-            if (Input.KeyJustDown(Keys.Space))
+			if (Input.ButtonJustUpMapped((int)Controls.Select))
             {
                 ((Game1)base.Game).BackToMenu();
             }

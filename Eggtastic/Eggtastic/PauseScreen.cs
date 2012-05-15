@@ -23,10 +23,5 @@ namespace Eggtastic
         {
             base.Update(gameTime);
         }
-
-        public virtual void Draw()
-        {
-            base.Draw();
-        }
     }
 }

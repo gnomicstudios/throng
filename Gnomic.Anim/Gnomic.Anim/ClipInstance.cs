@@ -75,7 +75,7 @@ namespace Gnomic.Anim
         public void Play(string animName)
         {
             ClipAnim animToPlay = Clip.AnimSet[animName];
-            System.Diagnostics.Trace.Assert(animToPlay != null);
+            System.Diagnostics.Debug.Assert(animToPlay != null);
             Play(animToPlay);
         }
 

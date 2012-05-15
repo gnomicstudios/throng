@@ -116,7 +116,7 @@ namespace Eggtastic
 
         protected void SwitchToGameScreen(GameScreen to)
         {
-            Trace.Assert(to != null);
+            Debug.Assert(to != null);
             
             _inactiveScreens.Add(_activeScreen);
             _activeScreen = to;
@@ -138,6 +138,15 @@ namespace Eggtastic
             base.Initialize();
 
             Input.Initialize(GraphicsDevice);
+
+			Input.ClearMappings();
+
+			Input.ButtonMappings.Add((int)Controls.Up, new ButtonGeneric[] { ButtonGeneric.Pad0LeftThumbstickUp, ButtonGeneric.Up, ButtonGeneric.W });
+			Input.ButtonMappings.Add((int)Controls.Down, new ButtonGeneric[] { ButtonGeneric.Pad0LeftThumbstickDown, ButtonGeneric.Down, ButtonGeneric.S });
+			Input.ButtonMappings.Add((int)Controls.Left, new ButtonGeneric[] { ButtonGeneric.Pad0LeftThumbstickLeft, ButtonGeneric.Left, ButtonGeneric.A });
+			Input.ButtonMappings.Add((int)Controls.Right, new ButtonGeneric[] { ButtonGeneric.Pad0LeftThumbstickRight, ButtonGeneric.Right, ButtonGeneric.D });
+			Input.ButtonMappings.Add((int)Controls.Suck, new ButtonGeneric[] { ButtonGeneric.TouchRightSide, ButtonGeneric.Space });
+			Input.ButtonMappings.Add((int)Controls.Select, new ButtonGeneric[] { ButtonGeneric.TapAnywhere, ButtonGeneric.Space });
         }
 
         /// <summary>
