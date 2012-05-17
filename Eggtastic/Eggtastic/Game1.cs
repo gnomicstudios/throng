@@ -139,14 +139,19 @@ namespace Eggtastic
 
             Input.Initialize(GraphicsDevice);
 
+			// Set up button mappings. Note that TouchTwinStick translates the left touch pad to Pad0, which is the same 
+			// input device as the first connected Xbox controller.
 			Input.ClearMappings();
-
 			Input.ButtonMappings.Add((int)Controls.Up, new ButtonGeneric[] { ButtonGeneric.Pad0LeftThumbstickUp, ButtonGeneric.Up, ButtonGeneric.W });
 			Input.ButtonMappings.Add((int)Controls.Down, new ButtonGeneric[] { ButtonGeneric.Pad0LeftThumbstickDown, ButtonGeneric.Down, ButtonGeneric.S });
 			Input.ButtonMappings.Add((int)Controls.Left, new ButtonGeneric[] { ButtonGeneric.Pad0LeftThumbstickLeft, ButtonGeneric.Left, ButtonGeneric.A });
 			Input.ButtonMappings.Add((int)Controls.Right, new ButtonGeneric[] { ButtonGeneric.Pad0LeftThumbstickRight, ButtonGeneric.Right, ButtonGeneric.D });
 			Input.ButtonMappings.Add((int)Controls.Suck, new ButtonGeneric[] { ButtonGeneric.TouchRightSide, ButtonGeneric.Space });
 			Input.ButtonMappings.Add((int)Controls.Select, new ButtonGeneric[] { ButtonGeneric.TapAnywhere, ButtonGeneric.Space });
+
+			// Default value for this is not sensitive enough for the Eggtastic gameplay. 
+			// By default it's tuned to menu item selection and requires much bigger deviation
+			Input.StickDirectionThreshold = 0.2f;
         }
 
         /// <summary>

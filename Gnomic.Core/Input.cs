@@ -1377,24 +1377,42 @@ namespace Gnomic.Core
             {
                 case GamePadButton.LeftTrigger:
                     return padState.Triggers.Left > TriggerThreshold;
+
                 case GamePadButton.RightTrigger:
                     return padState.Triggers.Right > TriggerThreshold;
+
                 case GamePadButton.LeftThumbstickDown:
-                    return padState.ThumbSticks.Left.Y < -StickDirectionThreshold;
+					return padState.ThumbSticks.Left.Y < -StickDirectionThreshold && 
+						Math.Abs(padState.ThumbSticks.Left.Y) > Math.Abs(padState.ThumbSticks.Left.X);
+
                 case GamePadButton.LeftThumbstickUp:
-                    return padState.ThumbSticks.Left.Y > StickDirectionThreshold;
+					return padState.ThumbSticks.Left.Y > StickDirectionThreshold &&
+						Math.Abs(padState.ThumbSticks.Left.Y) > Math.Abs(padState.ThumbSticks.Left.X);
+
                 case GamePadButton.LeftThumbstickLeft:
-                    return padState.ThumbSticks.Left.X < -StickDirectionThreshold;
+					return padState.ThumbSticks.Left.X < -StickDirectionThreshold &&
+						Math.Abs(padState.ThumbSticks.Left.X) > Math.Abs(padState.ThumbSticks.Left.Y);
+
                 case GamePadButton.LeftThumbstickRight:
-                    return padState.ThumbSticks.Left.X > StickDirectionThreshold;
+                    return padState.ThumbSticks.Left.X > StickDirectionThreshold && 
+						Math.Abs(padState.ThumbSticks.Left.X) > Math.Abs(padState.ThumbSticks.Left.Y);
+
                 case GamePadButton.RightThumbstickDown:
-                    return padState.ThumbSticks.Right.Y < -StickDirectionThreshold;
+					return padState.ThumbSticks.Right.Y < -StickDirectionThreshold &&
+						Math.Abs(padState.ThumbSticks.Right.Y) > Math.Abs(padState.ThumbSticks.Right.X);
+
                 case GamePadButton.RightThumbstickUp:
-                    return padState.ThumbSticks.Right.Y > StickDirectionThreshold;
+					return padState.ThumbSticks.Right.Y > StickDirectionThreshold &&
+						Math.Abs(padState.ThumbSticks.Right.Y) > Math.Abs(padState.ThumbSticks.Right.X);
+
                 case GamePadButton.RightThumbstickLeft:
-                    return padState.ThumbSticks.Right.X < -StickDirectionThreshold;
+					return padState.ThumbSticks.Right.X < -StickDirectionThreshold &&
+						Math.Abs(padState.ThumbSticks.Right.X) > Math.Abs(padState.ThumbSticks.Right.Y);
+
                 case GamePadButton.RightThumbstickRight:
-                    return padState.ThumbSticks.Right.X > StickDirectionThreshold;
+					return padState.ThumbSticks.Right.X > StickDirectionThreshold &&
+						Math.Abs(padState.ThumbSticks.Right.X) > Math.Abs(padState.ThumbSticks.Right.Y);
+
                 default:
                     return false;
             }
