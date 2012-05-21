@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="Camera2D.cs" />
     <Compile Include="GameEntity.cs" />
     <Compile Include="GameScreen.cs" />
     <Compile Include="Input.cs" />

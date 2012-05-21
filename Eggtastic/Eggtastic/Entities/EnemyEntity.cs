@@ -547,6 +547,7 @@ namespace Eggtastic
         {
             PlayerEntity player = Target as PlayerEntity;
             _heading = 0.25f * (player.Position - Position);
+			_heading.Normalize();
         }
     }
 }

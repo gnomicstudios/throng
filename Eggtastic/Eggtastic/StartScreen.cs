@@ -16,8 +16,8 @@ namespace Eggtastic
 {
     public class StartScreen : GameScreen
     {
-        public StartScreen(Game game)
-            : base(game) 
+        public StartScreen(Game1 game)
+            : base(game, game.Camera) 
         {
             Texture2D backgroundTexture = game.Content.Load<Texture2D>("startScreen");
 

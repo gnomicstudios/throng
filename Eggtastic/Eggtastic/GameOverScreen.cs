@@ -16,8 +16,8 @@ namespace Eggtastic
 {
     public class GameOverScreen : GameScreen
     {
-        public GameOverScreen(Game game)
-            : base(game)
+        public GameOverScreen(Game1 game)
+            : base(game, game.Camera)
         {
             Texture2D backgroundTexture = game.Content.Load<Texture2D>("gameOverScreen");
 

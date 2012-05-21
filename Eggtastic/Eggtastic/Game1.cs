@@ -30,6 +30,8 @@ namespace Eggtastic
         GameOverScreen _gameOverScreen;
         StartScreen _startScreen;
 
+		public Camera2D Camera { get; set; }
+
         public enum State
         {
             Start,
@@ -132,6 +134,9 @@ namespace Eggtastic
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+			Camera = new Camera2D(
+				GraphicsDevice.Viewport, 
+				new Vector2(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight));
 
             InitialiseGameScreens();
 
@@ -200,7 +205,7 @@ namespace Eggtastic
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
             if (GameState == State.Paused || GameState == State.GameOver)
             {

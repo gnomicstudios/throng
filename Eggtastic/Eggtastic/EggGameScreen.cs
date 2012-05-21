@@ -82,12 +82,12 @@ namespace Eggtastic
 
         }
 
-        public EggGameScreen(Game game)
-            : base(game)
+        public EggGameScreen(Game1 game)
+            : base(game, game.Camera.Clone())
         {
             ConvertUnits.SetDisplayUnitToSimUnitRatio(64f);
             
-            _eggtastic = (Game1)game;
+            _eggtastic = game;
 
             Clips = new Dictionary<string, Clip>();
             Enemies = new List<EnemyEntity>();
@@ -295,12 +295,17 @@ namespace Eggtastic
                 _eggtastic.GameOver();
             }
 
+			UpdateEggPhysics();
+
+			// Follow player with camera
+			Camera.Position = (Player.Position - Camera.Origin);
+
             if (_eggCounterCurrent != _eggCounterLast)
             {
                 _eggCounterString = "Eggs: " + _eggCounterCurrent.ToString();
                 _eggCounterLast = _eggCounterCurrent;
             }
-
+			
             CreateQueuedEntities();
 
             _enemySpawner.Tick(gameTime);
@@ -313,6 +318,37 @@ namespace Eggtastic
                 HandleKeyboardInput();
             }
         }
+
+		// Constants to be tuned in UpdateEggPhysics()
+		const float TARGET_EGG_DIST_SQR = 400; // 20 (in default 1280 width size)
+		const float MAX_EGG_DIST_SQR = 20000;
+		const float MAX_EGG_FORCE = 8;
+
+		/// <summary>
+		/// Apply a follow mechanic to the eggs. The first egg follows the player and
+		/// the rest of the eggs follow the previous egg in the list
+		/// </summary>
+		private void UpdateEggPhysics()
+		{
+			Vector2 previousEggPos = Player.Position;
+
+			for (int i = 0; i < Eggs.Count; ++i)
+			{
+				Vector2 eggPos = Eggs[i].Position;
+				float eggDistSqr = Vector2.DistanceSquared(previousEggPos, eggPos);
+
+				// Get direction egg should travel
+				Vector2 eggAt = previousEggPos - eggPos;
+				eggAt.Normalize();
+
+				if (eggDistSqr > TARGET_EGG_DIST_SQR)
+				{
+					float eggForceMultiplier = MAX_EGG_FORCE * ((eggDistSqr - TARGET_EGG_DIST_SQR) / (MAX_EGG_DIST_SQR - TARGET_EGG_DIST_SQR));
+					Eggs[i].DynamicBody.ApplyForce(eggAt * eggForceMultiplier);
+				}
+				previousEggPos = eggPos;
+			}
+		}
 
         public override void Draw()
         {

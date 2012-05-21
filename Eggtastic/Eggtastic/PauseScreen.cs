@@ -16,8 +16,8 @@ namespace Eggtastic
 {
     public class PauseScreen : GameScreen
     {
-        public PauseScreen(Game game)
-            : base(game) { }
+        public PauseScreen(Game1 game)
+            : base(game, game.Camera) { }
 
         public override void Update(GameTime gameTime)
         {

@@ -12,14 +12,16 @@ namespace Gnomic.Core
         public Game Game { get; set; }
         public GameTime CurrentGameTime { get; set; }
         public bool SortEntitiesForDraw { get; set; }
+		public Camera2D Camera { get; set; }
 
         public Random RandomNum { get; set; }
 
         protected SpriteBatch spriteBatch;
 
-        public GameScreen(Game game)
+        public GameScreen(Game game, Camera2D camera)
         {
             Game = game;
+			Camera = camera;
             RandomNum = new Random();
             spriteBatch = new SpriteBatch(game.GraphicsDevice);
             SortEntitiesForDraw = true;
@@ -52,7 +54,7 @@ namespace Gnomic.Core
                 }
             }
 
-            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied);
+			spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied, null, null, null, null, Camera.GetViewMatrix());
 
             foreach (GameEntity ge in ActiveEntities)
             {
