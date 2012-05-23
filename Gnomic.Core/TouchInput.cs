@@ -1,4 +1,4 @@
-#if WINDOWS_PHONE
+#if ANDROID || IOS || WINRT || WINDOWS_PHONE
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -240,7 +240,7 @@ namespace Gnomic.Core
         public static GamePadState GetGamePadState()
         {
             // Get gamepad 0 state, simply to detect the WP7 hardware Back button
-            GamePadState gs0 = GamePad.GetState(0, GamePadDeadZone.Circular);
+            GamePadState gs0 = GamePad.GetState(0);
 
             GamePadState gs = new GamePadState(
                 new GamePadThumbSticks(leftStickDirection, rightStickDirection),

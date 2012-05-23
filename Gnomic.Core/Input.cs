@@ -1075,8 +1075,9 @@ namespace Gnomic.Core
                 {
                     zeroPointX = graphicsDevice.Viewport.Width / 2;
                     zeroPointY = graphicsDevice.Viewport.Height / 2;
-
+					#if WINDOWS
                     Microsoft.Xna.Framework.Input.Mouse.SetPosition(zeroPointX, zeroPointY);
+					#endif
                 }
             }
         }
@@ -1181,11 +1182,12 @@ namespace Gnomic.Core
             lastMouseState = currentMouseState;
             currentMouseState = Mouse.GetState();
 
-#if WINDOWS_PHONE
-            TouchTwinStick.Update(dt);
+#if ANDROID || IOS || WINRT || WINDOWS_PHONE
+			TouchTwinStick.Update(dt);
             lastPadState[0] = CurrentPadState[0];
             CurrentPadState[0] = TouchTwinStick.GetGamePadState();
 
+#if WINDOWS_PHONE
             if (VibrationEnabled && PadVibrate[0] > 0.0f)
             {
                 Microsoft.Devices.VibrateController.Default.Start(
@@ -1193,6 +1195,11 @@ namespace Gnomic.Core
 
                 PadVibrate[0] = 0.0f;
             }
+#elif ANDROID
+			// Android sometims has a keyboard!
+            lastKeyState = currentKeyState;
+            currentKeyState = Keyboard.GetState();
+#endif
 #else
             lastKeyState = currentKeyState;
             currentKeyState = Keyboard.GetState();
@@ -1221,7 +1228,7 @@ namespace Gnomic.Core
                 if (id < 4)
                 {
                     PlayerIndex pId = (PlayerIndex)id;
-                    CurrentPadState[id] = GamePad.GetState(pId, GamePadDeadZone.Circular);
+                    CurrentPadState[id] = GamePad.GetState(pId); //, GamePadDeadZone.Circular);
 
                     // Handle vibration
                     if (CurrentPadState[id].IsConnected && PadVibrate[id] > 0f)
@@ -1278,12 +1285,13 @@ namespace Gnomic.Core
             }
 #endif
 
-            if (captureMouse)
+			if (captureMouse)
             {
                 mouseDX = currentMouseState.X - zeroPointX;
                 mouseDY = currentMouseState.Y - zeroPointY;
-
+				#if WINDOWS
                 Mouse.SetPosition(zeroPointX, zeroPointY);
+				#endif
             }
             else
             {

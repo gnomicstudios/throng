@@ -31,7 +31,12 @@ namespace Eggtastic
         {
             base.Update(gameTime);
 
+#if ANDROID
+			// Temporary hack as Android's touch input seems to only report Move events (at least on simulator)
+			if (Microsoft.Xna.Framework.Input.Touch.TouchPanel.GetState().Count > 0)
+#else
 			if (Input.ButtonJustUpMapped((int)Controls.Select))
+#endif
             {
                 ((Game1)base.Game).StartGame();
             }

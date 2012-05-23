@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{32F502AE-41EA-4CAA-AB93-B472202B92C8}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Farseer_Physics_XNA</RootNamespace>
+    <AssemblyName>FarseerPhysicsXNA</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidSupportedAbis>armeabi%3barmeabi-v7a%3bx86</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions />
+    <MandroidI18n />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Collision\Collision.cs" />
+    <Compile Include="Collision\Distance.cs" />
+    <Compile Include="Collision\DynamicTree.cs" />
+    <Compile Include="Collision\DynamicTreeBroadPhase.cs" />
+    <Compile Include="Collision\IBroadPhase.cs" />
+    <Compile Include="Collision\QuadTree.cs" />
+    <Compile Include="Collision\QuadTreeBroadPhase.cs" />
+    <Compile Include="Collision\Shapes\CircleShape.cs" />
+    <Compile Include="Collision\Shapes\EdgeShape.cs" />
+    <Compile Include="Collision\Shapes\LoopShape.cs" />
+    <Compile Include="Collision\Shapes\PolygonShape.cs" />
+    <Compile Include="Collision\Shapes\Shape.cs" />
+    <Compile Include="Collision\TimeOfImpact.cs" />
+    <Compile Include="Common\ConvexHull\ChainHull.cs" />
+    <Compile Include="Common\ConvexHull\GiftWrap.cs" />
+    <Compile Include="Common\ConvexHull\Melkman.cs" />
+    <Compile Include="Common\Decomposition\BayazitDecomposer.cs" />
+    <Compile Include="Common\Decomposition\CDTDecomposer.cs" />
+    <Compile Include="Common\Decomposition\CDT\Delaunay\DelaunayTriangle.cs" />
+    <Compile Include="Common\Decomposition\CDT\Delaunay\Sweep\AdvancingFront.cs" />
+    <Compile Include="Common\Decomposition\CDT\Delaunay\Sweep\AdvancingFrontNode.cs" />
+    <Compile Include="Common\Decomposition\CDT\Delaunay\Sweep\DTSweep.cs" />
+    <Compile Include="Common\Decomposition\CDT\Delaunay\Sweep\DTSweepConstraint.cs" />
+    <Compile Include="Common\Decomposition\CDT\Delaunay\Sweep\DTSweepContext.cs" />
+    <Compile Include="Common\Decomposition\CDT\Delaunay\Sweep\DTSweepPointComparator.cs" />
+    <Compile Include="Common\Decomposition\CDT\Delaunay\Sweep\PointOnEdgeException.cs" />
+    <Compile Include="Common\Decomposition\CDT\ITriangulatable.cs" />
+    <Compile Include="Common\Decomposition\CDT\Orientation.cs" />
+    <Compile Include="Common\Decomposition\CDT\Polygon\Polygon.cs" />
+    <Compile Include="Common\Decomposition\CDT\Polygon\PolygonPoint.cs" />
+    <Compile Include="Common\Decomposition\CDT\Polygon\PolygonSet.cs" />
+    <Compile Include="Common\Decomposition\CDT\Sets\ConstrainedPointSet.cs" />
+    <Compile Include="Common\Decomposition\CDT\Sets\PointSet.cs" />
+    <Compile Include="Common\Decomposition\CDT\TriangulationConstraint.cs" />
+    <Compile Include="Common\Decomposition\CDT\TriangulationContext.cs" />
+    <Compile Include="Common\Decomposition\CDT\TriangulationMode.cs" />
+    <Compile Include="Common\Decomposition\CDT\TriangulationPoint.cs" />
+    <Compile Include="Common\Decomposition\CDT\TriangulationUtil.cs" />
+    <Compile Include="Common\Decomposition\CDT\Util\FixedArray3.cs" />
+    <Compile Include="Common\Decomposition\CDT\Util\FixedBitArray3.cs" />
+    <Compile Include="Common\Decomposition\CDT\Util\PointGenerator.cs" />
+    <Compile Include="Common\Decomposition\CDT\Util\PolygonGenerator.cs" />
+    <Compile Include="Common\Decomposition\EarclipDecomposer.cs" />
+    <Compile Include="Common\Decomposition\FlipcodeDecomposer.cs" />
+    <Compile Include="Common\Decomposition\SeidelDecomposer.cs" />
+    <Compile Include="Common\FixedArray.cs" />
+    <Compile Include="Common\HashSet.cs" />
+    <Compile Include="Common\LineTools.cs" />
+    <Compile Include="Common\Math.cs" />
+    <Compile Include="Common\Path.cs" />
+    <Compile Include="Common\PathManager.cs" />
+    <Compile Include="Common\PhysicsLogic\Explosion.cs" />
+    <Compile Include="Common\PhysicsLogic\PhysicsLogic.cs" />
+    <Compile Include="Common\PolygonManipulation\CuttingTools.cs" />
+    <Compile Include="Common\PolygonManipulation\SimplifyTools.cs" />
+    <Compile Include="Common\PolygonManipulation\YuPengClipper.cs" />
+    <Compile Include="Common\PolygonTools.cs" />
+    <Compile Include="Common\Serialization.cs" />
+    <Compile Include="Common\TextureTools\MarchingSquares.cs" />
+    <Compile Include="Common\TextureTools\MSTerrain.cs" />
+    <Compile Include="Common\TextureTools\TextureConverter.cs" />
+    <Compile Include="Common\Vertices.cs" />
+    <Compile Include="Controllers\AbstractForceController.cs" />
+    <Compile Include="Controllers\BuoyancyController.cs" />
+    <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Controllers\GravityController.cs" />
+    <Compile Include="Controllers\SimpleWindForce.cs" />
+    <Compile Include="Controllers\VelocityLimitController.cs" />
+    <Compile Include="DebugView XNA\DebugViewXNA.cs" />
+    <Compile Include="DebugView XNA\PrimitiveBatch.cs" />
+    <Compile Include="DebugView XNA\Properties\AssemblyInfo.cs" />
+    <Compile Include="DebugView.cs" />
+    <Compile Include="Dynamics\Body.cs" />
+    <Compile Include="Dynamics\BreakableBody.cs" />
+    <Compile Include="Dynamics\ContactManager.cs" />
+    <Compile Include="Dynamics\Contacts\Contact.cs" />
+    <Compile Include="Dynamics\Contacts\ContactSolver.cs" />
+    <Compile Include="Dynamics\Fixture.cs" />
+    <Compile Include="Dynamics\Island.cs" />
+    <Compile Include="Dynamics\Joints\AngleJoint.cs" />
+    <Compile Include="Dynamics\Joints\DistanceJoint.cs" />
+    <Compile Include="Dynamics\Joints\FixedAngleJoint.cs" />
+    <Compile Include="Dynamics\Joints\FixedDistanceJoint.cs" />
+    <Compile Include="Dynamics\Joints\FixedFrictionJoint.cs" />
+    <Compile Include="Dynamics\Joints\FixedLineJoint.cs" />
+    <Compile Include="Dynamics\Joints\FixedMouseJoint.cs" />
+    <Compile Include="Dynamics\Joints\FixedPrismaticJoint.cs" />
+    <Compile Include="Dynamics\Joints\FixedRevoluteJoint.cs" />
+    <Compile Include="Dynamics\Joints\FrictionJoint.cs" />
+    <Compile Include="Dynamics\Joints\GearJoint.cs" />
+    <Compile Include="Dynamics\Joints\Joint.cs" />
+    <Compile Include="Dynamics\Joints\LineJoint.cs" />
+    <Compile Include="Dynamics\Joints\PrismaticJoint.cs" />
+    <Compile Include="Dynamics\Joints\PulleyJoint.cs" />
+    <Compile Include="Dynamics\Joints\RevoluteJoint.cs" />
+    <Compile Include="Dynamics\Joints\RopeJoint.cs" />
+    <Compile Include="Dynamics\Joints\SliderJoint.cs" />
+    <Compile Include="Dynamics\Joints\WeldJoint.cs" />
+    <Compile Include="Dynamics\TimeStep.cs" />
+    <Compile Include="Dynamics\World.cs" />
+    <Compile Include="Dynamics\WorldCallbacks.cs" />
+    <Compile Include="Factories\BodyFactory.cs" />
+    <Compile Include="Factories\FixtureFactory.cs" />
+    <Compile Include="Factories\JointFactory.cs" />
+    <Compile Include="Factories\LinkFactory.cs" />
+    <Compile Include="Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DebugView XNA\bin\Windows Phone\Debug\DebugViewXNA.dll" />
+    <Content Include="DebugView XNA\bin\Windows Phone\Debug\DebugViewXNA.pdb" />
+    <Content Include="DebugView XNA\bin\Windows Phone\Debug\FarseerPhysicsXNA.dll" />
+    <Content Include="DebugView XNA\bin\Windows Phone\Debug\FarseerPhysicsXNA.pdb" />
+    <Content Include="DebugView XNA\bin\Windows Phone\Release\DebugViewXNA.dll" />
+    <Content Include="DebugView XNA\bin\Windows Phone\Release\DebugViewXNA.pdb" />
+    <Content Include="DebugView XNA\bin\Windows Phone\Release\FarseerPhysicsXNA.dll" />
+    <Content Include="DebugView XNA\bin\Windows Phone\Release\FarseerPhysicsXNA.pdb" />
+    <Content Include="DebugView XNA\bin\x86\Debug\DebugViewXNA.dll" />
+    <Content Include="DebugView XNA\bin\x86\Debug\DebugViewXNA.pdb" />
+    <Content Include="DebugView XNA\bin\x86\Debug\DebugViewXNA.XML" />
+    <Content Include="DebugView XNA\bin\x86\Debug\FarseerPhysicsXNA.dll" />
+    <Content Include="DebugView XNA\bin\x86\Debug\FarseerPhysicsXNA.pdb" />
+    <Content Include="DebugView XNA\bin\x86\Debug\FarseerPhysicsXNA.xml" />
+    <Content Include="DebugView XNA\bin\x86\Release\DebugViewXNA.dll" />
+    <Content Include="DebugView XNA\bin\x86\Release\DebugViewXNA.pdb" />
+    <Content Include="DebugView XNA\bin\x86\Release\FarseerPhysicsXNA.dll" />
+    <Content Include="DebugView XNA\bin\x86\Release\FarseerPhysicsXNA.pdb" />
+    <Content Include="DebugView XNA\bin\x86\Release\FarseerPhysicsXNA.xml" />
+    <Content Include="DebugView XNA\Content\obj\Windows Phone\Debug\DebugView XNA Content.contentproj.FileListAbsolute.txt" />
+    <Content Include="DebugView XNA\Content\obj\Windows Phone\Release\DebugView XNA Content.contentproj.FileListAbsolute.txt" />
+    <Content Include="DebugView XNA\Content\obj\x86\Debug\DebugView XNA Content.contentproj.FileListAbsolute.txt" />
+    <Content Include="DebugView XNA\Content\obj\x86\Release\DebugView XNA Content.contentproj.FileListAbsolute.txt" />
+    <Content Include="DebugView XNA\DebugView XNA WP7.csproj" />
+    <Content Include="DebugView XNA\DebugView XNA Xbox360.csproj" />
+    <Content Include="DebugView XNA\DebugView XNA.csproj" />
+    <Content Include="DebugView XNA\DebugView XNA.WP7.csproj" />
+    <Content Include="DebugView XNA\obj\Windows Phone\Debug\cachefile-{AC26EDE1-2A42-4A57-BEEE-9603FCAC9317}-targetpath.txt" />
+    <Content Include="DebugView XNA\obj\Windows Phone\Debug\ContentPipeline-{AC26EDE1-2A42-4A57-BEEE-9603FCAC9317}.xml" />
+    <Content Include="DebugView XNA\obj\Windows Phone\Debug\DebugView XNA.WP7.csproj.FileListAbsolute.txt" />
+    <Content Include="DebugView XNA\obj\Windows Phone\Debug\DebugViewXNA.dll" />
+    <Content Include="DebugView XNA\obj\Windows Phone\Debug\DebugViewXNA.pdb" />
+    <Content Include="DebugView XNA\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt" />
+    <Content Include="DebugView XNA\obj\Windows Phone\Release\cachefile-{AC26EDE1-2A42-4A57-BEEE-9603FCAC9317}-targetpath.txt" />
+    <Content Include="DebugView XNA\obj\Windows Phone\Release\ContentPipeline-{AC26EDE1-2A42-4A57-BEEE-9603FCAC9317}.xml" />
+    <Content Include="DebugView XNA\obj\Windows Phone\Release\DebugView XNA.WP7.csproj.FileListAbsolute.txt" />
+    <Content Include="DebugView XNA\obj\Windows Phone\Release\DebugViewXNA.dll" />
+    <Content Include="DebugView XNA\obj\Windows Phone\Release\DebugViewXNA.pdb" />
+    <Content Include="DebugView XNA\obj\Windows Phone\Release\Microsoft.Xna.Framework.RuntimeProfile.txt" />
+    <Content Include="DebugView XNA\obj\x86\Debug\cachefile-{AC26EDE1-2A42-4A57-BEEE-9603FCAC9317}-targetpath.txt" />
+    <Content Include="DebugView XNA\obj\x86\Debug\ContentPipeline-{AC26EDE1-2A42-4A57-BEEE-9603FCAC9317}.xml" />
+    <Content Include="DebugView XNA\obj\x86\Debug\DebugView XNA.csproj.FileListAbsolute.txt" />
+    <Content Include="DebugView XNA\obj\x86\Debug\DebugViewXNA.dll" />
+    <Content Include="DebugView XNA\obj\x86\Debug\DebugViewXNA.pdb" />
+    <Content Include="DebugView XNA\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt" />
+    <Content Include="DebugView XNA\obj\x86\Release\cachefile-{AC26EDE1-2A42-4A57-BEEE-9603FCAC9317}-targetpath.txt" />
+    <Content Include="DebugView XNA\obj\x86\Release\ContentPipeline-{AC26EDE1-2A42-4A57-BEEE-9603FCAC9317}.xml" />
+    <Content Include="DebugView XNA\obj\x86\Release\DebugView XNA.csproj.FileListAbsolute.txt" />
+    <Content Include="DebugView XNA\obj\x86\Release\DebugViewXNA.dll" />
+    <Content Include="DebugView XNA\obj\x86\Release\DebugViewXNA.pdb" />
+    <Content Include="DebugView XNA\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt" />
+    <Content Include="DebugView XNA\Properties\AppManifest.xml" />
+    <Content Include="DebugView XNA\Properties\WMAppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DebugView XNA\bin\Windows Phone\Debug\Content\font.xnb" />
+    <None Include="DebugView XNA\bin\Windows Phone\Release\Content\font.xnb" />
+    <None Include="DebugView XNA\bin\x86\Debug\Content\font.xnb" />
+    <None Include="DebugView XNA\bin\x86\Release\Content\font.xnb" />
+    <None Include="DebugView XNA\Content\DebugView XNA Content.contentproj" />
+    <None Include="DebugView XNA\Content\font.spritefont" />
+    <None Include="DebugView XNA\Content\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="DebugView XNA\Content\obj\Windows Phone\Debug\ResolveAssemblyReference.cache" />
+    <None Include="DebugView XNA\Content\obj\x86\Debug\ResolveAssemblyReference.cache" />
+    <None Include="DebugView XNA\Content\obj\x86\Release\ResolveAssemblyReference.cache" />
+    <None Include="DebugView XNA\DebugView XNA.csproj.Debug.cachefile" />
+    <None Include="DebugView XNA\DebugView XNA.csproj.Release.cachefile" />
+    <None Include="DebugView XNA\DebugView XNA.WP7.csproj.Debug.cachefile" />
+    <None Include="DebugView XNA\DebugView XNA.WP7.csproj.Release.cachefile" />
+    <None Include="DebugView XNA\obj\Windows Phone\Debug\build.force" />
+    <None Include="DebugView XNA\obj\Windows Phone\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="DebugView XNA\obj\Windows Phone\Debug\ResolveAssemblyReference.cache" />
+    <None Include="DebugView XNA\obj\Windows Phone\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="DebugView XNA\obj\x86\Debug\build.force" />
+    <None Include="DebugView XNA\obj\x86\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="DebugView XNA\obj\x86\Debug\ResolveAssemblyReference.cache" />
+    <None Include="DebugView XNA\obj\x86\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DebugView XNA\Content\bin\AnyCPU\Debug\" />
+    <Folder Include="DebugView XNA\Content\bin\Windows Phone\Debug\" />
+    <Folder Include="DebugView XNA\Content\bin\Windows Phone\Release\" />
+    <Folder Include="DebugView XNA\Content\bin\x86\Debug\" />
+    <Folder Include="DebugView XNA\Content\bin\x86\Release\" />
+    <Folder Include="DebugView XNA\Content\obj\Debug\TempPE\" />
+    <Folder Include="DebugView XNA\obj\Windows Phone\Debug\TempPE\" />
+    <Folder Include="DebugView XNA\obj\Windows Phone\Release\TempPE\" />
+    <Folder Include="DebugView XNA\obj\x86\Debug\TempPE\" />
+    <Folder Include="DebugView XNA\obj\x86\Release\TempPE\" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MonoGame\MonoGame.Framework\MonoGame.Framework.Android.csproj">
+      <Project>{BA9476CF-99BA-4D03-92F2-73D2C5E58883}</Project>
+      <Name>MonoGame.Framework.Android</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

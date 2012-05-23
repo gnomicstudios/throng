@@ -43,7 +43,7 @@ namespace Eggtastic
 
         public Game1()
         {
-            GameState = State.Start;
+			GameState = State.Start;
 
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferWidth = 1280;

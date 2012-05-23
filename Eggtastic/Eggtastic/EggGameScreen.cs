@@ -102,11 +102,13 @@ namespace Eggtastic
 
             gameFont = Content.Load<SpriteFont>("GameFont");
 
+#if !ANDROID
             BackgroundMusic =
                 Content.Load<Song>("background-music");
             MediaPlayer.Play(BackgroundMusic);
             MediaPlayer.Volume = 0.5f;
-            
+#endif
+		    
             Corners = new Vertices(4);
             Corners.Add(new Vector2(0f));                              // top-left
             Corners.Add(new Vector2(Viewport.Width, 0f));              // top-right
