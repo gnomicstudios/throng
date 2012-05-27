@@ -417,25 +417,39 @@ namespace Eggtastic
         private bool CollisionWithPlayer(Fixture f1, Fixture f2,
                                          Contact contact, PlayerEntity player)
         {
-            if (CurrentState == State.BeingSuckedIn &&
-                player.CurrentState != PlayerEntity.State.Eating)
+            if (player.CurrentState == PlayerEntity.State.Lunging)
             {
-                player.SwitchToEating();
-                GameScreen.DestroyEnemy(this);
-                return false;
-            }
-            else if (CurrentState == State.BeingSuckedIn ||
-                     CurrentState == State.Retreating)
-            {
-                return true;
-            }
-
-            if (!HitPlayer)
-            {
-                ApplyImpactImpulse(player);
-                HitPlayer = true;
+                Vector2 playerToEnemy = this.Position - player.Position;
+                playerToEnemy.Normalize();
+                Vector2 playerHeading = player.DynamicBody.LinearVelocity;
+                if (playerHeading != Vector2.Zero && Vector2.Dot(playerToEnemy, playerHeading) > 0.2f)
+                {
+                    player.SwitchToEating();
+                    GameScreen.DestroyEnemy(this);
+                    return false;
+                }
             }
             return true;
+
+            //if (CurrentState == State.BeingSuckedIn &&
+            //    player.CurrentState != PlayerEntity.State.Eating)
+            //{
+            //    player.SwitchToEating();
+            //    GameScreen.DestroyEnemy(this);
+            //    return false;
+            //}
+            //else if (CurrentState == State.BeingSuckedIn ||
+            //         CurrentState == State.Retreating)
+            //{
+            //    return true;
+            //}
+
+            //if (!HitPlayer)
+            //{
+            //    ApplyImpactImpulse(player);
+            //    HitPlayer = true;
+            //}
+            //return true;
         }
 
         private bool CollisionWithEgg(Fixture f1, Fixture f2,

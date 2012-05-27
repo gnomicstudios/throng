@@ -10,8 +10,8 @@ namespace Eggtastic
 		Up,
 		Down,
 		Left,
-		Right,
-		Suck,
+        Right,
+        Suck,
 		Select
 	}
 }

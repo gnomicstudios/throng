@@ -20,6 +20,7 @@ namespace Eggtastic
     public class EnemySpawner
     {
         private const float SPAWN_INTERVAL_DEFAULT = 5.0f;
+        private const float SPAWN_INTERVAL_MIN = 1.0f;
 
         private EggGameScreen _gameScreen;
         private Random _rand;
@@ -58,7 +59,8 @@ namespace Eggtastic
 
         public void Tick(GameTime gameTime)
         {
-            SpawnInterval -= (0.03f * (float)gameTime.ElapsedGameTime.TotalSeconds);
+            SpawnInterval -= (0.05f * (float)gameTime.ElapsedGameTime.TotalSeconds);
+            SpawnInterval = Math.Max(SPAWN_INTERVAL_MIN, SpawnInterval);
 
             _secondsSinceLastSpawn += (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (_secondsSinceLastSpawn > SpawnInterval)
@@ -90,15 +92,16 @@ namespace Eggtastic
             // Vector2 side = rCoef * (nextCorner - corner);
             // Vector2 spawnPoint = corner + side;
 
-            Vector2 topLeft = _gameScreen.Corners[0];
+            Vector2 top = new Vector2(_gameScreen.Player.Position.X + _gameScreen.ScreenSizeDefault.X, 0.0f);
+            Vector2 bottom = new Vector2(_gameScreen.Player.Position.X + _gameScreen.ScreenSizeDefault.X, _gameScreen.ScreenSizeDefault.Y);
             Vector2 topRight = _gameScreen.Corners[1];
-            Vector2 top = rCoef * (topRight - topLeft);
-            Vector2 spawnPoint = topLeft + top;
+            Vector2 mid = rCoef * (bottom - top);
+            Vector2 spawnPoint = top + mid;
 
-            const float buffer = 20f;
+            //const float buffer = 20f;
 
-            spawnPoint.X += ((top.X - buffer) < 0) ? buffer : -buffer;
-            spawnPoint.Y += ((top.Y - buffer) < 0) ? buffer : -buffer;
+            //spawnPoint.X += ((top.X - buffer) < 0) ? buffer : -buffer;
+            //spawnPoint.Y += ((top.Y - buffer) < 0) ? buffer : -buffer;
 
             // if spawn point is too close to player, try again ..
             if (Vector2.Distance(_gameScreen.Player.Position, spawnPoint)
@@ -110,11 +113,11 @@ namespace Eggtastic
             else
             {
                 EnemyEntity enemy = new EnemyEntity(_gameScreen, _clip, spawnPoint);
-                enemy.AttackPlayerWeight = 0.75f;
-                if (_gameScreen.RandomNum.NextDouble() > 0.5)
-                {
-                    enemy.AttackEggWeight = 0.75f;
-                }
+                enemy.AttackPlayerWeight = 1f;
+                //if (_gameScreen.RandomNum.NextDouble() > 0.5)
+                //{
+                //    enemy.AttackEggWeight = 0.75f;
+                //}
                 _gameScreen.AddEnemy(enemy);
             }
         }

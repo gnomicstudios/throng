@@ -24,9 +24,11 @@ namespace Eggtastic
     public class EggGameScreen : GameScreen
     {
         private const int STARTING_EGGS = 1;
+        private const float CAMERA_CATCHUP_FACTOR = 2f;
         private const float EGG_SPAWN_MIN_DIST = 100f;
         private const float EGG_SPAWN_MAX_DIST = 200f;
         private const float INITIAL_NO_INPUT_TIME = 1f;
+        private const int PLAY_AREA_WIDTH_IN_SCREENS = 200;
 
         private int _eggCounterLast = -1;
         private int _eggCounterCurrent = 0;
@@ -36,6 +38,9 @@ namespace Eggtastic
         private Border _border;
         private EnemySpawner _enemySpawner;
         private Game1 _eggtastic;
+        public Vector2 ScreenSizeDefault; 
+        private SpriteEntity _bgSprite1;
+        private SpriteEntity _bgSprite2;
 
         public List<EnemyEntity> Enemies;
         public List<EggEntity> Eggs;
@@ -46,7 +51,7 @@ namespace Eggtastic
         public ContentManager Content { get; set; }
 
         public Vector2 ScreenCenter { get; set; }
-
+        
         public Vertices Corners { get; set; }
 
         protected DebugViewXNA DebugView { get; set; }
@@ -79,7 +84,6 @@ namespace Eggtastic
             Clip enemyClip = Content.Load<Gnomic.Anim.Clip>("enemy");
             enemyClip.Init(Content);
             Clips.Add("enemy", enemyClip);
-
         }
 
         public EggGameScreen(Game1 game)
@@ -95,9 +99,11 @@ namespace Eggtastic
             QueuedForDisposal = new List<CharacterEntity>();
             QueuedForCreation = new List<CharacterEntity>();
 
+            ScreenSizeDefault = new Vector2(1280, 720);
+
             GraphicsDevice = game.GraphicsDevice;
             Viewport = GraphicsDevice.Viewport;
-            ScreenCenter = new Vector2(Viewport.Width / 2f, Viewport.Height / 2f);
+            ScreenCenter = new Vector2(ScreenSizeDefault.X / 2f, ScreenSizeDefault.Y / 2f);
             Content = game.Content;
 
             gameFont = Content.Load<SpriteFont>("GameFont");
@@ -110,14 +116,14 @@ namespace Eggtastic
 #endif
 		    
             Corners = new Vertices(4);
-            Corners.Add(new Vector2(0f));                              // top-left
-            Corners.Add(new Vector2(Viewport.Width, 0f));              // top-right
-            Corners.Add(new Vector2(Viewport.Width, Viewport.Height)); // bottom-right
-            Corners.Add(new Vector2(0f, Viewport.Height));             // bottom-left
+            Corners.Add(new Vector2(0f));                                           // top-left
+            Corners.Add(new Vector2(ScreenSizeDefault.X, 0f));                     // top-right
+            Corners.Add(new Vector2(ScreenSizeDefault.X, ScreenSizeDefault.Y));   // bottom-right
+            Corners.Add(new Vector2(0f, ScreenSizeDefault.Y));                     // bottom-left
 
             projection =
-                Matrix.CreateOrthographicOffCenter(0f, ConvertUnits.ToSimUnits(Viewport.Width),
-                                                   ConvertUnits.ToSimUnits(Viewport.Height), 0f, 0f, 1f);
+                Matrix.CreateOrthographicOffCenter(0f, ConvertUnits.ToSimUnits(ScreenSizeDefault.X),
+                                                   ConvertUnits.ToSimUnits(ScreenSizeDefault.Y), 0f, 0f, 1f);
 
             World = new World(new Vector2(0, 0));
             DebugView = new DebugViewXNA(World);
@@ -130,7 +136,8 @@ namespace Eggtastic
 
             _enemySpawner = new EnemySpawner(this, Clips["enemy"]);
 
-            _border = new Border(World, Viewport);
+            // World is 1 screen high, N screens wide
+            _border = new Border(World, new Vector2(ScreenSizeDefault.X * PLAY_AREA_WIDTH_IN_SCREENS, ScreenSizeDefault.Y));
 
             InitialiseLevel();
         }
@@ -138,7 +145,11 @@ namespace Eggtastic
         public void InitialiseLevel()
         {
             Texture2D backgroundTexture = Content.Load<Texture2D>("background");
-            base.ActiveEntities.Add(new SpriteEntity(backgroundTexture, ScreenCenter));
+            _bgSprite1 = new SpriteEntity(backgroundTexture, ScreenCenter);
+            base.ActiveEntities.Add(_bgSprite1);
+            _bgSprite2 = new SpriteEntity(backgroundTexture, new Vector2(ScreenCenter.X + ScreenSizeDefault.X, ScreenCenter.Y));
+            base.ActiveEntities.Add(_bgSprite2);
+
             
             Player = new PlayerEntity(this, Clips["player"], ScreenCenter);
             ActiveEntities.Add(Player);
@@ -202,7 +213,7 @@ namespace Eggtastic
             _enemySpawner.Reset();
 
             Vector2 spawn = ScreenCenter;
-            spawn.Y += Viewport.Height / 2.25f;
+            spawn.Y += ScreenSizeDefault.Y / 2.25f;
             AddEgg(spawn);
         }
 
@@ -290,7 +301,8 @@ namespace Eggtastic
             _levelActiveTime += gameTime.ElapsedGameTime.TotalSeconds;
 
             base.Update(gameTime);
-            RandomNum = new Random(gameTime.TotalGameTime.Milliseconds);
+            
+            UpdateBackground();
 
             if (Eggs.Count == 0)
             {
@@ -300,7 +312,9 @@ namespace Eggtastic
 			UpdateEggPhysics();
 
 			// Follow player with camera
-			Camera.Position = (Player.Position - Camera.Origin);
+            Vector2 cameraTarget = new Vector2(Player.Position.X, 0);
+            Vector2 cameraPos = Camera.Position + (cameraTarget - Camera.Position) * (float)gameTime.ElapsedGameTime.TotalSeconds * CAMERA_CATCHUP_FACTOR;
+            Camera.Position = cameraPos;
 
             if (_eggCounterCurrent != _eggCounterLast)
             {
@@ -319,6 +333,13 @@ namespace Eggtastic
             {
                 HandleKeyboardInput();
             }
+        }
+
+        private void UpdateBackground()
+        {
+            int xBlock = (int)(Camera.Position.X / ScreenSizeDefault.X);
+            _bgSprite1.Position = new Vector2(ScreenCenter.X + xBlock * ScreenSizeDefault.X, ScreenCenter.Y);
+            _bgSprite2.Position = new Vector2(ScreenCenter.X + (xBlock + 1) * ScreenSizeDefault.X, ScreenCenter.Y);
         }
 
 		// Constants to be tuned in UpdateEggPhysics()
@@ -345,7 +366,7 @@ namespace Eggtastic
 
 				if (eggDistSqr > TARGET_EGG_DIST_SQR)
 				{
-					float eggForceMultiplier = MAX_EGG_FORCE * ((eggDistSqr - TARGET_EGG_DIST_SQR) / (MAX_EGG_DIST_SQR - TARGET_EGG_DIST_SQR));
+					float eggForceMultiplier = Math.Min(MAX_EGG_FORCE, MAX_EGG_FORCE * ((eggDistSqr - TARGET_EGG_DIST_SQR) / (MAX_EGG_DIST_SQR - TARGET_EGG_DIST_SQR)));
 					Eggs[i].DynamicBody.ApplyForce(eggAt * eggForceMultiplier);
 				}
 				previousEggPos = eggPos;

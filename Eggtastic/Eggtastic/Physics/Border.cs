@@ -24,10 +24,10 @@ namespace Eggtastic
 
         public Vertices Corners{ get; set; }
         
-        public Border(World world, Viewport viewport)
+        public Border(World world, Vector2 worldSize)
         {
-            float simWidth = ConvertUnits.ToSimUnits(viewport.Width);
-            float simHeight = ConvertUnits.ToSimUnits(viewport.Height);
+            float simWidth = ConvertUnits.ToSimUnits(worldSize.X);
+            float simHeight = ConvertUnits.ToSimUnits(worldSize.Y);
 
             Corners = new Vertices(4);
             Corners.Add(new Vector2(0f, 0f));

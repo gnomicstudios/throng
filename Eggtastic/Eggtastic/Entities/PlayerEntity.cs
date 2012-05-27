@@ -20,12 +20,15 @@ namespace Eggtastic
 {
     public class PlayerEntity : CharacterEntity
     {
-        private const float MOVEMENT_FORCE = 10f;
+        public const float TARGET_SPEED = 10.0f;
+        public const float PER_FRAME_FORCE_INCREMENT = 1.0f;
+        private const float MOVEMENT_FORCE = 40f;
         private const float IDLE_SPEED_THRESHOLD = 0.2f;
         private const float DIRECTION_CHANGE_THRESHOLD = 0.3f;
 
         private const double EATING_EGG_DURATION = 0.9f;
-        private const double EATING_ANIM_DURATION = 1.6f;
+        private const double EATING_ANIM_DURATION = 1.3f;
+        private const float LUNGE_DURATION = 0.8f;
         
         private static readonly float PHYSICS_RADIUS = 0.5f;
         private static readonly Vector2 PHYSICS_OFFSET = new Vector2(0.0f, -0.45f);
@@ -33,10 +36,14 @@ namespace Eggtastic
         private Body _sensor;
         private float _sensorRotation;
         private AnimationDirection _animDirection;
-        private Vector2 _movementForce;
-
+        private Vector2 _movementDirection;
         private double _eatingTime;
         private bool _eggSpawned;
+        private double _lungeTime;
+        
+
+        private float _baseForce;
+        private float _targetSpeed = TARGET_SPEED;
 
         int _eatingSfxId;
         double[] _eatingSfxTimes = new double[] { 0.0, 0.4, 0.6, 0.9 };
@@ -62,6 +69,7 @@ namespace Eggtastic
         {
             Idle,
             Moving,
+            Lunging,
             Sucking,
             Eating
         }
@@ -126,7 +134,7 @@ namespace Eggtastic
                 if (enemy.CurrentState != EnemyEntity.State.BeingSuckedIn)
                 {
                     enemy.CurrentState = EnemyEntity.State.BeingSuckedIn;
-                    enemy.MovementSpeed = 0.1f;
+                    enemy.MovementSpeed = 0.3f;
                     enemy.Target = this;
                 }
             }
@@ -180,6 +188,17 @@ namespace Eggtastic
                 sfxInst.IsLooped = true;
                 sfxInst.Volume = volume;
                 sfxInst.Play();
+            }
+        }
+
+        public void SwitchToLunging()
+        {
+            if (_movementDirection != Vector2.Zero)
+            {
+                DynamicBody.ApplyLinearImpulse(20.0f * Vector2.Normalize(_movementDirection));
+                CurrentState = State.Lunging;
+                PlayNewCharacterAnimation();
+                _lungeTime = 0;
             }
         }
 
@@ -252,6 +271,7 @@ namespace Eggtastic
         {
             base.Update(gameTime);
 
+            //_targetSpeed = TARGET_SPEED;
             switch (CurrentState)
             {
                 case State.Eating:
@@ -273,11 +293,34 @@ namespace Eggtastic
                             _sfxEat[_eatingSfxId].Play();
                             _eatingSfxId++;
                         }
-
-                        break;
                     }
+                    break;
+                case State.Lunging:
+                    {
+                        _lungeTime += gameTime.ElapsedGameTime.TotalSeconds;
+                        //_targetSpeed = TARGET_SPEED * 2.0f;
+
+                        if (_lungeTime > LUNGE_DURATION)
+                        {
+                            SwitchToMoving();
+                        }
+                    }
+                    break;
             }
-			
+
+            float currentSpeed = DynamicBody.LinearVelocity.Length();
+            if (currentSpeed < _targetSpeed)
+            {
+                _baseForce += PER_FRAME_FORCE_INCREMENT;
+            }
+            else if (currentSpeed > _targetSpeed)
+            {
+                _baseForce -= PER_FRAME_FORCE_INCREMENT;
+            }
+            
+            Vector2 movementDirection = _baseForce * Vector2.UnitX;
+            DynamicBody.ApplyForce(movementDirection);
+
             SwitchStateBasedOnSpeed();
 
             SetCurrentDirection();
@@ -292,7 +335,7 @@ namespace Eggtastic
             switch (CurrentState)
             {
                 case State.Idle:
-                    if (_movementForce != Vector2.Zero &&
+                    if (_movementDirection != Vector2.Zero &&
                         speedSqr > IDLE_SPEED_THRESHOLD * IDLE_SPEED_THRESHOLD)
                     {
                         SwitchToMoving();
@@ -300,7 +343,7 @@ namespace Eggtastic
                     break;
 
                 case State.Moving:
-                    if (_movementForce == Vector2.Zero &&
+                    if (_movementDirection == Vector2.Zero &&
                         speedSqr < IDLE_SPEED_THRESHOLD * IDLE_SPEED_THRESHOLD)
                     {
                         SwitchToIdle();
@@ -313,10 +356,10 @@ namespace Eggtastic
 
         void SetCurrentDirection()
         {
-            if (_movementForce != Vector2.Zero)
+            if (_movementDirection != Vector2.Zero)
             {
                 // Get direction we are pushing
-                AnimationDirection newDirection = DirectionHelper.GetDirectionFromHeading(_movementForce);
+                AnimationDirection newDirection = DirectionHelper.GetDirectionFromHeading(_movementDirection);
                 if (newDirection == _animDirection)
                     return;
 
@@ -333,7 +376,7 @@ namespace Eggtastic
                     if (velocity.LengthSquared() < 0.01f)
                         return;
 
-                    Vector2 normalHeading = Vector2.Normalize(_movementForce);
+                    Vector2 normalHeading = Vector2.Normalize(_movementDirection);
                     Vector2 normalVelocity = Vector2.Normalize(velocity);
                     float directionDotProduct = Vector2.Dot(normalHeading, normalVelocity);
                     if (directionDotProduct > DIRECTION_CHANGE_THRESHOLD)
@@ -347,7 +390,7 @@ namespace Eggtastic
 
         public void HandleKeyboardInput()
         {
-            _movementForce = Vector2.Zero;
+            _movementDirection = Vector2.Zero;
 
             switch (CurrentState)
             {
@@ -360,22 +403,28 @@ namespace Eggtastic
                         {
                             MoveUp();
                         }
-						if (Input.ButtonDownMapped((int)Controls.Down))
+                        if (Input.ButtonDownMapped((int)Controls.Down))
                         {
                             MoveDown();
                         }
-						if (Input.ButtonDownMapped((int)Controls.Left))
+                        if (Input.ButtonDownMapped((int)Controls.Left))
                         {
                             MoveLeft();
                         }
-						if (Input.ButtonDownMapped((int)Controls.Right))
+                        if (Input.ButtonDownMapped((int)Controls.Right))
                         {
                             MoveRight();
                         }
 						if (Input.ButtonDownMapped((int)Controls.Suck))
                         {
-                            SwitchToSucking();
-                            goto case State.Sucking;
+                            SwitchToLunging();
+                            //SwitchToSucking();
+                            //goto case State.Sucking;
+                        }
+                        else if (_movementDirection != Vector2.Zero)
+                        {
+                            _movementDirection.Normalize();
+                            DynamicBody.ApplyForce(_movementDirection * MOVEMENT_FORCE);
                         }
                         break;
                     }
@@ -398,33 +447,29 @@ namespace Eggtastic
         {
             
         }
-        
+
         public void MoveRight()
         {
             _sensorRotation = -90f;
-            _movementForce = new Vector2(MOVEMENT_FORCE, 0f);
-            DynamicBody.ApplyForce(_movementForce);
+            _movementDirection += new Vector2(1.0f, 0f);
         }
 
         public void MoveLeft()
         {
             _sensorRotation = 90f;
-            _movementForce = new Vector2(-MOVEMENT_FORCE, 0f);
-            DynamicBody.ApplyForce(_movementForce);
+            _movementDirection += new Vector2(-1.0f, 0f);
         }
 
         public void MoveUp()
         {
             _sensorRotation = 180f;
-            _movementForce = new Vector2(0f, -MOVEMENT_FORCE);
-            DynamicBody.ApplyForce(_movementForce);
+            _movementDirection += new Vector2(0f, -1.0f);
         }
 
         public void MoveDown()
         {
             _sensorRotation = 0f;
-            _movementForce = new Vector2(0f, MOVEMENT_FORCE);
-            DynamicBody.ApplyForce(_movementForce);
+            _movementDirection += new Vector2(0f, 1.0f);
         }
 
         public PlayerEntity(EggGameScreen gameScreen, Clip clip)
@@ -445,15 +490,14 @@ namespace Eggtastic
             : base(gameScreen, clip, position, scale, rotation, PHYSICS_OFFSET, PHYSICS_RADIUS)
         {
             EntityType = Type.Player;
-            CurrentState = State.Idle;
-
-            _animDirection = AnimationDirection.Down;
+            
+            _animDirection = AnimationDirection.Right;
 
             LoadSounds(gameScreen.Content);
 
             SetupAnimations(clip);
 
-            PlayNewCharacterAnimation();
+            SwitchToMoving();
          }
 
         private void LoadSounds(ContentManager content)
@@ -492,6 +536,16 @@ namespace Eggtastic
             _animations[new AnimKey(State.Eating, AnimationDirection.Right)] = clip.AnimSet["eat-right"];
             _animations[new AnimKey(State.Eating, AnimationDirection.Up)] = clip.AnimSet["eat-up"];
             _animations[new AnimKey(State.Eating, AnimationDirection.Down)] = clip.AnimSet["eat-down"];
+
+            _animations[new AnimKey(State.Lunging, AnimationDirection.Left)] = clip.AnimSet["eat-left"];
+            _animations[new AnimKey(State.Lunging, AnimationDirection.Right)] = clip.AnimSet["eat-right"];
+            _animations[new AnimKey(State.Lunging, AnimationDirection.Up)] = clip.AnimSet["eat-up"];
+            _animations[new AnimKey(State.Lunging, AnimationDirection.Down)] = clip.AnimSet["eat-down"];
+        }
+
+        public Vector2 GetHeading()
+        {
+            return _movementDirection;
         }
     }
 }
