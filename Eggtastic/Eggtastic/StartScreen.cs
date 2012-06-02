@@ -22,10 +22,7 @@ namespace Eggtastic
             Texture2D backgroundTexture = game.Content.Load<Texture2D>("startScreen");
 
             base.ActiveEntities.Add(
-                new SpriteEntity(
-                    backgroundTexture,
-                    new Vector2(640, 360)));
-                    //new Vector2(game.GraphicsDevice.Viewport.Width / 2, game.GraphicsDevice.Viewport.Height / 2)));
+                new SpriteEntity(backgroundTexture, game.ScreenSizeDefault / 2.0f));
         }
 
         public override void Update(GameTime gameTime)

@@ -18,6 +18,8 @@ namespace Eggtastic
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        public readonly Vector2 ScreenSizeDefault = new Vector2(1280, 720);
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
