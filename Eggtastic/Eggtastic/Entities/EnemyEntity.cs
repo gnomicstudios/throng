@@ -248,7 +248,8 @@ namespace Eggtastic
                 SwitchToRetreating();
             }
 
-            MoveTowards(_heading);
+            const float SUCKED_FORC_MULTIPLIER = 40.0f;
+            MoveTowards(_heading * SUCKED_FORC_MULTIPLIER);
             CalculateSuckedInHeading();
         }
 
@@ -417,12 +418,12 @@ namespace Eggtastic
         private bool CollisionWithPlayer(Fixture f1, Fixture f2,
                                          Contact contact, PlayerEntity player)
         {
-            if (player.CurrentState == PlayerEntity.State.Lunging)
+            if (player.CurrentState == PlayerEntity.State.Lunging || player.CurrentState == PlayerEntity.State.Sucking)
             {
-                Vector2 playerToEnemy = this.Position - player.Position;
-                playerToEnemy.Normalize();
-                Vector2 playerHeading = player.DynamicBody.LinearVelocity;
-                if (playerHeading != Vector2.Zero && Vector2.Dot(playerToEnemy, playerHeading) > 0.2f)
+                //Vector2 playerToEnemy = this.Position - player.Position;
+                //playerToEnemy.Normalize();
+                //Vector2 playerHeading = player.DynamicBody.LinearVelocity;
+                //if (playerHeading != Vector2.Zero && Vector2.Dot(playerToEnemy, playerHeading) > 0.2f)
                 {
                     player.SwitchToEating();
                     GameScreen.DestroyEnemy(this);

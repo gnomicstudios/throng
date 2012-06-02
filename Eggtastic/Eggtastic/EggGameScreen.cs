@@ -38,10 +38,10 @@ namespace Eggtastic
         private Border _border;
         private EnemySpawner _enemySpawner;
         private Game1 _eggtastic;
-        public Vector2 ScreenSizeDefault; 
         private SpriteEntity _bgSprite1;
         private SpriteEntity _bgSprite2;
 
+        public Vector2 ScreenSizeDefault;
         public List<EnemyEntity> Enemies;
         public List<EggEntity> Eggs;
 
@@ -312,10 +312,9 @@ namespace Eggtastic
 			UpdateEggPhysics();
 
 			// Follow player with camera
-            Vector2 cameraTarget = new Vector2(Player.Position.X, 0);
-            Vector2 cameraPos = Camera.Position + (cameraTarget - Camera.Position) * (float)gameTime.ElapsedGameTime.TotalSeconds * CAMERA_CATCHUP_FACTOR;
-            Camera.Position = cameraPos;
-
+            Vector2 cameraTarget = new Vector2(Player.Position.X - ScreenSizeDefault.X * 0.5f, 0.0f);
+            Camera.Position = cameraTarget;
+ 
             if (_eggCounterCurrent != _eggCounterLast)
             {
                 _eggCounterString = "Eggs: " + _eggCounterCurrent.ToString();

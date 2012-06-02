@@ -13,6 +13,7 @@ namespace Gnomic.Core
         public GameTime CurrentGameTime { get; set; }
         public bool SortEntitiesForDraw { get; set; }
 		public Camera2D Camera { get; set; }
+        public Matrix ViewMatrix { get; set; }
 
         public Random RandomNum { get; set; }
 
@@ -54,7 +55,8 @@ namespace Gnomic.Core
                 }
             }
 
-			spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied, null, null, null, null, Camera.GetViewMatrix());
+            ViewMatrix = Camera.GetViewMatrix();
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied, null, null, null, null, ViewMatrix);
 
             foreach (GameEntity ge in ActiveEntities)
             {

@@ -186,8 +186,8 @@ namespace Gnomic.Core
 
         static TouchTwinStick()
         {
-            TouchPanel.EnabledGestures = GestureType.None;
-            TouchPanel.DisplayOrientation = DisplayOrientation.LandscapeLeft;
+            //TouchPanel.EnabledGestures = GestureType.None;
+            //TouchPanel.DisplayOrientation = DisplayOrientation.LandscapeLeft;
 
             DeadZoneSizeLeft = 5.0f;
             DeadZoneSizeRight = 5.0f;
@@ -260,15 +260,15 @@ namespace Gnomic.Core
             justTapped = false;
             touchStartId = null;
 
-            while (TouchPanel.IsGestureAvailable)
-            {
-                GestureSample gesture = TouchPanel.ReadGesture();
-                if (gesture.GestureType == GestureType.Tap)
-                {
-                    justTapped = true;
-                    tapPosition = gesture.Position;
-                }
-            }
+            //while (TouchPanel.IsGestureAvailable)
+            //{
+            //    GestureSample gesture = TouchPanel.ReadGesture();
+            //    if (gesture.GestureType == GestureType.Tap)
+            //    {
+            //        justTapped = true;
+            //        tapPosition = gesture.Position;
+            //    }
+            //}
 
             //stateLast = state;
             state = TouchPanel.GetState();

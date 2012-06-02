@@ -22,7 +22,7 @@ namespace Eggtastic
     {
         public const float TARGET_SPEED = 10.0f;
         public const float PER_FRAME_FORCE_INCREMENT = 1.0f;
-        private const float MOVEMENT_FORCE = 40f;
+        private const float MOVEMENT_FORCE = 20f;
         private const float IDLE_SPEED_THRESHOLD = 0.2f;
         private const float DIRECTION_CHANGE_THRESHOLD = 0.3f;
 
@@ -317,9 +317,7 @@ namespace Eggtastic
             {
                 _baseForce -= PER_FRAME_FORCE_INCREMENT;
             }
-            
-            Vector2 movementDirection = _baseForce * Vector2.UnitX;
-            DynamicBody.ApplyForce(movementDirection);
+
 
             SwitchStateBasedOnSpeed();
 
@@ -399,38 +397,33 @@ namespace Eggtastic
                 case State.Idle:
                 case State.Moving:
                     {
-                        if (Input.ButtonDownMapped((int)Controls.Up))
+#if WINDOWS
+                        if (Input.ButtonDownMapped((int)Controls.Suck))
+#else
+                        if (TouchTwinStick.UsingRightStick)
+#endif
                         {
-                            MoveUp();
+                            SwitchToSucking();
+                            SuckIn();
                         }
-                        if (Input.ButtonDownMapped((int)Controls.Down))
+                        
+                        _movementDirection = GetFacingDirectionFromControls();
+                        if (_movementDirection != Vector2.Zero)
                         {
-                            MoveDown();
-                        }
-                        if (Input.ButtonDownMapped((int)Controls.Left))
-                        {
-                            MoveLeft();
-                        }
-                        if (Input.ButtonDownMapped((int)Controls.Right))
-                        {
-                            MoveRight();
-                        }
-						if (Input.ButtonDownMapped((int)Controls.Suck))
-                        {
-                            SwitchToLunging();
-                            //SwitchToSucking();
-                            //goto case State.Sucking;
-                        }
-                        else if (_movementDirection != Vector2.Zero)
-                        {
+                            _sensorRotation = MathHelper.ToDegrees((float)Math.Atan2(_movementDirection.Y, _movementDirection.X) - MathHelper.PiOver2);
                             _movementDirection.Normalize();
                             DynamicBody.ApplyForce(_movementDirection * MOVEMENT_FORCE);
                         }
+
                         break;
                     }
                 case State.Sucking:
                     {
-						if (Input.ButtonDownMapped((int)Controls.Suck))
+#if WINDOWS
+                        if (Input.ButtonDownMapped((int)Controls.Suck))
+#else
+                        if (TouchTwinStick.UsingRightStick)
+#endif
                         {
                             SuckIn();
                         }
@@ -443,33 +436,27 @@ namespace Eggtastic
             }
         }
 
+        private Vector2 GetFacingDirectionFromControls()
+        {
+            Vector2 direction = Vector2.Zero;
+#if WINDOWS
+            if (Input.ButtonDownMapped((int)Controls.Up)) direction.Y -= 1.0f;
+            if (Input.ButtonDownMapped((int)Controls.Down)) direction.Y += 1.0f;
+            if (Input.ButtonDownMapped((int)Controls.Left)) direction.X -= 1.0f;
+            if (Input.ButtonDownMapped((int)Controls.Right)) direction.X += 1.0f;
+#else
+            if (TouchTwinStick.leftStickMagnitude > 0.2f)
+            {
+                direction = Vector2.Normalize(TouchTwinStick.leftStickDirection);
+                direction.Y = -direction.Y;
+            }
+#endif
+            return direction;
+        }
+
         public void SuckIn()
         {
             
-        }
-
-        public void MoveRight()
-        {
-            _sensorRotation = -90f;
-            _movementDirection += new Vector2(1.0f, 0f);
-        }
-
-        public void MoveLeft()
-        {
-            _sensorRotation = 90f;
-            _movementDirection += new Vector2(-1.0f, 0f);
-        }
-
-        public void MoveUp()
-        {
-            _sensorRotation = 180f;
-            _movementDirection += new Vector2(0f, -1.0f);
-        }
-
-        public void MoveDown()
-        {
-            _sensorRotation = 0f;
-            _movementDirection += new Vector2(0f, 1.0f);
         }
 
         public PlayerEntity(EggGameScreen gameScreen, Clip clip)
