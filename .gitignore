@@ -3,6 +3,7 @@
 # Ignore VS2010 build files:
 *.suo
 *.cachefile
+*.csproj.user
 
 # Ignore the contents of the '/bin' and '/obj' directories:
 bin/
