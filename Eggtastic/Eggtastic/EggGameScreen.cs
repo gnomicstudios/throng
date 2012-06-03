@@ -169,13 +169,16 @@ namespace Eggtastic
 
         public void AddEnemy(EnemyEntity enemy)
         {
+            enemy.IsValid = true;
+
             ActiveEntities.Add(enemy);
             Enemies.Add(enemy);
         }
 
         public void DestroyEnemy(EnemyEntity enemy)
         {
-            Enemies.Remove(enemy);
+            enemy.IsValid = false;
+
             QueuedForDisposal.Add(enemy);
         }
 
@@ -183,7 +186,6 @@ namespace Eggtastic
         {
             egg.IsValid = false;
 
-            Eggs.Remove(egg);
             QueuedForDisposal.Add(egg);
         }
 
@@ -279,6 +281,20 @@ namespace Eggtastic
                     entity.DynamicBody.Enabled = false;
                     entity.DynamicBody.Dispose();
                     ActiveEntities.Remove(entity);
+
+                    EnemyEntity enemy = entity as EnemyEntity;
+                    if (enemy != null)
+                    {
+                        Enemies.Remove(enemy);
+                    }
+                    else
+                    {
+                        EggEntity egg = entity as EggEntity;
+                        if (egg != null)
+                        {
+                            Eggs.Remove(egg);
+                        }
+                    }
                 }
                 QueuedForDisposal.Clear();
             }
