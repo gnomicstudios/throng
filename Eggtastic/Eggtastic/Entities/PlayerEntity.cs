@@ -25,7 +25,7 @@ namespace Eggtastic
         private const float MOVEMENT_FORCE = 20f;
         private const float IDLE_SPEED_THRESHOLD = 0.2f;
         private const float DIRECTION_CHANGE_THRESHOLD = 0.3f;
-
+        private const float ENEMY_EAT_RANGE = 100.0f;
         private const double EATING_EGG_DURATION = 0.9f;
         private const double EATING_ANIM_DURATION = 1.3f;
         private const float LUNGE_DURATION = 0.8f;
@@ -40,7 +40,7 @@ namespace Eggtastic
         private double _eatingTime;
         private bool _eggSpawned;
         private double _lungeTime;
-        
+        private int _numEnemiesBeingEaten = 0;
 
         private float _baseForce;
         private float _targetSpeed = TARGET_SPEED;
@@ -284,7 +284,11 @@ namespace Eggtastic
                         }
                         else if (!_eggSpawned && _eatingTime > EATING_EGG_DURATION)
                         {
-                            SpawnEgg();
+                            for (int i = 0; i < _numEnemiesBeingEaten; ++i)
+                            {
+                                SpawnEgg();
+                            }
+                            _numEnemiesBeingEaten = 0;
                         }
 
                         while (_eatingSfxId < _eatingSfxTimes.Length &&
@@ -533,6 +537,37 @@ namespace Eggtastic
         public Vector2 GetHeading()
         {
             return _movementDirection;
+        }
+
+        /// <summary>
+        /// Destroys any enemies within range.
+        /// The player and enemy must be in the correct state (sucking and being sucked)
+        /// </summary>
+        /// <returns>True if any enemies were eaten</returns>
+        public bool EatEnemiesInRange()
+        {
+            _numEnemiesBeingEaten = 0;
+            if (CurrentState == PlayerEntity.State.Lunging || CurrentState == PlayerEntity.State.Sucking)
+            {
+                foreach (EnemyEntity e in GameScreen.Enemies)
+                {
+                    if (e.CurrentState == EnemyEntity.State.BeingSuckedIn)
+                    {
+                        float distToEnemy = Vector2.Distance(e.Position, Position);
+                        if (distToEnemy < ENEMY_EAT_RANGE)
+                        {
+                            _numEnemiesBeingEaten++;
+                            GameScreen.DestroyEnemy(e);
+                        }
+                    }
+                }
+            }
+            if (_numEnemiesBeingEaten > 0)
+            {
+                SwitchToEating();
+                return true;
+            }
+            return false;
         }
     }
 }
