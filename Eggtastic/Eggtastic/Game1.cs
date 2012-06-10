@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Gnomic.Core;
+using System.Threading;
 
 namespace Eggtastic
 {
@@ -107,15 +108,23 @@ namespace Eggtastic
 
         protected void InitialiseGameScreens()
         {
-            _gameScreen = new EggGameScreen(this);
             _pauseScreen = new PauseScreen(this);
             _gameOverScreen = new GameOverScreen(this);
             _startScreen = new StartScreen(this);
 
+            WaitCallback loadGameCallback = new WaitCallback(LoadMainGameScreen);
+            ThreadPool.QueueUserWorkItem(loadGameCallback);
+
             _activeScreen = _startScreen;
             _inactiveScreens.Add(_pauseScreen);
             _inactiveScreens.Add(_gameOverScreen);
+        }
+
+        void LoadMainGameScreen(object asyncState)
+        {
+            _gameScreen = new EggGameScreen(this);
             _inactiveScreens.Add(_gameScreen);
+            _startScreen.IsGameLoaded = true;
         }
 
         protected void SwitchToGameScreen(GameScreen to)
