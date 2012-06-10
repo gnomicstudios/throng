@@ -22,7 +22,7 @@ namespace Eggtastic
     {
         public const float TARGET_SPEED = 10.0f;
         public const float PER_FRAME_FORCE_INCREMENT = 1.0f;
-        private const float MOVEMENT_FORCE = 20f;
+        private float MOVEMENT_FORCE = Tweak.MOVEMENT_FORCE;
         private const float IDLE_SPEED_THRESHOLD = 0.2f;
         private const float DIRECTION_CHANGE_THRESHOLD = 0.3f;
         private const float ENEMY_EAT_RANGE = 100.0f;
@@ -113,7 +113,7 @@ namespace Eggtastic
             DynamicBody.CollidesWith = (Category)
                 CharacterEntity.CollidesWith.Player;
 
-            Vertices trapezoid = CreateTrapezoid(1f, 3f, 2.5f);
+            Vertices trapezoid = CreateTrapezoid(1f, 3f * Tweak.SUCK_AREA_MULTIPLER, 2.5f * Tweak.SUCK_AREA_MULTIPLER);
 
             _sensor = BodyFactory.CreatePolygon(GameScreen.World, trapezoid, 1f, ConvertUnits.ToSimUnits(GameScreen.ScreenCenter));
             _sensor.IsSensor = true;
@@ -358,6 +358,10 @@ namespace Eggtastic
 
         void SetCurrentDirection()
         {
+            Tweak.Stats = "";
+            Tweak.Stats += "_animDirection: " + _animDirection.ToString() + "\r\n";
+            Tweak.Stats += "_movementDirection: " + _movementDirection.ToString() + "\r\n";
+            
             if (_movementDirection != Vector2.Zero)
             {
                 // Get direction we are pushing
@@ -401,16 +405,13 @@ namespace Eggtastic
                 case State.Idle:
                 case State.Moving:
                     {
-#if WINDOWS
                         if (Input.ButtonDownMapped((int)Controls.Suck))
-#else
-                        if (TouchTwinStick.UsingRightStick)
-#endif
                         {
                             SwitchToSucking();
                             SuckIn();
+                            break;
                         }
-                        
+	                        
                         _movementDirection = GetFacingDirectionFromControls();
                         if (_movementDirection != Vector2.Zero)
                         {
@@ -423,11 +424,7 @@ namespace Eggtastic
                     }
                 case State.Sucking:
                     {
-#if WINDOWS
                         if (Input.ButtonDownMapped((int)Controls.Suck))
-#else
-                        if (TouchTwinStick.UsingRightStick)
-#endif
                         {
                             SuckIn();
                         }
@@ -462,7 +459,7 @@ namespace Eggtastic
         {
             
         }
-
+        
         public PlayerEntity(EggGameScreen gameScreen, Clip clip)
             : this(gameScreen, clip, new Vector2(), new Vector2(1f), 0.0f)
         { }
@@ -512,26 +509,38 @@ namespace Eggtastic
             _animations[new AnimKey(State.Idle, AnimationDirection.Right)] = clip.AnimSet["idle-right"];
             _animations[new AnimKey(State.Idle, AnimationDirection.Up)] = clip.AnimSet["idle-up"];
             _animations[new AnimKey(State.Idle, AnimationDirection.Down)] = clip.AnimSet["idle-down"];
+            _animations[new AnimKey(State.Idle, AnimationDirection.DiagonalUpLeft)] = clip.AnimSet["idle-diag-up-left"];
+            _animations[new AnimKey(State.Idle, AnimationDirection.DiagonalUpRight)] = clip.AnimSet["idle-diag-up-right"];
+            _animations[new AnimKey(State.Idle, AnimationDirection.DiagonalDownLeft)] = clip.AnimSet["idle-diag-down-left"];
+            _animations[new AnimKey(State.Idle, AnimationDirection.DiagonalDownRight)] = clip.AnimSet["idle-diag-down-right"];
 
             _animations[new AnimKey(State.Moving, AnimationDirection.Left)] = clip.AnimSet["walk-left"];
             _animations[new AnimKey(State.Moving, AnimationDirection.Right)] = clip.AnimSet["walk-right"];
             _animations[new AnimKey(State.Moving, AnimationDirection.Up)] = clip.AnimSet["walk-up"];
             _animations[new AnimKey(State.Moving, AnimationDirection.Down)] = clip.AnimSet["walk-down"];
+            _animations[new AnimKey(State.Moving, AnimationDirection.DiagonalUpLeft)] = clip.AnimSet["walk-diag-up-left"];
+            _animations[new AnimKey(State.Moving, AnimationDirection.DiagonalUpRight)] = clip.AnimSet["walk-diag-up-right"];
+            _animations[new AnimKey(State.Moving, AnimationDirection.DiagonalDownLeft)] = clip.AnimSet["walk-diag-down-left"];
+            _animations[new AnimKey(State.Moving, AnimationDirection.DiagonalDownRight)] = clip.AnimSet["walk-diag-down-right"];
 
             _animations[new AnimKey(State.Sucking, AnimationDirection.Left)] = clip.AnimSet["suck-left"];
             _animations[new AnimKey(State.Sucking, AnimationDirection.Right)] = clip.AnimSet["suck-right"];
             _animations[new AnimKey(State.Sucking, AnimationDirection.Up)] = clip.AnimSet["suck-up"];
             _animations[new AnimKey(State.Sucking, AnimationDirection.Down)] = clip.AnimSet["suck-down"];
+            _animations[new AnimKey(State.Sucking, AnimationDirection.DiagonalUpLeft)] = clip.AnimSet["suck-diag-up-left"];
+            _animations[new AnimKey(State.Sucking, AnimationDirection.DiagonalUpRight)] = clip.AnimSet["suck-diag-up-right"];
+            _animations[new AnimKey(State.Sucking, AnimationDirection.DiagonalDownLeft)] = clip.AnimSet["suck-diag-down-left"];
+            _animations[new AnimKey(State.Sucking, AnimationDirection.DiagonalDownRight)] = clip.AnimSet["suck-diag-down-right"];
 
             _animations[new AnimKey(State.Eating, AnimationDirection.Left)] = clip.AnimSet["eat-left"];
             _animations[new AnimKey(State.Eating, AnimationDirection.Right)] = clip.AnimSet["eat-right"];
             _animations[new AnimKey(State.Eating, AnimationDirection.Up)] = clip.AnimSet["eat-up"];
             _animations[new AnimKey(State.Eating, AnimationDirection.Down)] = clip.AnimSet["eat-down"];
-
-            _animations[new AnimKey(State.Lunging, AnimationDirection.Left)] = clip.AnimSet["eat-left"];
-            _animations[new AnimKey(State.Lunging, AnimationDirection.Right)] = clip.AnimSet["eat-right"];
-            _animations[new AnimKey(State.Lunging, AnimationDirection.Up)] = clip.AnimSet["eat-up"];
-            _animations[new AnimKey(State.Lunging, AnimationDirection.Down)] = clip.AnimSet["eat-down"];
+			
+            _animations[new AnimKey(State.Eating, AnimationDirection.DiagonalUpLeft)] = clip.AnimSet["eat-diag-up-left"];
+            _animations[new AnimKey(State.Eating, AnimationDirection.DiagonalUpRight)] = clip.AnimSet["eat-diag-up-right"];
+            _animations[new AnimKey(State.Eating, AnimationDirection.DiagonalDownLeft)] = clip.AnimSet["eat-diag-down-left"];
+            _animations[new AnimKey(State.Eating, AnimationDirection.DiagonalDownRight)] = clip.AnimSet["eat-diag-down-right"];			
         }
 
         public Vector2 GetHeading()

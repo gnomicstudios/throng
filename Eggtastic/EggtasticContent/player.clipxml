@@ -380,6 +380,11 @@
           </Frame>
         </JointAnim>
       </Anim>
+      
+      <!-- For AnimSets Transform.Rot is in radians -->
+      <!-- 1 degree = 0.0174532925 radians -->
+      
+      <!-- idle -->
       <Anim>
         <Name>idle-down</Name>
         <Duration>22</Duration>
@@ -770,6 +775,7 @@
           </Frame>
         </JointAnim>
       </Anim>
+
       <Anim>
         <Name>idle-up</Name>
         <Duration>1</Duration>
@@ -905,6 +911,279 @@
           </Frame>
         </JointAnim>
       </Anim>
+
+      <Anim>
+        <Name>idle-diag-up-left</Name>
+        <Duration>1</Duration>
+        <Framerate>12</Framerate>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 40.651</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 182 73 16</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>36 7.5</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeFront</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>0.45 -35.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+      </Anim>
+
+      <Anim>
+        <Name>idle-diag-up-right</Name>
+        <Duration>1</Duration>
+        <Framerate>12</Framerate>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 40.651</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 182 73 16</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>36 7.5</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeFront</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>0.45 -35.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+      </Anim>
+
       <Anim>
         <Name>idle-left</Name>
         <Duration>22</Duration>
@@ -1295,6 +1574,7 @@
           </Frame>
         </JointAnim>
       </Anim>
+
       <Anim>
         <Name>idle-right</Name>
         <Duration>22</Duration>
@@ -1693,6 +1973,790 @@
           </Frame>
         </JointAnim>
       </Anim>
+
+      <Anim>
+        <Name>idle-diag-down-left</Name>
+        <Duration>22</Duration>
+        <Framerate>12</Framerate>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>17</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.201 14.100999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.201 14.100999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>17</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.100999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.100999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>255 0 87 83</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>42.601 76.65</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 182 73 16</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>36 7.5</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeFront</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>16</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>17</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -49.95</Pos>
+              <Scale>1.089813232421875 0.7959136962890625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>18</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -49.95</Pos>
+              <Scale>1.089813232421875 0.7959136962890625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -49.95</Pos>
+              <Scale>0.969940185546875 1.03399658203125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -49.95</Pos>
+              <Scale>1.089813232421875 0.8979644775390625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>19.55 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>16</FrameNumber>
+            <Transform>
+              <Pos>19.55 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>17</FrameNumber>
+            <Transform>
+              <Pos>19.55 -49.95</Pos>
+              <Scale>1.1197509765625 0.7959136962890625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>18</FrameNumber>
+            <Transform>
+              <Pos>19.55 -49.95</Pos>
+              <Scale>1.1197509765625 0.7959136962890625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Transform>
+              <Pos>19.55 -49.95</Pos>
+              <Scale>0.9382476806640625 1.03399658203125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Transform>
+              <Pos>19.55 -49.95</Pos>
+              <Scale>1.1197509765625 0.8979644775390625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Transform>
+              <Pos>19.55 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>-0.05 0.05</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>16</FrameNumber>
+            <Transform>
+              <Pos>-0.05 0.05</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>17</FrameNumber>
+            <Transform>
+              <Pos>-0.05 0.05</Pos>
+              <Scale>1 0.948150634765625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>18</FrameNumber>
+            <Transform>
+              <Pos>-0.05 0.05</Pos>
+              <Scale>1 0.948150634765625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Transform>
+              <Pos>-0.05 0.05</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+      </Anim>
+
+      <Anim>
+        <Name>idle-diag-down-right</Name>
+        <Duration>22</Duration>
+        <Framerate>12</Framerate>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>17</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.201 14.100999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.201 14.100999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>17</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.100999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.100999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>255 0 87 83</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>42.601 76.65</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 182 73 16</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>36 7.5</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeFront</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>16</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>17</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -49.95</Pos>
+              <Scale>1.089813232421875 0.7959136962890625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>18</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -49.95</Pos>
+              <Scale>1.089813232421875 0.7959136962890625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -49.95</Pos>
+              <Scale>0.969940185546875 1.03399658203125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -49.95</Pos>
+              <Scale>1.089813232421875 0.8979644775390625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>19.55 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>16</FrameNumber>
+            <Transform>
+              <Pos>19.55 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>17</FrameNumber>
+            <Transform>
+              <Pos>19.55 -49.95</Pos>
+              <Scale>1.1197509765625 0.7959136962890625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>18</FrameNumber>
+            <Transform>
+              <Pos>19.55 -49.95</Pos>
+              <Scale>1.1197509765625 0.7959136962890625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Transform>
+              <Pos>19.55 -49.95</Pos>
+              <Scale>0.9382476806640625 1.03399658203125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Transform>
+              <Pos>19.55 -49.95</Pos>
+              <Scale>1.1197509765625 0.8979644775390625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Transform>
+              <Pos>19.55 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>-0.05 0.05</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>16</FrameNumber>
+            <Transform>
+              <Pos>-0.05 0.05</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>17</FrameNumber>
+            <Transform>
+              <Pos>-0.05 0.05</Pos>
+              <Scale>1 0.948150634765625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>18</FrameNumber>
+            <Transform>
+              <Pos>-0.05 0.05</Pos>
+              <Scale>1 0.948150634765625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Transform>
+              <Pos>-0.05 0.05</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+      </Anim>
+
+      <!-- walk -->
       <Anim>
         <Name>walk-down</Name>
         <Duration>4</Duration>
@@ -2026,6 +3090,7 @@
           </Frame>
         </JointAnim>
       </Anim>
+
       <Anim>
         <Name>walk-up</Name>
         <Duration>4</Duration>
@@ -2247,6 +3312,451 @@
           </Frame>
         </JointAnim>
       </Anim>
+
+      <Anim>
+        <Name>walk-diag-up-left</Name>
+        <Duration>4</Duration>
+        <Framerate>12</Framerate>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 76.65</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 76.7</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 76.65</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 76.55000000000001</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 182 73 16</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>36 7.5</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeFront</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.05</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.05</Pos>
+              <Scale>0.91888427734375 1.11016845703125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.05</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.05</Pos>
+              <Scale>1.1042938232421875 0.8639068603515625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>0.84759521484375 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1.2916717529296875 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+      </Anim>
+
+      <Anim>
+        <Name>walk-diag-up-right</Name>
+        <Duration>4</Duration>
+        <Framerate>12</Framerate>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 76.65</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 76.7</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 76.65</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 76.55000000000001</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 182 73 16</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>36 7.5</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeFront</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.05</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.05</Pos>
+              <Scale>0.91888427734375 1.11016845703125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.05</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.05</Pos>
+              <Scale>1.1042938232421875 0.8639068603515625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>0.84759521484375 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1.2916717529296875 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+      </Anim>
+
       <Anim>
         <Name>walk-left</Name>
         <Duration>4</Duration>
@@ -2572,6 +4082,7 @@
           </Frame>
         </JointAnim>
       </Anim>
+      
       <Anim>
         <Name>walk-right</Name>
         <Duration>4</Duration>
@@ -2929,6 +4440,676 @@
           </Frame>
         </JointAnim>
       </Anim>
+
+      <Anim>
+        <Name>walk-diag-down-left</Name>
+        <Duration>4</Duration>
+        <Framerate>12</Framerate>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.250999999999998 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>255 0 87 83</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.101 76.65</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>255 0 87 83</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.101 76.7</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>255 0 87 83</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.101 76.65</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>255 0 87 83</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.101 76.55000000000001</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 182 73 16</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>36 7.5</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeFront</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -51.45</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -51.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -47.45</Pos>
+              <Scale>1.1197509765625 0.931976318359375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>19.55 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>19.55 -51.45</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>19.55 -51.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>19.55 -47.45</Pos>
+              <Scale>1.17962646484375 0.931976318359375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.05</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.05</Pos>
+              <Scale>0.91888427734375 1.11016845703125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.05</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.05</Pos>
+              <Scale>1.1042938232421875 0.8639068603515625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>0.84759521484375 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1.2916717529296875 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+      </Anim>
+
+      <Anim>
+        <Name>walk-diag-down-right</Name>
+        <Duration>4</Duration>
+        <Framerate>12</Framerate>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.250999999999998 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>255 0 87 83</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.101 76.65</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>255 0 87 83</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.101 76.7</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>255 0 87 83</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.101 76.65</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>255 0 87 83</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.101 76.55000000000001</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 182 73 16</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>36 7.5</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeFront</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -51.45</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -51.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -47.45</Pos>
+              <Scale>1.1197509765625 0.931976318359375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>19.55 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>19.55 -51.45</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>19.55 -51.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>19.55 -47.45</Pos>
+              <Scale>1.17962646484375 0.931976318359375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.05</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.05</Pos>
+              <Scale>0.91888427734375 1.11016845703125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.05</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.05</Pos>
+              <Scale>1.1042938232421875 0.8639068603515625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>0.84759521484375 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1.2916717529296875 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+      </Anim>
+
+      <!-- suck -->
       <Anim>
         <Name>suck-down</Name>
         <Duration>2</Duration>
@@ -3203,6 +5384,7 @@
           </Frame>
         </JointAnim>
       </Anim>
+      
       <Anim>
         <Name>suck-up</Name>
         <Duration>2</Duration>
@@ -3405,6 +5587,415 @@
           </Frame>
         </JointAnim>
       </Anim>
+
+      <Anim>
+        <Name>suck-diag-up-left</Name>
+        <Duration>2</Duration>
+        <Framerate>12</Framerate>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 0 152 90</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>74.801 44.900000000000006</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 91 152 90</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>74.801 44.95</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>42.651 40.651</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 40.651</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 182 73 16</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>36 7.5</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeFront</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>-70 -90</Pos>
+              <Scale>0.5772857666015625 1</Scale>
+              <!-- 45 degrees * 0.0174532925 = 0.785398163397448 radians -->
+              <Rot>0.785398163397448</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>-70 -90</Pos>
+              <Scale>0.5772857666015625 1</Scale>
+              <Rot>0.785398163397448</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>-0.55 -35.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>1.45 -35.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+      </Anim>
+
+      <Anim>
+        <Name>suck-diag-up-right</Name>
+        <Duration>2</Duration>
+        <Framerate>12</Framerate>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 0 152 90</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>74.801 44.900000000000006</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 91 152 90</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>74.801 44.95</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>42.651 40.651</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 40.651</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 182 73 16</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>36 7.5</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeFront</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>70 -90</Pos>
+              <Scale>0.5772857666015625 1</Scale>
+              <!-- 135 degrees * 0.0174532925 = 2.3561944875 radians -->
+              <Rot>2.3561944875</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>70 -90</Pos>
+              <Scale>0.5772857666015625 1</Scale>
+              <Rot>2.3561944875</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>-0.55 -35.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>1.45 -35.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+      </Anim>
+
       <Anim>
         <Name>suck-left</Name>
         <Duration>2</Duration>
@@ -3671,6 +6262,7 @@
           </Frame>
         </JointAnim>
       </Anim>
+      
       <Anim>
         <Name>suck-right</Name>
         <Duration>2</Duration>
@@ -3953,6 +6545,560 @@
           </Frame>
         </JointAnim>
       </Anim>
+
+      <Anim>
+        <Name>suck-diag-down-left</Name>
+        <Duration>2</Duration>
+        <Framerate>12</Framerate>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 0 152 90</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>75.7 44.401</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 91 152 90</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>75.7 44.451</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>249 167 83 87</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>41 42.251</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>74 182 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.051 14.251</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>74 182 34 30</TexRect>
+            <FlipState>1</FlipState>
+            <Origin>16.351 14.251</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>74 182 34 30</TexRect>
+            <FlipState>1</FlipState>
+            <Origin>16.401 14.251</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 182 73 16</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>36 7.5</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeFront</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>-80 40</Pos>
+              <Scale>1 1</Scale>
+              <!-- -45 degrees * 0.0174532925 = -0.785398163397448 radians -->
+              <Rot>-0.785398163397448</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>-80 40</Pos>
+              <Scale>1 1</Scale>
+              <Rot>-0.785398163397448</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>2.25 -38</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>4.25 -38</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>-21.75 -67.25</Pos>
+              <Scale>0.9296722412109375 0.9296722412109375</Scale>
+              <Rot>0.11343308557418101</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>-19.75 -67.25</Pos>
+              <Scale>0.9296722412109375 0.9296722412109375</Scale>
+              <Rot>0.11343308557418101</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>26.1 -62.9</Pos>
+              <Scale>0.929656982421875 0.929656982421875</Scale>
+              <Rot>-0.5654934953385533</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>28.1 -62.9</Pos>
+              <Scale>0.929656982421875 0.929656982421875</Scale>
+              <Rot>-0.5654934953385533</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+      </Anim>
+
+      <Anim>
+        <Name>suck-diag-down-right</Name>
+        <Duration>2</Duration>
+        <Framerate>12</Framerate>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 0 152 90</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>75.7 44.401</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 91 152 90</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>75.7 44.451</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>249 167 83 87</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>41 42.251</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>74 182 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.051 14.251</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>74 182 34 30</TexRect>
+            <FlipState>1</FlipState>
+            <Origin>16.351 14.251</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>74 182 34 30</TexRect>
+            <FlipState>1</FlipState>
+            <Origin>16.401 14.251</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 182 73 16</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>36 7.5</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeFront</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>80 40</Pos>
+              <Scale>1 1</Scale>
+              <!-- 225 degrees * 0.0174532925 = 3.9269908125 radians -->
+              <Rot>3.9269908125</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>80 40</Pos>
+              <Scale>1 1</Scale>
+              <Rot>3.9269908125</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>2.25 -38</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>4.25 -38</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>-21.75 -67.25</Pos>
+              <Scale>0.9296722412109375 0.9296722412109375</Scale>
+              <Rot>0.11343308557418101</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>-19.75 -67.25</Pos>
+              <Scale>0.9296722412109375 0.9296722412109375</Scale>
+              <Rot>0.11343308557418101</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>26.1 -62.9</Pos>
+              <Scale>0.929656982421875 0.929656982421875</Scale>
+              <Rot>-0.5654934953385533</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>28.1 -62.9</Pos>
+              <Scale>0.929656982421875 0.929656982421875</Scale>
+              <Rot>-0.5654934953385533</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+      </Anim>
+
+      <!-- eat -->
       <Anim>
         <Name>eat-down</Name>
         <Duration>22</Duration>
@@ -4839,6 +7985,7 @@
           </Frame>
         </JointAnim>
       </Anim>
+      
       <Anim>
         <Name>eat-up</Name>
         <Duration>22</Duration>
@@ -5165,6 +8312,661 @@
           </Frame>
         </JointAnim>
       </Anim>
+
+      <Anim>
+        <Name>eat-diag-up-left</Name>
+        <Duration>22</Duration>
+        <Framerate>12</Framerate>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 76.9</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 76.85</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 76.95</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 167 95 81</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>46.8 71.95</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>4</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 167 95 81</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>46.8 71.80000000000001</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>9</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 167 95 81</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>46.8 71.65</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>10</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 167 95 81</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>46.8 71.75</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>11</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 167 95 81</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>46.8 71.6</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 167 95 81</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>46.8 71.65</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 76.75</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 76.9</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 182 73 16</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>36 7.5</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeFront</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.3</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.3</Pos>
+              <Scale>1.063873291015625 0.9063262939453125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.3</Pos>
+              <Scale>1.00579833984375 1.087249755859375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>0.7 0.6</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>4</FrameNumber>
+            <Transform>
+              <Pos>0.7 0.55</Pos>
+              <Scale>1.117523193359375 0.848175048828125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>5</FrameNumber>
+            <Transform>
+              <Pos>0.7 0.5</Pos>
+              <Scale>1.085296630859375 0.91729736328125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>8</FrameNumber>
+            <Transform>
+              <Pos>0.7 0.5</Pos>
+              <Scale>1.085296630859375 0.91729736328125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>9</FrameNumber>
+            <Transform>
+              <Pos>0.7 0.55</Pos>
+              <Scale>1.128204345703125 0.72393798828125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>10</FrameNumber>
+            <Transform>
+              <Pos>0.7 0.6</Pos>
+              <Scale>1.075164794921875 0.772491455078125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>11</FrameNumber>
+            <Transform>
+              <Pos>0.7 0.65</Pos>
+              <Scale>1.06463623046875 0.6343231201171875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>18</FrameNumber>
+            <Transform>
+              <Pos>0.7 0.65</Pos>
+              <Scale>1.06463623046875 0.6343231201171875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Transform>
+              <Pos>0.7 0.65</Pos>
+              <Scale>0.9898223876953125 0.6759490966796875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.3</Pos>
+              <Scale>1 0.8320465087890625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.3</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+      </Anim>
+
+      <Anim>
+        <Name>eat-diag-up-right</Name>
+        <Duration>22</Duration>
+        <Framerate>12</Framerate>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 76.9</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 76.85</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 76.95</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 167 95 81</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>46.8 71.95</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>4</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 167 95 81</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>46.8 71.80000000000001</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>9</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 167 95 81</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>46.8 71.65</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>10</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 167 95 81</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>46.8 71.75</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>11</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 167 95 81</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>46.8 71.6</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 167 95 81</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>46.8 71.65</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 76.75</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>252 84 87 82</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>43.151 76.9</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 182 73 16</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>36 7.5</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeFront</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.3</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.3</Pos>
+              <Scale>1.063873291015625 0.9063262939453125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.3</Pos>
+              <Scale>1.00579833984375 1.087249755859375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>0.7 0.6</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>4</FrameNumber>
+            <Transform>
+              <Pos>0.7 0.55</Pos>
+              <Scale>1.117523193359375 0.848175048828125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>5</FrameNumber>
+            <Transform>
+              <Pos>0.7 0.5</Pos>
+              <Scale>1.085296630859375 0.91729736328125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>8</FrameNumber>
+            <Transform>
+              <Pos>0.7 0.5</Pos>
+              <Scale>1.085296630859375 0.91729736328125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>9</FrameNumber>
+            <Transform>
+              <Pos>0.7 0.55</Pos>
+              <Scale>1.128204345703125 0.72393798828125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>10</FrameNumber>
+            <Transform>
+              <Pos>0.7 0.6</Pos>
+              <Scale>1.075164794921875 0.772491455078125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>11</FrameNumber>
+            <Transform>
+              <Pos>0.7 0.65</Pos>
+              <Scale>1.06463623046875 0.6343231201171875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>18</FrameNumber>
+            <Transform>
+              <Pos>0.7 0.65</Pos>
+              <Scale>1.06463623046875 0.6343231201171875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Transform>
+              <Pos>0.7 0.65</Pos>
+              <Scale>0.9898223876953125 0.6759490966796875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.3</Pos>
+              <Scale>1 0.8320465087890625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Transform>
+              <Pos>0.45 0.3</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+      </Anim>
+
       <Anim>
         <Name>eat-left</Name>
         <Duration>22</Duration>
@@ -5824,6 +9626,7 @@
           </Frame>
         </JointAnim>
       </Anim>
+      
       <Anim>
         <Name>eat-right</Name>
         <Duration>22</Duration>
@@ -6515,6 +10318,1781 @@
           </Frame>
         </JointAnim>
       </Anim>
+
+      <Anim>
+        <Name>eat-diag-down-left</Name>
+        <Duration>22</Duration>
+        <Framerate>12</Framerate>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.350999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>4</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.151</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>9</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.050999999999998</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>10</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.100999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.050999999999998</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.000999999999998 14.350999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>4</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.151</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>5</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.101 14.151</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>9</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.050999999999998</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>10</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>11</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.201 14.251</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>12</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.201 14.100999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.050999999999998</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>249 167 83 87</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>38.751 80.5</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>249 167 83 87</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>38.751 80.3</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>249 167 83 87</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>38.751 80.4</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 80 98 86</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>47.050999999999995 72.1</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>4</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 80 98 86</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>47.050999999999995 72</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>9</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 80 98 86</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>47.050999999999995 71.75</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>10</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 80 98 86</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>47.050999999999995 71.8</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>11</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 80 98 86</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>47.050999999999995 71.7</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 80 98 86</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>47.050999999999995 71.75</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>255 0 87 83</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>42.601 76.55000000000001</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>255 0 87 83</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>42.601 76.65</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>74 182 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.051 14.251</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>74 182 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>15.901 14.75</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>74 182 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.051 14.251</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>74 182 34 30</TexRect>
+            <FlipState>1</FlipState>
+            <Origin>16.351 14.251</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>74 182 34 30</TexRect>
+            <FlipState>1</FlipState>
+            <Origin>16.301 14.401</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>74 182 34 30</TexRect>
+            <FlipState>1</FlipState>
+            <Origin>16.401 14.300999999999998</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 182 73 16</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>36 7.5</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeFront</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>17.25 -41.5</Pos>
+              <Scale>0.83428955078125 1.21258544921875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>17.25 -41.5</Pos>
+              <Scale>0.83428955078125 1.21258544921875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>4</FrameNumber>
+            <Transform>
+              <Pos>18.75 -25.55</Pos>
+              <Scale>1.02850341796875 0.906890869140625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>5</FrameNumber>
+            <Transform>
+              <Pos>18.25 -25.55</Pos>
+              <Scale>0.939208984375 0.906890869140625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>8</FrameNumber>
+            <Transform>
+              <Pos>18.25 -25.55</Pos>
+              <Scale>0.939208984375 0.906890869140625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>9</FrameNumber>
+            <Transform>
+              <Pos>18.25 -19.8</Pos>
+              <Scale>1.0291748046875 0.737060546875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>10</FrameNumber>
+            <Transform>
+              <Pos>19.75 -27.2</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>11</FrameNumber>
+            <Transform>
+              <Pos>19.75 -27.2</Pos>
+              <Scale>1.03399658203125 1.03399658203125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>12</FrameNumber>
+            <Transform>
+              <Pos>19.75 -27.2</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>18</FrameNumber>
+            <Transform>
+              <Pos>19.75 -27.2</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Transform>
+              <Pos>19.25 -21.2</Pos>
+              <Scale>1.0748291015625 0.829925537109375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Transform>
+              <Pos>19.25 -37.95</Pos>
+              <Scale>1 0.829925537109375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>0</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>0</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>-17.75 -41.5</Pos>
+              <Scale>0.7910614013671875 1.21258544921875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>-17.75 -41.5</Pos>
+              <Scale>0.7910614013671875 1.21258544921875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>4</FrameNumber>
+            <Transform>
+              <Pos>-19.25 -25.55</Pos>
+              <Scale>0.971343994140625 0.906890869140625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>5</FrameNumber>
+            <Transform>
+              <Pos>-18.25 -25.55</Pos>
+              <Scale>0.8663330078125 0.906890869140625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>8</FrameNumber>
+            <Transform>
+              <Pos>-18.25 -25.55</Pos>
+              <Scale>0.8663330078125 0.906890869140625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>9</FrameNumber>
+            <Transform>
+              <Pos>-18.25 -19.8</Pos>
+              <Scale>0.9860076904296875 0.737060546875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>10</FrameNumber>
+            <Transform>
+              <Pos>-18 -27.2</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>11</FrameNumber>
+            <Transform>
+              <Pos>-18 -27.2</Pos>
+              <Scale>1.068023681640625 1.068023681640625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>12</FrameNumber>
+            <Transform>
+              <Pos>-18 -27.2</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>18</FrameNumber>
+            <Transform>
+              <Pos>-18 -27.2</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Transform>
+              <Pos>-18.5 -21.2</Pos>
+              <Scale>1.0449066162109375 0.829925537109375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Transform>
+              <Pos>-18.5 -37.95</Pos>
+              <Scale>1 0.829925537109375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Transform>
+              <Pos>19.55 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>0</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>0</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>0 0.25</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>0 0.15</Pos>
+              <Scale>1.04046630859375 0.888916015625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>0 0.15</Pos>
+              <Scale>0.9364166259765625 1.04998779296875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>0.25 0.15</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>4</FrameNumber>
+            <Transform>
+              <Pos>0.25 0.15</Pos>
+              <Scale>1.0655975341796875 0.8657073974609375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>5</FrameNumber>
+            <Transform>
+              <Pos>0.3 0.1</Pos>
+              <Scale>1.009674072265625 0.9378509521484375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>8</FrameNumber>
+            <Transform>
+              <Pos>0.3 0.1</Pos>
+              <Scale>1.009674072265625 0.9378509521484375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>9</FrameNumber>
+            <Transform>
+              <Pos>0.3 0.05</Pos>
+              <Scale>1.009674072265625 0.7134246826171875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>10</FrameNumber>
+            <Transform>
+              <Pos>0.3 0.05</Pos>
+              <Scale>1.009674072265625 0.772064208984375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>11</FrameNumber>
+            <Transform>
+              <Pos>0.3 0.05</Pos>
+              <Scale>1.009674072265625 0.6441802978515625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>18</FrameNumber>
+            <Transform>
+              <Pos>0.3 0.05</Pos>
+              <Scale>1.009674072265625 0.6441802978515625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Transform>
+              <Pos>0.3 0.05</Pos>
+              <Scale>1.009674072265625 0.671722412109375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Transform>
+              <Pos>-0.05 0.05</Pos>
+              <Scale>1 0.8120574951171875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Transform>
+              <Pos>-0.05 0.05</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>-21.75 -67.25</Pos>
+              <Scale>0.9296722412109375 0.9296722412109375</Scale>
+              <Rot>0.11343308557418101</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>-23.5 -64.5</Pos>
+              <Scale>0.9296417236328125 0.9296417236328125</Scale>
+              <Rot>0.8536294157897144</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>-22 -63</Pos>
+              <Scale>0.9296722412109375 0.9296722412109375</Scale>
+              <Rot>0.11343308557418101</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Transform>
+              <Pos>-22 -63</Pos>
+              <Scale>0.9296722412109375 0.9296722412109375</Scale>
+              <Rot>0.11343308557418101</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>0</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>0</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>26.1 -62.9</Pos>
+              <Scale>0.929656982421875 0.929656982421875</Scale>
+              <Rot>-0.5654934953385533</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>26.35 -60.15</Pos>
+              <Scale>1.0943756103515625 0.9296417236328125</Scale>
+              <Rot>-0.9751284173574184</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>26.8 -61.1</Pos>
+              <Scale>0.8238983154296875 0.929656982421875</Scale>
+              <Rot>-0.5654934953385533</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Transform>
+              <Pos>26.8 -61.1</Pos>
+              <Scale>0.8238983154296875 0.929656982421875</Scale>
+              <Rot>-0.5654934953385533</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>0</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>0</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+      </Anim>
+
+      <Anim>
+        <Name>eat-diag-down-right</Name>
+        <Duration>22</Duration>
+        <Framerate>12</Framerate>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.350999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>4</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.151</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>9</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.050999999999998</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>10</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.100999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.050999999999998</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.000999999999998 14.350999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>4</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.151</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>5</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.101 14.151</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>9</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.050999999999998</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>10</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>11</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.201 14.251</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>12</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.201 14.100999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.151 14.050999999999998</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>35 199 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.651 14.200999999999999</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>249 167 83 87</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>38.751 80.5</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>249 167 83 87</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>38.751 80.3</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>249 167 83 87</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>38.751 80.4</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 80 98 86</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>47.050999999999995 72.1</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>4</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 80 98 86</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>47.050999999999995 72</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>9</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 80 98 86</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>47.050999999999995 71.75</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>10</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 80 98 86</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>47.050999999999995 71.8</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>11</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 80 98 86</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>47.050999999999995 71.7</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>153 80 98 86</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>47.050999999999995 71.75</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>255 0 87 83</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>42.601 76.55000000000001</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>255 0 87 83</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>42.601 76.65</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>74 182 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.051 14.251</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>74 182 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>15.901 14.75</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>74 182 34 30</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>16.051 14.251</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>74 182 34 30</TexRect>
+            <FlipState>1</FlipState>
+            <Origin>16.351 14.251</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>74 182 34 30</TexRect>
+            <FlipState>1</FlipState>
+            <Origin>16.301 14.401</Origin>
+            <Visible>true</Visible>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>74 182 34 30</TexRect>
+            <FlipState>1</FlipState>
+            <Origin>16.401 14.300999999999998</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex>playerSheet</Tex>
+            <TexRect>0 182 73 16</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>36 7.5</Origin>
+            <Visible>true</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>fx</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimTexture">
+          <JointName>eyeFront</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Tex/>
+            <TexRect>0 0 0 0</TexRect>
+            <FlipState>0</FlipState>
+            <Origin>0 0</Origin>
+            <Visible>false</Visible>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>17.25 -41.5</Pos>
+              <Scale>0.83428955078125 1.21258544921875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>17.25 -41.5</Pos>
+              <Scale>0.83428955078125 1.21258544921875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>4</FrameNumber>
+            <Transform>
+              <Pos>18.75 -25.55</Pos>
+              <Scale>1.02850341796875 0.906890869140625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>5</FrameNumber>
+            <Transform>
+              <Pos>18.25 -25.55</Pos>
+              <Scale>0.939208984375 0.906890869140625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>8</FrameNumber>
+            <Transform>
+              <Pos>18.25 -25.55</Pos>
+              <Scale>0.939208984375 0.906890869140625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>9</FrameNumber>
+            <Transform>
+              <Pos>18.25 -19.8</Pos>
+              <Scale>1.0291748046875 0.737060546875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>10</FrameNumber>
+            <Transform>
+              <Pos>19.75 -27.2</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>11</FrameNumber>
+            <Transform>
+              <Pos>19.75 -27.2</Pos>
+              <Scale>1.03399658203125 1.03399658203125</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>12</FrameNumber>
+            <Transform>
+              <Pos>19.75 -27.2</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>18</FrameNumber>
+            <Transform>
+              <Pos>19.75 -27.2</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Transform>
+              <Pos>19.25 -21.2</Pos>
+              <Scale>1.0748291015625 0.829925537109375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Transform>
+              <Pos>19.25 -37.95</Pos>
+              <Scale>1 0.829925537109375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Transform>
+              <Pos>-19.95 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyes0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>0</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>0</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>-17.75 -41.5</Pos>
+              <Scale>0.7910614013671875 1.21258544921875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>-17.75 -41.5</Pos>
+              <Scale>0.7910614013671875 1.21258544921875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>4</FrameNumber>
+            <Transform>
+              <Pos>-19.25 -25.55</Pos>
+              <Scale>0.971343994140625 0.906890869140625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>5</FrameNumber>
+            <Transform>
+              <Pos>-18.25 -25.55</Pos>
+              <Scale>0.8663330078125 0.906890869140625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>8</FrameNumber>
+            <Transform>
+              <Pos>-18.25 -25.55</Pos>
+              <Scale>0.8663330078125 0.906890869140625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>9</FrameNumber>
+            <Transform>
+              <Pos>-18.25 -19.8</Pos>
+              <Scale>0.9860076904296875 0.737060546875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>10</FrameNumber>
+            <Transform>
+              <Pos>-18 -27.2</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>11</FrameNumber>
+            <Transform>
+              <Pos>-18 -27.2</Pos>
+              <Scale>1.068023681640625 1.068023681640625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>12</FrameNumber>
+            <Transform>
+              <Pos>-18 -27.2</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>18</FrameNumber>
+            <Transform>
+              <Pos>-18 -27.2</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Transform>
+              <Pos>-18.5 -21.2</Pos>
+              <Scale>1.0449066162109375 0.829925537109375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Transform>
+              <Pos>-18.5 -37.95</Pos>
+              <Scale>1 0.829925537109375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Transform>
+              <Pos>19.55 -49.95</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyes1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>0</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>0</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>0 0.25</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>0 0.15</Pos>
+              <Scale>1.04046630859375 0.888916015625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>0 0.15</Pos>
+              <Scale>0.9364166259765625 1.04998779296875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <Transform>
+              <Pos>0.25 0.15</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>4</FrameNumber>
+            <Transform>
+              <Pos>0.25 0.15</Pos>
+              <Scale>1.0655975341796875 0.8657073974609375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>5</FrameNumber>
+            <Transform>
+              <Pos>0.3 0.1</Pos>
+              <Scale>1.009674072265625 0.9378509521484375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>8</FrameNumber>
+            <Transform>
+              <Pos>0.3 0.1</Pos>
+              <Scale>1.009674072265625 0.9378509521484375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>9</FrameNumber>
+            <Transform>
+              <Pos>0.3 0.05</Pos>
+              <Scale>1.009674072265625 0.7134246826171875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>10</FrameNumber>
+            <Transform>
+              <Pos>0.3 0.05</Pos>
+              <Scale>1.009674072265625 0.772064208984375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>11</FrameNumber>
+            <Transform>
+              <Pos>0.3 0.05</Pos>
+              <Scale>1.009674072265625 0.6441802978515625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>18</FrameNumber>
+            <Transform>
+              <Pos>0.3 0.05</Pos>
+              <Scale>1.009674072265625 0.6441802978515625</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>19</FrameNumber>
+            <Transform>
+              <Pos>0.3 0.05</Pos>
+              <Scale>1.009674072265625 0.671722412109375</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>20</FrameNumber>
+            <Transform>
+              <Pos>-0.05 0.05</Pos>
+              <Scale>1 0.8120574951171875</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Transform>
+              <Pos>-0.05 0.05</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>body</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>-21.75 -67.25</Pos>
+              <Scale>0.9296722412109375 0.9296722412109375</Scale>
+              <Rot>0.11343308557418101</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>-23.5 -64.5</Pos>
+              <Scale>0.9296417236328125 0.9296417236328125</Scale>
+              <Rot>0.8536294157897144</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>-22 -63</Pos>
+              <Scale>0.9296722412109375 0.9296722412109375</Scale>
+              <Rot>0.11343308557418101</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Transform>
+              <Pos>-22 -63</Pos>
+              <Scale>0.9296722412109375 0.9296722412109375</Scale>
+              <Rot>0.11343308557418101</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyeBack0</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>0</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>0</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>26.1 -62.9</Pos>
+              <Scale>0.929656982421875 0.929656982421875</Scale>
+              <Rot>-0.5654934953385533</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>1</FrameNumber>
+            <Transform>
+              <Pos>26.35 -60.15</Pos>
+              <Scale>1.0943756103515625 0.9296417236328125</Scale>
+              <Rot>-0.9751284173574184</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <Transform>
+              <Pos>26.8 -61.1</Pos>
+              <Scale>0.8238983154296875 0.929656982421875</Scale>
+              <Rot>-0.5654934953385533</Rot>
+            </Transform>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <Transform>
+              <Pos>26.8 -61.1</Pos>
+              <Scale>0.8238983154296875 0.929656982421875</Scale>
+              <Rot>-0.5654934953385533</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>eyeBack1</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>2</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>3</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>0</A>
+          </Frame>
+          <Frame>
+            <FrameNumber>21</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>0</A>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimSpatial">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <Transform>
+              <Pos>1.5 3.5</Pos>
+              <Scale>1 1</Scale>
+              <Rot>0</Rot>
+            </Transform>
+          </Frame>
+        </JointAnim>
+        <JointAnim Type="Gnomic.Anim.JointAnimColour">
+          <JointName>shadow</JointName>
+          <Frame>
+            <FrameNumber>0</FrameNumber>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>127</A>
+          </Frame>
+        </JointAnim>
+      </Anim>
+
     </AnimSet>
   </Asset>
 </XnaContent>

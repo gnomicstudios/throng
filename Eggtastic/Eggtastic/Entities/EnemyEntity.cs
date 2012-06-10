@@ -149,6 +149,10 @@ namespace Eggtastic
         private void MoveTowards(Vector2 to)
         {
             Vector2 v = to * MovementSpeed;
+            if (IsPlayerSucking())
+            {
+                v = to * MovementSpeed * Tweak.SUCK_SPEED_MULTIPLIER;
+            }
             DynamicBody.ApplyForce(v);
         }
 
@@ -287,6 +291,11 @@ namespace Eggtastic
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
+
+            if (Tweak.PermanentlyFreezeEnemies)
+            {
+                return;
+            }
             
             _headingTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
 

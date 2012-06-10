@@ -162,8 +162,11 @@ namespace Eggtastic
 			Input.ButtonMappings.Add((int)Controls.Down, new ButtonGeneric[] { ButtonGeneric.Pad0LeftThumbstickDown, ButtonGeneric.Down, ButtonGeneric.S });
 			Input.ButtonMappings.Add((int)Controls.Left, new ButtonGeneric[] { ButtonGeneric.Pad0LeftThumbstickLeft, ButtonGeneric.Left, ButtonGeneric.A });
 			Input.ButtonMappings.Add((int)Controls.Right, new ButtonGeneric[] { ButtonGeneric.Pad0LeftThumbstickRight, ButtonGeneric.Right, ButtonGeneric.D });
-			Input.ButtonMappings.Add((int)Controls.Suck, new ButtonGeneric[] { ButtonGeneric.TouchRightSide, ButtonGeneric.Space });
-			Input.ButtonMappings.Add((int)Controls.Select, new ButtonGeneric[] { ButtonGeneric.TapAnywhere, ButtonGeneric.Space });
+
+			//Input.ButtonMappings.Add((int)Controls.Suck, new ButtonGeneric[] { ButtonGeneric.TouchRightSide, ButtonGeneric.Space });
+            //unfortunately you can't press up+left+space at the same time! so we have to use a different key...
+            Input.ButtonMappings.Add((int)Controls.Suck, new ButtonGeneric[] { ButtonGeneric.TouchRightSide, ButtonGeneric.LeftControl, ButtonGeneric.RightControl});
+            Input.ButtonMappings.Add((int)Controls.Select, new ButtonGeneric[] { ButtonGeneric.TapAnywhere, ButtonGeneric.Space });
 
 			// Default value for this is not sensitive enough for the Eggtastic gameplay. 
 			// By default it's tuned to menu item selection and requires much bigger deviation
