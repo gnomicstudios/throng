@@ -1179,8 +1179,8 @@ namespace Gnomic.Core
             if (!enabled)
                 return;
 
-            lastMouseState = currentMouseState;
-            currentMouseState = Mouse.GetState();
+            //lastMouseState = currentMouseState;
+            //currentMouseState = Mouse.GetState();
 
 #if ANDROID || IOS || WINRT || WINDOWS_PHONE
 			TouchTwinStick.Update(dt);
@@ -1464,8 +1464,8 @@ namespace Gnomic.Core
                     return true;
                 }
             }
-#if WINDOWS_PHONE
-			else
+#if WINDOWS_PHONE || ANDROID || IOS || WINRT
+            else
 			{
 				GenericTouchInput touchInput = (GenericTouchInput)(btnID - 320);
 				if (touchInput == GenericTouchInput.TouchAnywhere)
@@ -1513,7 +1513,7 @@ namespace Gnomic.Core
 					return true;
 				}
             }
-#if WINDOWS_PHONE
+#if WINDOWS_PHONE || ANDROID || IOS || WINRT
 			else // if (btnID < 400)
 			{
 				GenericTouchInput touchInput = (GenericTouchInput)(btnID - 320);
@@ -1560,8 +1560,8 @@ namespace Gnomic.Core
                     return true;
                 }
             }
-#if WINDOWS_PHONE
-			else // if (btnID < 400)
+#if WINDOWS_PHONE || ANDROID || IOS || WINRT
+            else // if (btnID < 400)
 			{
 				GenericTouchInput touchInput = (GenericTouchInput)(btnID - 320);
 				if (touchInput == GenericTouchInput.TapAnywhere)
