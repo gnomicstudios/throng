@@ -20,7 +20,7 @@ namespace Eggtastic
 {
     public class PlayerEntity : CharacterEntity
     {
-        private const float MOVEMENT_FORCE = 10f;
+        private float MOVEMENT_FORCE = Tweak.MOVEMENT_FORCE;
         private const float IDLE_SPEED_THRESHOLD = 0.2f;
         private const float DIRECTION_CHANGE_THRESHOLD = 0.3f;
 
@@ -105,7 +105,7 @@ namespace Eggtastic
             DynamicBody.CollidesWith = (Category)
                 CharacterEntity.CollidesWith.Player;
 
-            Vertices trapezoid = CreateTrapezoid(1f, 3f, 2.5f);
+            Vertices trapezoid = CreateTrapezoid(1f, 3f * Tweak.SUCK_AREA_MULTIPLER, 2.5f * Tweak.SUCK_AREA_MULTIPLER);
 
             _sensor = BodyFactory.CreatePolygon(GameScreen.World, trapezoid, 1f, ConvertUnits.ToSimUnits(GameScreen.ScreenCenter));
             _sensor.IsSensor = true;
@@ -313,6 +313,11 @@ namespace Eggtastic
 
         void SetCurrentDirection()
         {
+            Tweak.Stats = "";
+            Tweak.Stats += "_animDirection: " + _animDirection.ToString() + "\r\n";
+            Tweak.Stats += "_movementForce: " + _movementForce.ToString() + "\r\n";
+
+
             if (_movementForce != Vector2.Zero)
             {
                 // Get direction we are pushing
@@ -356,19 +361,52 @@ namespace Eggtastic
                 case State.Idle:
                 case State.Moving:
                     {
-                        if (Input.ButtonDownMapped((int)Controls.Up))
+                        bool upApplied = false;
+                        bool downApplied = false;
+                        bool leftApplied = false;
+                        bool rightApplied = false;
+
+                        if (Input.ButtonDownMapped((int)Controls.Up) && Input.ButtonDownMapped((int)Controls.Left))
+                        {
+                            MoveDiag(AnimationDirection.DiagonalUpLeft);
+                            upApplied = true;
+                            leftApplied = true;
+                        }
+
+                        if (Input.ButtonDownMapped((int)Controls.Up) && Input.ButtonDownMapped((int)Controls.Right))
+                        {
+                            MoveDiag(AnimationDirection.DiagonalUpRight);
+                            upApplied = true;
+                            rightApplied = true;
+                        }
+
+                        if (Input.ButtonDownMapped((int)Controls.Down) && Input.ButtonDownMapped((int)Controls.Left))
+                        {
+                            MoveDiag(AnimationDirection.DiagonalDownLeft);
+                            downApplied = true;
+                            leftApplied = true;
+                        }
+
+                        if (Input.ButtonDownMapped((int)Controls.Down) && Input.ButtonDownMapped((int)Controls.Right))
+                        {
+                            MoveDiag(AnimationDirection.DiagonalDownRight);
+                            downApplied = true;
+                            rightApplied = true;
+                        }
+
+                        if (!upApplied && Input.ButtonDownMapped((int)Controls.Up))
                         {
                             MoveUp();
                         }
-						if (Input.ButtonDownMapped((int)Controls.Down))
+                        if (!downApplied && Input.ButtonDownMapped((int)Controls.Down))
                         {
                             MoveDown();
                         }
-						if (Input.ButtonDownMapped((int)Controls.Left))
+                        if (!leftApplied && Input.ButtonDownMapped((int)Controls.Left))
                         {
                             MoveLeft();
                         }
-						if (Input.ButtonDownMapped((int)Controls.Right))
+                        if (!rightApplied && Input.ButtonDownMapped((int)Controls.Right))
                         {
                             MoveRight();
                         }
@@ -427,6 +465,70 @@ namespace Eggtastic
             DynamicBody.ApplyForce(_movementForce);
         }
 
+        private void MoveDiag(AnimationDirection direction)
+        {
+            float rightRot = -90.0f;
+            float downRot = 0.0f;
+            float leftRot = 90.0f;
+            float upRot = 180.0f;
+            float upRightRot = 180.0f+45.0f;
+
+            Vector2 downForce = new Vector2(0f, MOVEMENT_FORCE);
+            Vector2 upForce = -downForce;
+
+            Vector2 rightForce = new Vector2(MOVEMENT_FORCE, 0f);
+            Vector2 leftForce = -rightForce;
+
+            switch (direction)
+            {
+                case AnimationDirection.DiagonalUpLeft:
+                    _sensorRotation = (upRot + leftRot) / 2.0f;
+                    _movementForce = (upForce + leftForce);
+                    break;
+                case AnimationDirection.DiagonalUpRight:
+                    _sensorRotation = upRightRot;
+                    _movementForce = (upForce + rightForce);
+                    break;
+                case AnimationDirection.DiagonalDownLeft:
+                    _sensorRotation = (downRot + leftRot) / 2.0f;
+                    _movementForce = (downForce + leftForce);
+                    break;
+                case AnimationDirection.DiagonalDownRight:
+                    _sensorRotation = (downRot + rightRot) / 2.0f;
+                    _movementForce = (downForce + rightForce);
+                    break;
+            }
+            DynamicBody.ApplyForce(_movementForce);
+        }
+
+        //public void MoveDiagUpLeft()
+        //{
+        //    MoveDiag(AnimationDirection.DiagonalUpLeft);
+
+        //    //float leftRot = 90.0f;
+        //    //Vector2 leftForce = new Vector2(-MOVEMENT_FORCE, 0f);
+
+        //    //float upRot = 180.0f;
+        //    //Vector2 upForce = new Vector2(0f, -MOVEMENT_FORCE);
+
+        //    //_sensorRotation = (leftRot+upRot)/2.0f;
+        //    //_movementForce = (leftForce + upForce) / 2.0f;
+        //    //DynamicBody.ApplyForce(_movementForce);
+        //}
+
+        //public void MoveDiagUpRight()
+        //{
+        //    MoveDiag(AnimationDirection.DiagonalUpRight);
+        //}
+
+        //public void MoveDiagDownLeft()
+        //{
+        //}
+
+        //public void MoveDiagDownRight()
+        //{
+        //}
+
         public PlayerEntity(EggGameScreen gameScreen, Clip clip)
             : this(gameScreen, clip, new Vector2(), new Vector2(1f), 0.0f)
         { }
@@ -477,21 +579,37 @@ namespace Eggtastic
             _animations[new AnimKey(State.Idle, AnimationDirection.Right)] = clip.AnimSet["idle-right"];
             _animations[new AnimKey(State.Idle, AnimationDirection.Up)] = clip.AnimSet["idle-up"];
             _animations[new AnimKey(State.Idle, AnimationDirection.Down)] = clip.AnimSet["idle-down"];
+            _animations[new AnimKey(State.Idle, AnimationDirection.DiagonalUpLeft)] = clip.AnimSet["idle-diag-up-left"];
+            _animations[new AnimKey(State.Idle, AnimationDirection.DiagonalUpRight)] = clip.AnimSet["idle-diag-up-right"];
+            _animations[new AnimKey(State.Idle, AnimationDirection.DiagonalDownLeft)] = clip.AnimSet["idle-diag-down-left"];
+            _animations[new AnimKey(State.Idle, AnimationDirection.DiagonalDownRight)] = clip.AnimSet["idle-diag-down-right"];
 
             _animations[new AnimKey(State.Moving, AnimationDirection.Left)] = clip.AnimSet["walk-left"];
             _animations[new AnimKey(State.Moving, AnimationDirection.Right)] = clip.AnimSet["walk-right"];
             _animations[new AnimKey(State.Moving, AnimationDirection.Up)] = clip.AnimSet["walk-up"];
             _animations[new AnimKey(State.Moving, AnimationDirection.Down)] = clip.AnimSet["walk-down"];
+            _animations[new AnimKey(State.Moving, AnimationDirection.DiagonalUpLeft)] = clip.AnimSet["walk-diag-up-left"];
+            _animations[new AnimKey(State.Moving, AnimationDirection.DiagonalUpRight)] = clip.AnimSet["walk-diag-up-right"];
+            _animations[new AnimKey(State.Moving, AnimationDirection.DiagonalDownLeft)] = clip.AnimSet["walk-diag-down-left"];
+            _animations[new AnimKey(State.Moving, AnimationDirection.DiagonalDownRight)] = clip.AnimSet["walk-diag-down-right"];
 
             _animations[new AnimKey(State.Sucking, AnimationDirection.Left)] = clip.AnimSet["suck-left"];
             _animations[new AnimKey(State.Sucking, AnimationDirection.Right)] = clip.AnimSet["suck-right"];
             _animations[new AnimKey(State.Sucking, AnimationDirection.Up)] = clip.AnimSet["suck-up"];
             _animations[new AnimKey(State.Sucking, AnimationDirection.Down)] = clip.AnimSet["suck-down"];
+            _animations[new AnimKey(State.Sucking, AnimationDirection.DiagonalUpLeft)] = clip.AnimSet["suck-diag-up-left"];
+            _animations[new AnimKey(State.Sucking, AnimationDirection.DiagonalUpRight)] = clip.AnimSet["suck-diag-up-right"];
+            _animations[new AnimKey(State.Sucking, AnimationDirection.DiagonalDownLeft)] = clip.AnimSet["suck-diag-down-left"];
+            _animations[new AnimKey(State.Sucking, AnimationDirection.DiagonalDownRight)] = clip.AnimSet["suck-diag-down-right"];
 
             _animations[new AnimKey(State.Eating, AnimationDirection.Left)] = clip.AnimSet["eat-left"];
             _animations[new AnimKey(State.Eating, AnimationDirection.Right)] = clip.AnimSet["eat-right"];
             _animations[new AnimKey(State.Eating, AnimationDirection.Up)] = clip.AnimSet["eat-up"];
             _animations[new AnimKey(State.Eating, AnimationDirection.Down)] = clip.AnimSet["eat-down"];
+            _animations[new AnimKey(State.Eating, AnimationDirection.DiagonalUpLeft)] = clip.AnimSet["eat-diag-up-left"];
+            _animations[new AnimKey(State.Eating, AnimationDirection.DiagonalUpRight)] = clip.AnimSet["eat-diag-up-right"];
+            _animations[new AnimKey(State.Eating, AnimationDirection.DiagonalDownLeft)] = clip.AnimSet["eat-diag-down-left"];
+            _animations[new AnimKey(State.Eating, AnimationDirection.DiagonalDownRight)] = clip.AnimSet["eat-diag-down-right"];
         }
     }
 }

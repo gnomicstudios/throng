@@ -23,7 +23,7 @@ namespace Eggtastic
 {
     public class EggGameScreen : GameScreen
     {
-        private const int STARTING_EGGS = 1;
+        private int STARTING_EGGS = Tweak.STARTING_EGGS;
         private const float EGG_SPAWN_MIN_DIST = 100f;
         private const float EGG_SPAWN_MAX_DIST = 200f;
         private const float INITIAL_NO_INPUT_TIME = 1f;
@@ -124,6 +124,10 @@ namespace Eggtastic
             DebugView.SleepingShapeColor = Color.LightGray;
             DebugView.LoadContent(GraphicsDevice, Content);
 
+            if (Tweak.SHOW_PHYSICS_ON_START)
+                EnableOrDisableFlag(DebugViewFlags.Shape);
+            Tweak.Init();
+
             InitialiseClips();
 
             _enemySpawner = new EnemySpawner(this, Clips["enemy"]);
@@ -193,21 +197,27 @@ namespace Eggtastic
             FlushEntities();
             InitialiseLevel();
 
+            STARTING_EGGS = Tweak.STARTING_EGGS;
+
             _eggCounterCurrent = 0;
-            //SpawnSomeEggs();
+            SpawnSomeEggs(STARTING_EGGS-1);
             _levelActiveTime = 0;
 
             _enemySpawner.Reset();
 
+            // spawn first egg here
             Vector2 spawn = ScreenCenter;
             spawn.Y += Viewport.Height / 2.25f;
             AddEgg(spawn);
         }
 
         // spawn some eggs around the player
-        private void SpawnSomeEggs()
+        private void SpawnSomeEggs(int numEggs)
         {
-            for (int i = 0; i < STARTING_EGGS; i++)
+            if (numEggs <= 0)
+                return;
+
+            for (int i = 0; i < numEggs; i++)
             {
                 Vector2 spawn = new Vector2(0f);
                 spawn.X = ((float)RandomNum.NextDouble() * 2f) - 1f;
@@ -299,6 +309,11 @@ namespace Eggtastic
             {
                 _eggCounterString = "Eggs: " + _eggCounterCurrent.ToString();
                 _eggCounterLast = _eggCounterCurrent;
+            }
+            if (Tweak.ShowStats)
+            {
+                _eggCounterString = "Eggs: " + _eggCounterCurrent.ToString();
+                _eggCounterString += Tweak.Stats;
             }
 
             CreateQueuedEntities();

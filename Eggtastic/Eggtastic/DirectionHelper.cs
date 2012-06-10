@@ -12,13 +12,26 @@ namespace Eggtastic
         Up,
         Left,
         Right,
-        Down
+        Down,
+        DiagonalUpLeft,
+        DiagonalUpRight,
+        DiagonalDownLeft,
+        DiagonalDownRight
     }
 
     static class DirectionHelper
     {
         public static AnimationDirection GetDirectionFromHeading(Vector2 heading)
         {
+            if (heading.X < -5 && heading.Y < -5)
+                return AnimationDirection.DiagonalUpLeft;
+            if (heading.X > 5 && heading.Y < -5)
+                return AnimationDirection.DiagonalUpRight;
+            if (heading.X < -5 && heading.Y > 5)
+                return AnimationDirection.DiagonalDownLeft;
+            if (heading.X > 5 && heading.Y > 5)
+                return AnimationDirection.DiagonalDownRight;
+
             if (Math.Abs(heading.X) > Math.Abs(heading.Y))
             {
                 return (heading.X > 0) ? AnimationDirection.Right : AnimationDirection.Left;
@@ -30,6 +43,15 @@ namespace Eggtastic
         }
         public static AnimationDirection GetDirectionFromHeadingBiasHorizontal(Vector2 heading, float biasAmount)
         {
+            if (heading.X < -5 && heading.Y < -5)
+                return AnimationDirection.DiagonalUpLeft;
+            if (heading.X > 5 && heading.Y < -5)
+                return AnimationDirection.DiagonalUpRight;
+            if (heading.X < -5 && heading.Y > 5)
+                return AnimationDirection.DiagonalDownLeft;
+            if (heading.X > 5 && heading.Y > 5)
+                return AnimationDirection.DiagonalDownRight;
+
             heading.Normalize();
             if (Math.Abs(heading.X) > Math.Abs(heading.Y) - biasAmount)
             {
@@ -53,6 +75,15 @@ namespace Eggtastic
                     return new Vector2(0f, -1f);
                 case AnimationDirection.Down:
                     return new Vector2(0f, 1f);
+
+                case AnimationDirection.DiagonalUpLeft:
+                    return new Vector2(-1f, -1f);
+                case AnimationDirection.DiagonalUpRight:
+                    return new Vector2(1f, -1f);
+                case AnimationDirection.DiagonalDownLeft:
+                    return new Vector2(-1f, 1f);
+                case AnimationDirection.DiagonalDownRight:
+                    return new Vector2(1f, 1f);
             }
             return Vector2.Zero;
         }
@@ -69,9 +100,17 @@ namespace Eggtastic
                     return AnimationDirection.Down;
                 case AnimationDirection.Down:
                     return AnimationDirection.Up;
+
+                case AnimationDirection.DiagonalUpLeft:
+                    return AnimationDirection.DiagonalDownRight;
+                case AnimationDirection.DiagonalUpRight:
+                    return AnimationDirection.DiagonalDownLeft;
+                case AnimationDirection.DiagonalDownLeft:
+                    return AnimationDirection.DiagonalUpRight;
+                case AnimationDirection.DiagonalDownRight:
+                    return AnimationDirection.DiagonalUpLeft;
             }
             return AnimationDirection.Down;
         }
-
     }
 }
