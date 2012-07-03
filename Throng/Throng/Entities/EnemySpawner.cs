@@ -15,14 +15,14 @@ using FarseerPhysics.Dynamics;
 using FarseerPhysics.Factories;
 using Gnomic.Anim;
 
-namespace Eggtastic
+namespace Throng
 {
     public class EnemySpawner
     {
         private const float SPAWN_INTERVAL_DEFAULT = 5.0f;
         private const float SPAWN_INTERVAL_MIN = 1.0f;
 
-        private EggGameScreen _gameScreen;
+        private ThrongGameScreen _gameScreen;
         private Random _rand;
         private float _secondsSinceLastSpawn;
         private float _minDistFromPlayer;
@@ -32,7 +32,7 @@ namespace Eggtastic
 
         // TODO: refactor this to use the content manager for retrieving
         // different enemy types ..
-        public EnemySpawner(EggGameScreen gameScreen, Clip clip)
+        public EnemySpawner(ThrongGameScreen gameScreen, Clip clip)
         {
             _gameScreen = gameScreen;
             _secondsSinceLastSpawn = 0f;

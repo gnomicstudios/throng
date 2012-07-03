@@ -19,9 +19,9 @@ using FarseerPhysics.DebugViews;
 using Gnomic.Anim;
 using Gnomic.Core;
 
-namespace Eggtastic
+namespace Throng
 {
-    public class EggGameScreen : GameScreen
+    public class ThrongGameScreen : GameScreen
     {
         private const float CAMERA_CATCHUP_FACTOR = 2f;
         private int STARTING_EGGS = Tweak.STARTING_EGGS;
@@ -86,7 +86,7 @@ namespace Eggtastic
             Clips.Add("enemy", enemyClip);
         }
 
-        public EggGameScreen(Game1 game)
+        public ThrongGameScreen(Game1 game)
             : base(game, game.Camera.Clone())
         {
             ConvertUnits.SetDisplayUnitToSimUnitRatio(64f);

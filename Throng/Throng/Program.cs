@@ -1,6 +1,6 @@
 using System;
 
-namespace Eggtastic
+namespace Throng
 {
 #if WINDOWS || XBOX
     static class Program

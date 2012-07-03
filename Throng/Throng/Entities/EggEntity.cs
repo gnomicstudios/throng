@@ -14,7 +14,7 @@ using FarseerPhysics.Dynamics;
 using FarseerPhysics.Factories;
 using Gnomic.Anim;
 
-namespace Eggtastic
+namespace Throng
 {
     public class EggEntity : CharacterEntity
     {
@@ -36,20 +36,20 @@ namespace Eggtastic
 
         public State CurrentState { get; set; }
 
-        public EggEntity(EggGameScreen gameScreen, Clip clip)
+        public EggEntity(ThrongGameScreen gameScreen, Clip clip)
             : this(gameScreen, clip, new Vector2(), new Vector2(1f), 0.0f)
         { }
 
-        public EggEntity(EggGameScreen gameScreen, Clip clip, Vector2 position)
+        public EggEntity(ThrongGameScreen gameScreen, Clip clip, Vector2 position)
             : this(gameScreen, clip, position, new Vector2(1f), 0.0f)
         { }
 
-        public EggEntity(EggGameScreen gameScreen, Clip clip, Vector2 position,
+        public EggEntity(ThrongGameScreen gameScreen, Clip clip, Vector2 position,
                          Vector2 scale)
             : this(gameScreen, clip, position, scale, 0.0f)
         { }
 
-        public EggEntity(EggGameScreen gameScreen, Clip clip,
+        public EggEntity(ThrongGameScreen gameScreen, Clip clip,
                          Vector2 position, Vector2 scale, float rotation)
             : base(gameScreen, clip, position, scale, rotation, PHYSICS_OFFSET, PHYSICS_RADIUS)
         {

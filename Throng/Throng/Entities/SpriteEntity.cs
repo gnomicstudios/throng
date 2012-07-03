@@ -6,7 +6,7 @@ using Gnomic.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Eggtastic
+namespace Throng
 {
     public class SpriteEntity : GameEntity
     {

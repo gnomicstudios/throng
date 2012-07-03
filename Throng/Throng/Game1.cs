@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 using Gnomic.Core;
 using System.Threading;
 
-namespace Eggtastic
+namespace Throng
 {
     /// <summary>
     /// This is the main type for your game
@@ -28,7 +28,7 @@ namespace Eggtastic
         List<GameScreen> _inactiveScreens;
 
         // Game screens:
-        EggGameScreen _gameScreen;
+        ThrongGameScreen _gameScreen;
         PauseScreen _pauseScreen;
         GameOverScreen _gameOverScreen;
         StartScreen _startScreen;
@@ -122,7 +122,7 @@ namespace Eggtastic
 
         void LoadMainGameScreen(object asyncState)
         {
-            _gameScreen = new EggGameScreen(this);
+            _gameScreen = new ThrongGameScreen(this);
             _inactiveScreens.Add(_gameScreen);
             _startScreen.IsGameLoaded = true;
         }
@@ -168,7 +168,7 @@ namespace Eggtastic
             Input.ButtonMappings.Add((int)Controls.Suck, new ButtonGeneric[] { ButtonGeneric.TouchRightSide, ButtonGeneric.LeftControl, ButtonGeneric.RightControl});
             Input.ButtonMappings.Add((int)Controls.Select, new ButtonGeneric[] { ButtonGeneric.TapAnywhere, ButtonGeneric.Space });
 
-			// Default value for this is not sensitive enough for the Eggtastic gameplay. 
+			// Default value for this is not sensitive enough for the Throng gameplay. 
 			// By default it's tuned to menu item selection and requires much bigger deviation
 			Input.StickDirectionThreshold = 0.2f;
         }

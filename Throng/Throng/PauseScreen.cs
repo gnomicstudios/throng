@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 using Gnomic.Core;
 
-namespace Eggtastic
+namespace Throng
 {
     public class PauseScreen : GameScreen
     {

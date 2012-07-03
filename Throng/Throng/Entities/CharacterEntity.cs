@@ -14,11 +14,11 @@ using FarseerPhysics.Dynamics;
 using FarseerPhysics.Factories;
 using Gnomic.Anim;
 
-namespace Eggtastic
+namespace Throng
 {
     public abstract class CharacterEntity : BaseEntity
     {
-        protected EggGameScreen GameScreen { get; set; }
+        protected ThrongGameScreen GameScreen { get; set; }
         protected float _physicsRadius;
         protected Vector2 _physicsOffset;
         
@@ -66,20 +66,20 @@ namespace Eggtastic
             set { ClipInstance.Rotation = value; }
         }
 
-        public CharacterEntity(EggGameScreen gameScreen, Clip clip)
+        public CharacterEntity(ThrongGameScreen gameScreen, Clip clip)
             : this(gameScreen, clip, new Vector2(), new Vector2(1f), 0.0f, Vector2.Zero, 1.0f)
         { }
 
-        public CharacterEntity(EggGameScreen gameScreen, Clip clip, Vector2 position)
+        public CharacterEntity(ThrongGameScreen gameScreen, Clip clip, Vector2 position)
             : this(gameScreen, clip, position, new Vector2(1f), 0.0f, Vector2.Zero, 1.0f)
         { }
 
-        public CharacterEntity(EggGameScreen gameScreen, Clip clip, Vector2 position,
+        public CharacterEntity(ThrongGameScreen gameScreen, Clip clip, Vector2 position,
                                Vector2 scale)
             : this(gameScreen, clip, position, scale, 0.0f, Vector2.Zero, 1.0f)
         { }
 
-        public CharacterEntity(EggGameScreen gameScreen, Clip clip,
+        public CharacterEntity(ThrongGameScreen gameScreen, Clip clip,
                                Vector2 position, Vector2 scale, float rotation, Vector2 physicsOffset, float physicsRadius)
         {
             ClipInstance = new ClipInstance(clip);

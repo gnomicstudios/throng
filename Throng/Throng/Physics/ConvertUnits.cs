@@ -1,6 +1,6 @@
 using Microsoft.Xna.Framework;
 
-namespace Eggtastic
+namespace Throng
 {
     /// <summary>
     /// Convert units between display and simulation units.

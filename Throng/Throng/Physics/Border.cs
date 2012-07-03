@@ -16,7 +16,7 @@ using FarseerPhysics.Factories;
 using Gnomic.Core;
 using Gnomic.Anim;
 
-namespace Eggtastic
+namespace Throng
 {
     public class Border
     {

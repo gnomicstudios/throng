@@ -8,16 +8,16 @@ using Android.Widget;
 using Android.OS;
 using Microsoft.Xna.Framework;
 
-namespace Eggtastic.M4A
+namespace Throng.M4A
 {
-	[Activity(Label = "Eggtastic", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity(Label = "Throng", MainLauncher = true, Icon = "@drawable/icon")]
 	public class Activity1 : AndroidGameActivity
 	{
-		Eggtastic.Game1 game;
+		Throng.Game1 game;
 		protected override void OnCreate(Bundle bundle)
 		{
 			base.OnCreate(bundle);
-			Eggtastic.Game1.Activity = this;
+			Throng.Game1.Activity = this;
 			game = new Game1();
 			SetContentView(game.Window);
 			game.Run();

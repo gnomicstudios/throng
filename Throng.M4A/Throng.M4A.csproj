@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,12 +9,12 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Eggtastic</RootNamespace>
-    <AssemblyName>Eggtastic</AssemblyName>
+    <RootNamespace>Throng</RootNamespace>
+    <AssemblyName>Throng</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
-    <AndroidSupportedAbis>armeabi%3bx86</AndroidSupportedAbis>
+    <AndroidSupportedAbis>armeabi%3barmeabi-v7a%3bx86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
   </PropertyGroup>
@@ -54,52 +54,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Eggtastic\Eggtastic\DirectionHelper.cs">
+    <Compile Include="..\Throng\Throng\DirectionHelper.cs">
       <Link>DirectionHelper.cs</Link>
     </Compile>
-    <Compile Include="..\Eggtastic\Eggtastic\EggGameScreen.cs">
-      <Link>EggGameScreen.cs</Link>
+    <Compile Include="..\Throng\Throng\ThrongGameScreen.cs">
+      <Link>ThrongGameScreen.cs</Link>
     </Compile>
-    <Compile Include="..\Eggtastic\Eggtastic\EggtasticControls.cs">
-      <Link>EggtasticControls.cs</Link>
+    <Compile Include="..\Throng\Throng\ThrongControls.cs">
+      <Link>ThrongControls.cs</Link>
     </Compile>
-    <Compile Include="..\Eggtastic\Eggtastic\EggtasticDefines.cs">
-      <Link>EggtasticDefines.cs</Link>
+    <Compile Include="..\Throng\Throng\ThrongDefines.cs">
+      <Link>ThrongDefines.cs</Link>
     </Compile>
-    <Compile Include="..\Eggtastic\Eggtastic\Entities\CharacterEntity.cs">
+    <Compile Include="..\Throng\Throng\Entities\CharacterEntity.cs">
       <Link>Entities\CharacterEntity.cs</Link>
     </Compile>
-    <Compile Include="..\Eggtastic\Eggtastic\Entities\EggEntity.cs">
+    <Compile Include="..\Throng\Throng\Entities\EggEntity.cs">
       <Link>Entities\EggEntity.cs</Link>
     </Compile>
-    <Compile Include="..\Eggtastic\Eggtastic\Entities\EnemyEntity.cs">
+    <Compile Include="..\Throng\Throng\Entities\EnemyEntity.cs">
       <Link>Entities\EnemyEntity.cs</Link>
     </Compile>
-    <Compile Include="..\Eggtastic\Eggtastic\Entities\EnemySpawner.cs">
+    <Compile Include="..\Throng\Throng\Entities\EnemySpawner.cs">
       <Link>Entities\EnemySpawner.cs</Link>
     </Compile>
-    <Compile Include="..\Eggtastic\Eggtastic\Entities\PlayerEntity.cs">
+    <Compile Include="..\Throng\Throng\Entities\PlayerEntity.cs">
       <Link>Entities\PlayerEntity.cs</Link>
     </Compile>
-    <Compile Include="..\Eggtastic\Eggtastic\Entities\SpriteEntity.cs">
+    <Compile Include="..\Throng\Throng\Entities\SpriteEntity.cs">
       <Link>Entities\SpriteEntity.cs</Link>
     </Compile>
-    <Compile Include="..\Eggtastic\Eggtastic\Game1.cs">
+    <Compile Include="..\Throng\Throng\Game1.cs">
       <Link>Game1.cs</Link>
     </Compile>
-    <Compile Include="..\Eggtastic\Eggtastic\GameOverScreen.cs">
+    <Compile Include="..\Throng\Throng\GameOverScreen.cs">
       <Link>GameOverScreen.cs</Link>
     </Compile>
-    <Compile Include="..\Eggtastic\Eggtastic\PauseScreen.cs">
+    <Compile Include="..\Throng\Throng\PauseScreen.cs">
       <Link>PauseScreen.cs</Link>
     </Compile>
-    <Compile Include="..\Eggtastic\Eggtastic\Physics\Border.cs">
+    <Compile Include="..\Throng\Throng\Physics\Border.cs">
       <Link>Physics\Border.cs</Link>
     </Compile>
-    <Compile Include="..\Eggtastic\Eggtastic\Physics\ConvertUnits.cs">
+    <Compile Include="..\Throng\Throng\Physics\ConvertUnits.cs">
       <Link>Physics\ConvertUnits.cs</Link>
     </Compile>
-    <Compile Include="..\Eggtastic\Eggtastic\StartScreen.cs">
+    <Compile Include="..\Throng\Throng\StartScreen.cs">
       <Link>StartScreen.cs</Link>
     </Compile>
     <Compile Include="Activity1.cs" />
@@ -107,83 +107,83 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\background-music.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\background-music.xnb">
       <Link>Assets\Content\background-music.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\background.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\background.xnb">
       <Link>Assets\Content\background.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\egg.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\egg.xnb">
       <Link>Assets\Content\egg.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\eggSheet.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\eggSheet.xnb">
       <Link>Assets\Content\eggSheet.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\enemy.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\enemy.xnb">
       <Link>Assets\Content\enemy.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\enemySheet.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\enemySheet.xnb">
       <Link>Assets\Content\enemySheet.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\font.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\font.xnb">
       <Link>Assets\Content\font.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\GameFont.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\GameFont.xnb">
       <Link>Assets\Content\GameFont.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\gameOverScreen.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\gameOverScreen.xnb">
       <Link>Assets\Content\gameOverScreen.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\player.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\player.xnb">
       <Link>Assets\Content\player.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\playerSheet.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\playerSheet.xnb">
       <Link>Assets\Content\playerSheet.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\Sounds\Chomp 2.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\Sounds\Chomp 2.xnb">
       <Link>Assets\Content\Sounds\Chomp 2.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\Sounds\Explode 1.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\Sounds\Explode 1.xnb">
       <Link>Assets\Content\Sounds\Explode 1.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\Sounds\Fart 4.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\Sounds\Fart 4.xnb">
       <Link>Assets\Content\Sounds\Fart 4.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\Sounds\Full Suck In.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\Sounds\Full Suck In.xnb">
       <Link>Assets\Content\Sounds\Full Suck In.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\Sounds\PlayerMove 1.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\Sounds\PlayerMove 1.xnb">
       <Link>Assets\Content\Sounds\PlayerMove 1.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\Sounds\Pop 2.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\Sounds\Pop 2.xnb">
       <Link>Assets\Content\Sounds\Pop 2.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\Sounds\Suck In Loop.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\Sounds\Suck In Loop.xnb">
       <Link>Assets\Content\Sounds\Suck In Loop.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\Sounds\Swallow.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\Sounds\Swallow.xnb">
       <Link>Assets\Content\Sounds\Swallow.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\startScreen.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\startScreen.xnb">
       <Link>Assets\Content\startScreen.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
@@ -200,7 +200,7 @@
     <AndroidResource Include="Resources\Drawable\Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="..\Eggtastic\Eggtastic\bin\x86\Debug\Content\background-music.wma">
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\background-music.wma">
       <Link>Assets\Content\background-music.wma</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
