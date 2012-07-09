@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThrongContent", "Throng\Thr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Throng.M4A", "Throng.M4A\Throng.M4A.csproj", "{E2629C5D-5E20-4FBD-B7EA-1B39902BB08E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gnomic.AI", "Gnomic.AI\Gnomic.AI.csproj", "{79EC2569-3C47-4EE5-A453-79437C2F065D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -272,6 +274,18 @@ Global
 		{E2629C5D-5E20-4FBD-B7EA-1B39902BB08E}.Release|Mixed Platforms.Deploy.0 = Release|Any CPU
 		{E2629C5D-5E20-4FBD-B7EA-1B39902BB08E}.Release|Windows Phone.ActiveCfg = Release|Any CPU
 		{E2629C5D-5E20-4FBD-B7EA-1B39902BB08E}.Release|x86.ActiveCfg = Release|Any CPU
+		{79EC2569-3C47-4EE5-A453-79437C2F065D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79EC2569-3C47-4EE5-A453-79437C2F065D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79EC2569-3C47-4EE5-A453-79437C2F065D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{79EC2569-3C47-4EE5-A453-79437C2F065D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{79EC2569-3C47-4EE5-A453-79437C2F065D}.Debug|Windows Phone.ActiveCfg = Debug|Any CPU
+		{79EC2569-3C47-4EE5-A453-79437C2F065D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{79EC2569-3C47-4EE5-A453-79437C2F065D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79EC2569-3C47-4EE5-A453-79437C2F065D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79EC2569-3C47-4EE5-A453-79437C2F065D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{79EC2569-3C47-4EE5-A453-79437C2F065D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{79EC2569-3C47-4EE5-A453-79437C2F065D}.Release|Windows Phone.ActiveCfg = Release|Any CPU
+		{79EC2569-3C47-4EE5-A453-79437C2F065D}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
