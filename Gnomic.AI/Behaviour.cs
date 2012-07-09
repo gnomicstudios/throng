@@ -14,7 +14,7 @@ namespace Gnomic.AI
         }
 
         public abstract Result Tick(Search search);
-        public abstract int Weight { get; }
+        public abstract int Index { get; set; }
 
         protected abstract bool IsValid(IActor actor);
     }
