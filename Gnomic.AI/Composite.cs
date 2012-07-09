@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 namespace Gnomic.AI
 {
-    public abstract class Composite
+    public abstract class Composite : Behaviour
     {
-        private List<Node> m_children = new List<Node>();
+        private List<Behaviour> m_children = new List<Behaviour>();
 
-        public List<Node> Children
+        public List<Behaviour> Children
         {
             get { return m_children; }
         }

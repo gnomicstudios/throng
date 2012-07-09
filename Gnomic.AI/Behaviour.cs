@@ -1,9 +1,9 @@
-﻿// Node.cs
+﻿// Behaviour.cs
 //
 
 namespace Gnomic.AI
 {
-    public abstract class Node
+    public abstract class Behaviour
     {
         public abstract int Weight { get; }
     }
