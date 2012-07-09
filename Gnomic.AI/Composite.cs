@@ -16,6 +16,11 @@ namespace Gnomic.AI
             set { /* do nothing */ }
         }
 
+        public IEnumerable<Behaviour> Children
+        {
+            get { return m_children.AsEnumerable(); }
+        }
+
         public void AddChild(Single child)
         {
             child.Success += OnChildSuccess;
