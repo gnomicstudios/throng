@@ -16,9 +16,21 @@ namespace Gnomic.AI
             set { /* do nothing */ }
         }
 
-        public List<Behaviour> Children
+        public void AddChild(Single child)
         {
-            get { return m_children; }
+            child.Success += OnChildSuccess;
+            child.Failure += OnChildFailure;
+            m_children.Add(child);
         }
+
+        public void RemoveChild(Single child)
+        {
+            child.Success -= OnChildSuccess;
+            child.Failure -= OnChildFailure;
+            m_children.Remove(child);
+        }
+
+        public abstract void OnChildSuccess(Search search);
+        public abstract void OnChildFailure(Search search);
     }
 }
