@@ -35,7 +35,7 @@ namespace Gnomic.Anim
             }
         }
 
-        public void Update(float elapsedSeconds, ref JointState jointState)
+        public void Update(float elapsedSeconds, ref SpriteState jointState)
         {
             if (JointAnim.FrameCount > 1)
             {

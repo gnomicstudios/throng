@@ -59,16 +59,6 @@
     <Compile Include="TouchInput.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Farseer Physics Engine 3.3.1 XNA\Farseer Physics XNA.WP7.csproj">
-      <Project>{d6bb070c-8bcc-4664-8eee-3a66daf9d6ab}</Project>
-      <Name>Farseer Physics XNA.WP7</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gnomic.Anim\Gnomic.Anim.WP7.csproj">
-      <Project>{660570b0-6f4b-4122-b6a0-a40d471043f4}</Project>
-      <Name>Gnomic.Anim.WP7</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="Microsoft.Phone, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Xna.Framework" />
     <Reference Include="Microsoft.Xna.Framework.Game" />

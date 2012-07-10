@@ -55,14 +55,6 @@
       <Project>{BA9476CF-99BA-4D03-92F2-73D2C5E58883}</Project>
       <Name>MonoGame.Framework.Android</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Farseer Physics Engine 3.3.1 XNA\Farseer Physics XNA.M4A.csproj">
-      <Project>{32F502AE-41EA-4CAA-AB93-B472202B92C8}</Project>
-      <Name>Farseer Physics XNA.M4A</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gnomic.Anim\Gnomic.Anim.M4A.csproj">
-      <Project>{A69EA583-9424-487C-B6E7-A60033AE95C2}</Project>
-      <Name>Gnomic.Anim.M4A</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ProjectExtensions>

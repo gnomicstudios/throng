@@ -15,7 +15,11 @@ namespace Gnomic.Anim
             public int G;
             public int B;
             public int A;
-            
+
+			[ContentSerializer(Optional = true)]
+			public TweenType Tween;
+			[ContentSerializer(Optional = true)]
+			public int EaseValue;
             [ContentSerializerIgnore()]
             public Color Color;
 
@@ -42,14 +46,29 @@ namespace Gnomic.Anim
         }
 
 
-        public override void ApplySate(int currentKeyframeIndex, int nextKeyframeIndex, float lerpValue, ref JointState jointState)
+        public override void ApplySate(int currentKeyframeIndex, int nextKeyframeIndex, float lerpValue, ref SpriteState jointState)
         {
-            //jointState.Color = Color.Lerp(
-            //    Frames[currentKeyframeIndex].Color,
-            //    Frames[nextKeyframeIndex].Color,
-            //    lerpValue);
+			if (Frames[currentKeyframeIndex].Tween == TweenType.none)
+			{
+				jointState.Color = Frames[currentKeyframeIndex].Color;
+			}
+			else
+			{
+				int tweenEase = Frames[currentKeyframeIndex].EaseValue;
+				if (tweenEase > 0)
+				{
+					lerpValue = Easing.QuadraticEaseOut(lerpValue, (float)tweenEase / 100.0f);
+				}
+				else if (tweenEase < 0)
+				{
+					lerpValue = Easing.QuadraticEaseIn(lerpValue, (float)tweenEase / -100.0f);
+				}
 
-            jointState.Color = Frames[currentKeyframeIndex].Color;
+				jointState.Color = Color.Lerp(
+					Frames[currentKeyframeIndex].Color,
+					Frames[nextKeyframeIndex].Color,
+					lerpValue);
+			}
         }
 
         public override JointAnimState<JointAnim> CreateState()

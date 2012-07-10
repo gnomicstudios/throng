@@ -90,22 +90,6 @@
     <Content Include="Game.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Farseer Physics Engine 3.3.1 XNA\DebugView XNA\DebugView XNA.WP7.csproj">
-      <Project>{1932eb84-d979-45cc-94f0-18033881b3e0}</Project>
-      <Name>DebugView XNA.WP7</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Farseer Physics Engine 3.3.1 XNA\Farseer Physics XNA.WP7.csproj">
-      <Project>{d6bb070c-8bcc-4664-8eee-3a66daf9d6ab}</Project>
-      <Name>Farseer Physics XNA.WP7</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Gnomic.Anim\Gnomic.Anim.WP7.csproj">
-      <Project>{660570b0-6f4b-4122-b6a0-a40d471043f4}</Project>
-      <Name>Gnomic.Anim.WP7</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Gnomic.Core\Gnomic.Core.WP7.csproj">
-      <Project>{d3a0af9b-8de9-44e4-9627-bf4af75e8892}</Project>
-      <Name>Gnomic.Core.WP7</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ThrongContent\ThrongContent.contentproj">
       <Name>ThrongContent %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>

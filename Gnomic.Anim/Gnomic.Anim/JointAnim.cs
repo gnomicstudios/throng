@@ -21,7 +21,7 @@ namespace Gnomic.Anim
         [ContentSerializerIgnore()]
         public ClipAnim ParentClipAnim { get { return parentClipAnim; } }
 
-        public virtual void ApplySate(int currentKeyframeIndex, int nextKeyframeIndex, float lerpValue, ref JointState jointState) { }
+        public virtual void ApplySate(int currentKeyframeIndex, int nextKeyframeIndex, float lerpValue, ref SpriteState jointState) { }
         public virtual void Init(ContentManager content, ClipAnim clipAnim)
         {
             parentClipAnim = clipAnim;

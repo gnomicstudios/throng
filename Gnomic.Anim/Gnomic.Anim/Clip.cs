@@ -13,14 +13,12 @@ namespace Gnomic.Anim
 
         public void Init(ContentManager content)
         {
-            foreach (Joint j in Joints)
-            {
-                j.Init(content);
-            }
-
             if (AnimSet != null)
             {
-                AnimSet.Init(content, this);
+                foreach (ClipAnim ca in AnimSet.Anims)
+                {
+                    ca.Init(content, this);
+                }
             }
         }
     }

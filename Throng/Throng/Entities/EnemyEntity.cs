@@ -48,49 +48,34 @@ namespace Throng
         {
             WanderAimless,
             WanderTowards,
-            Attacking,
-            Retreating,
-            BeingSuckedIn
+            Retreat,
+            Attack,
+            Hit,
+            Death
         }
 
         public enum AnimState
         {
-            Walk,
-            Sucked
+            Idle,
+            Run,
+            Attack,
+            Hit,
+            Death
         }
 
         public struct AnimKey
         {
-            AnimState AnimState;
-            AnimationDirection Direction;
+            public AnimState State;
+            public AnimationDirection Direction;
 
             public AnimKey(AnimState state, AnimationDirection direction)
             {
-                AnimState = state;
-                Direction = direction;
-            }
-
-            public AnimKey(State state, AnimationDirection direction)
-            {
-                switch (state)
-                {
-                    case EnemyEntity.State.BeingSuckedIn:
-                        AnimState = EnemyEntity.AnimState.Sucked;
-                        break;
-                    case EnemyEntity.State.Retreating:
-                    case EnemyEntity.State.WanderAimless:
-                    case EnemyEntity.State.WanderTowards:
-                    case EnemyEntity.State.Attacking:
-                    default:
-                        AnimState = EnemyEntity.AnimState.Walk;
-                        break;
-                }
-
+                State = state;
                 Direction = direction;
             }
         }
 
-        private Dictionary<AnimKey, ClipAnim> _animations = new Dictionary<AnimKey, ClipAnim>();
+        private Dictionary<AnimKey, ClipAnimSet> _animations = new Dictionary<AnimKey, ClipAnimSet>();
 
         public State CurrentState { get; set; }
         public CharacterEntity Target { get; set; }
@@ -126,6 +111,25 @@ namespace Throng
                 CharacterEntity.CollidesWith.Enemy;
         }
 
+        private AnimState GetAnimState()
+        {
+            switch (CurrentState)
+            {
+                case State.WanderAimless:
+                    return AnimState.Run;
+                case State.WanderTowards:
+                    return AnimState.Run;
+                case State.Attack:
+                    return AnimState.Attack;
+                case State.Retreat:
+                    return AnimState.Run;
+                case State.Death:
+                    return AnimState.Death;
+                default:
+                    return  AnimState.Idle;
+            }
+        }
+
         private bool TargetIsClose()
         {
             float distance = Math.Abs((Target.Position - Position).Length());
@@ -149,10 +153,6 @@ namespace Throng
         private void MoveTowards(Vector2 to)
         {
             Vector2 v = to * MovementSpeed;
-            if (IsPlayerSucking())
-            {
-                v = to * MovementSpeed * Tweak.SUCK_SPEED_MULTIPLIER;
-            }
             DynamicBody.ApplyForce(v);
         }
 
@@ -211,7 +211,7 @@ namespace Throng
             }
             else if (HitPlayer)
             {
-                CurrentState = State.Retreating;
+                CurrentState = State.Retreat;
                 MovementSpeed = RETREAT_SPEED;
                 return;
             }
@@ -244,28 +244,15 @@ namespace Throng
             MoveTowards(_heading);
         }
 
-        private void BeingSuckedIn(GameTime gameTime)
-        {
-            PlayNewEnemyAnimation();
-            if (!IsPlayerSucking())
-            {
-                SwitchToRetreating();
-            }
-
-            const float SUCKED_FORC_MULTIPLIER = 40.0f;
-            MoveTowards(_heading * SUCKED_FORC_MULTIPLIER);
-            CalculateSuckedInHeading();
-        }
-
         private void SwitchToAttacking()
         {
-            CurrentState = State.Attacking;
-            MovementSpeed = FAST_SPEED;
+            CurrentState = State.Attack;
+            MovementSpeed = 0.0f;
         }
 
         private void SwitchToRetreating()
         {
-            CurrentState = State.Retreating;
+            CurrentState = State.Retreat;
             MovementSpeed = RETREAT_SPEED;
             CalculateRetreatHeading();
             PlayNewEnemyAnimation();
@@ -273,19 +260,9 @@ namespace Throng
 
         private void SwitchToWanderAimless()
         {
-            CurrentState = State.WanderAimless;
+            CurrentState = State.Retreat;
             MovementSpeed = SLOW_SPEED;
             HitPlayer = false; HitEgg = false;
-        }
-
-        private bool IsPlayerSucking()
-        {
-            PlayerEntity player = Target as PlayerEntity;
-            if (player != null)
-            {
-                return player.CurrentState == PlayerEntity.State.Sucking;
-            }
-            return false;
         }
 
         public override void Update(GameTime gameTime)
@@ -307,18 +284,23 @@ namespace Throng
                 case State.WanderTowards:
                     WanderTowards(gameTime);
                     break;
-                case State.Attacking:
+                case State.Attack:
                     Attacking(gameTime);
                     break;
-                case State.Retreating:
-                    Retreating(gameTime);
+                case State.Hit:
+                    BeingHit(gameTime);
                     break;
-                case State.BeingSuckedIn:
-                    BeingSuckedIn(gameTime);
+                case State.Retreat:
+                    Retreating(gameTime);
                     break;
             }
 
             UpdateDirectionBasedOnVelocity();
+        }
+
+        private void BeingHit(GameTime gameTime)
+        {
+            
         }
 
         public EnemyEntity(ThrongGameScreen gameScreen, Clip clip)
@@ -349,27 +331,35 @@ namespace Throng
             DynamicBody.OnCollision += CollisionHandler;
 			FindNearestTarget();
 
-            _animations[new AnimKey(AnimState.Walk, AnimationDirection.Left)] = clip.AnimSet["walk-left"];
-            _animations[new AnimKey(AnimState.Walk, AnimationDirection.Right)] = clip.AnimSet["walk-right"];
-            _animations[new AnimKey(AnimState.Walk, AnimationDirection.Up)] = clip.AnimSet["walk-up"];
-            _animations[new AnimKey(AnimState.Walk, AnimationDirection.Down)] = clip.AnimSet["walk-down"];
+            _animations[new AnimKey(AnimState.Idle, AnimationDirection.Right)] = clip.AnimSet.CreateSingleAnimSet("idle-left");
+            _animations[new AnimKey(AnimState.Idle, AnimationDirection.Left)] = clip.AnimSet.CreateSingleAnimSet("right-right");
 
-            _animations[new AnimKey(AnimState.Sucked, AnimationDirection.Left)] = clip.AnimSet["sucked-right"];
-            _animations[new AnimKey(AnimState.Sucked, AnimationDirection.Right)] = clip.AnimSet["sucked-left"];
-            _animations[new AnimKey(AnimState.Sucked, AnimationDirection.Up)] = clip.AnimSet["sucked-down"];
-            _animations[new AnimKey(AnimState.Sucked, AnimationDirection.Down)] = clip.AnimSet["sucked-up"];
+            _animations[new AnimKey(AnimState.Run, AnimationDirection.Right)] = clip.AnimSet.CreateSingleAnimSet("run-right");
+            _animations[new AnimKey(AnimState.Run, AnimationDirection.Left)] = clip.AnimSet.CreateSingleAnimSet("run-left");
+
+            _animations[new AnimKey(AnimState.Attack, AnimationDirection.Right)] = clip.AnimSet.CreateSingleAnimSet("attack-right");
+            _animations[new AnimKey(AnimState.Attack, AnimationDirection.Left)] = clip.AnimSet.CreateSingleAnimSet("attack-left");
+
+            _animations[new AnimKey(AnimState.Hit, AnimationDirection.Right)] = clip.AnimSet.CreateSubSet(true, "hitA-right", "hitB-right", "hitC-right");
+            _animations[new AnimKey(AnimState.Hit, AnimationDirection.Left)] = clip.AnimSet.CreateSubSet(true, "hitA-left", "hitB-left", "hitC-left");
+
+            _animations[new AnimKey(AnimState.Death, AnimationDirection.Right)] = clip.AnimSet.CreateSingleAnimSet("death-right");
+            _animations[new AnimKey(AnimState.Death, AnimationDirection.Left)] = clip.AnimSet.CreateSingleAnimSet("death-left");
 
             PlayNewEnemyAnimation();        
         }
 
+        ClipAnimSet currentAnimSet = null;
         void PlayNewEnemyAnimation()
         {
-            ClipAnim newAnim = null;
-            if (_animations.TryGetValue(new AnimKey(CurrentState, _animDirection), out newAnim))
+            ClipAnimSet newAnimSet = null;
+            AnimKey key = new AnimKey(GetAnimState(), _animDirection);
+            if (_animations.TryGetValue(key, out newAnimSet))
             {
-                if (newAnim != ClipInstance.CurrentAnim)
+                if (newAnimSet != currentAnimSet)
                 {
-                     ClipInstance.Play(newAnim);
+                    ClipInstance.Play(newAnimSet.GetNextAnim(), key.State == AnimState.Idle || key.State == AnimState.Run || key.State == AnimState.Attack);
+                    currentAnimSet = newAnimSet;
                 }
             }
         }
@@ -379,7 +369,7 @@ namespace Throng
             if (_heading.LengthSquared() > 0.001f)
             {
                 // Get direction enemy is moving
-                AnimationDirection newDirection = DirectionHelper.GetDirectionFromHeadingBiasHorizontal(_heading, 0.2f);
+                AnimationDirection newDirection = DirectionHelper.GetDirectionFromHeading(_heading);
                 if (newDirection == _animDirection)
                     return;
 
@@ -412,14 +402,9 @@ namespace Throng
         private bool CollisionHandler(Fixture f1, Fixture f2, Contact contact)
         {
             PlayerEntity player = f2.Body.UserData as PlayerEntity;
-            EggEntity egg = f2.Body.UserData as EggEntity;
             if (player != null)
             {
                 return CollisionWithPlayer(f1, f2, contact, player);
-            }
-            else if (egg != null)
-            {
-                return CollisionWithEgg(f1, f2, contact, egg);
             }
             return true;
         }
@@ -427,22 +412,11 @@ namespace Throng
         private bool CollisionWithPlayer(Fixture f1, Fixture f2,
                                          Contact contact, PlayerEntity player)
         {
-            if (player.EatEnemiesInRange())
-            {
-                // If this enemy was eaten, it will become invalid so return false to cancel the collision.
-                return this.IsValid;
-            }
-            return true;
-        }
-
-        private bool CollisionWithEgg(Fixture f1, Fixture f2,
-                                      Contact contact, EggEntity egg)
-        {
-            if (CurrentState == State.BeingSuckedIn)
-                return false;
-
-            HitEgg = true;
-            egg.SwitchToDeathState();
+            //if (player.EatEnemiesInRange())
+            //{
+            //    // If this enemy was eaten, it will become invalid so return false to cancel the collision.
+            //    return this.IsValid;
+            //}
             return true;
         }
 
@@ -455,6 +429,9 @@ namespace Throng
         private void FindNearestTarget()
         {
             float min = 9999999f;
+
+            // currently enemies only target players
+            #if false
             foreach (EggEntity egg in GameScreen.Eggs)
             {
                 float dist = Math.Abs(Vector2.Distance(egg.Position, Position));
@@ -464,9 +441,8 @@ namespace Throng
                     min = dist;
                 }
             }
+            #endif
 
-            // currently enemies only target eggs
-            #if false
             foreach (GameEntity entity in GameScreen.ActiveEntities)
             {
                 CharacterEntity character = entity as CharacterEntity;
@@ -490,7 +466,6 @@ namespace Throng
                     }
                 }
             }
-            #endif
         }
 
         private void CalculateAimlessHeading()

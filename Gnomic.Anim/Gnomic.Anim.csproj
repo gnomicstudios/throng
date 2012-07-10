@@ -59,16 +59,19 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gnomic.Anim\ClipAnimInstance.cs" />
     <Compile Include="Gnomic.Anim\ClipAnimSet.cs" />
     <Compile Include="Gnomic.Anim\ClipAnim.cs" />
     <Compile Include="Gnomic.Anim\Clip.cs" />
     <Compile Include="Gnomic.Anim\ClipInstance.cs" />
+    <Compile Include="Gnomic.Anim\EasingFunctions.cs" />
     <Compile Include="Gnomic.Anim\JointAnimState.cs" />
     <Compile Include="Gnomic.Anim\Joint.cs" />
     <Compile Include="Gnomic.Anim\JointAnim.cs" />
     <Compile Include="Gnomic.Anim\JointAnimColour.cs" />
     <Compile Include="Gnomic.Anim\JointAnimSpatial.cs" />
     <Compile Include="Gnomic.Anim\JointAnimTexture.cs" />
+    <Compile Include="Gnomic.Anim\SpriteState.cs" />
     <Compile Include="Gnomic.Anim\Transform2D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

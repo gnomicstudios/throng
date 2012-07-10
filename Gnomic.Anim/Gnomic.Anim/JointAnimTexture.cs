@@ -14,7 +14,6 @@ namespace Gnomic.Anim
             public string Tex;
             public Rectangle TexRect;
             public SpriteEffects FlipState;
-            public Vector2 Origin;
             public bool Visible;
 
             [ContentSerializerIgnore()]
@@ -44,13 +43,12 @@ namespace Gnomic.Anim
         }
 
 
-        public override void ApplySate(int currentKeyframeIndex, int nextKeyframeIndex, float lerpValue, ref JointState jointState)
+        public override void ApplySate(int currentKeyframeIndex, int nextKeyframeIndex, float lerpValue, ref SpriteState jointState)
         {
             Frame f = Frames[currentKeyframeIndex];
             jointState.TextureRect = f.TexRect;
             jointState.Texture = f.Texture;
             jointState.FlipState = f.FlipState;
-            jointState.Origin = f.Origin;
             jointState.Visible = f.Visible;
         }
 

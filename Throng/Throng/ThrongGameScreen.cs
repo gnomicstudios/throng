@@ -77,11 +77,12 @@ namespace Throng
             playerClip.Init(Content);
             Clips.Add("player", playerClip);
 
-            Clip eggClip = Content.Load<Gnomic.Anim.Clip>("egg");
-            eggClip.Init(Content);
-            Clips.Add("egg", eggClip);
+            // Excluding egg for now as it was exported with an old version of the Gnomic.Anim library
+            //Clip eggClip = Content.Load<Gnomic.Anim.Clip>("egg");
+            //eggClip.Init(Content);
+            //Clips.Add("egg", eggClip);
 
-            Clip enemyClip = Content.Load<Gnomic.Anim.Clip>("enemy");
+            Clip enemyClip = Content.Load<Gnomic.Anim.Clip>("alien");
             enemyClip.Init(Content);
             Clips.Add("enemy", enemyClip);
         }
@@ -223,7 +224,7 @@ namespace Throng
             // spawn first egg here
             Vector2 spawn = ScreenCenter;
             spawn.Y += ScreenSizeDefault.Y / 2.25f;
-            AddEgg(spawn);
+            //AddEgg(spawn);
         }
 
         // spawn some eggs around the player
@@ -232,20 +233,20 @@ namespace Throng
             if (numEggs <= 0)
                 return;
 
-            for (int i = 0; i < numEggs; i++)
-            {
-                Vector2 spawn = new Vector2(0f);
-                spawn.X = ((float)RandomNum.NextDouble() * 2f) - 1f;
-                spawn.Y = ((float)RandomNum.NextDouble() * 2f) - 1f;
-                spawn.Normalize();
+            //for (int i = 0; i < numEggs; i++)
+            //{
+            //    Vector2 spawn = new Vector2(0f);
+            //    spawn.X = ((float)RandomNum.NextDouble() * 2f) - 1f;
+            //    spawn.Y = ((float)RandomNum.NextDouble() * 2f) - 1f;
+            //    spawn.Normalize();
 
-                float range = EGG_SPAWN_MAX_DIST - EGG_SPAWN_MIN_DIST;
-                float dist = EGG_SPAWN_MIN_DIST +
-                    ((float)RandomNum.NextDouble()) * range;
-                spawn = Player.Position + (spawn * dist);
+            //    float range = EGG_SPAWN_MAX_DIST - EGG_SPAWN_MIN_DIST;
+            //    float dist = EGG_SPAWN_MIN_DIST +
+            //        ((float)RandomNum.NextDouble()) * range;
+            //    spawn = Player.Position + (spawn * dist);
 
-                AddEgg(spawn);
-            }
+            //    AddEgg(spawn);
+            //}
         }
 
         // removes all entities from the game
@@ -330,10 +331,10 @@ namespace Throng
             
             UpdateBackground();
 
-            if (Eggs.Count == 0)
-            {
-                _eggtastic.GameOver();
-            }
+            //if (Eggs.Count == 0)
+            //{
+            //    _eggtastic.GameOver();
+            //}
 
 			UpdateEggPhysics();
 

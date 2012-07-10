@@ -165,7 +165,7 @@ namespace Throng
 
 			//Input.ButtonMappings.Add((int)Controls.Suck, new ButtonGeneric[] { ButtonGeneric.TouchRightSide, ButtonGeneric.Space });
             //unfortunately you can't press up+left+space at the same time! so we have to use a different key...
-            Input.ButtonMappings.Add((int)Controls.Suck, new ButtonGeneric[] { ButtonGeneric.TouchRightSide, ButtonGeneric.LeftControl, ButtonGeneric.RightControl});
+            Input.ButtonMappings.Add((int)Controls.Attack1, new ButtonGeneric[] { ButtonGeneric.TouchRightSide, ButtonGeneric.LeftControl, ButtonGeneric.RightControl});
             Input.ButtonMappings.Add((int)Controls.Select, new ButtonGeneric[] { ButtonGeneric.TapAnywhere, ButtonGeneric.Space });
 
 			// Default value for this is not sensitive enough for the Throng gameplay. 

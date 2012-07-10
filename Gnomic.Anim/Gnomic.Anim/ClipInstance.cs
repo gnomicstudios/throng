@@ -5,25 +5,16 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Gnomic.Anim
 {
-    public struct JointState
-    {
-        public Transform2D Transform;
-        public Color Color;
-        public Texture2D Texture;
-        public Rectangle TextureRect;
-        public SpriteEffects FlipState;
-        public bool Visible;
-        public Vector2 Origin;
-    }
-    
     public class ClipInstance
     {
         public Clip Clip;
-        public JointState[] JointStates;
-        public JointAnimState<JointAnim>[] JointAnimStates;
+        public SpriteState[] JointStates;
         public Transform2D[] AbsoluteTransforms;
-        ClipAnim currentAnim;
-        public ClipAnim CurrentAnim { get { return currentAnim; } }
+        ClipAnimInstance currentAnim;
+        public ClipAnim CurrentAnim { get { return currentAnim.Anim; } }
+        
+		ClipInstance linkToParentClipInstance;
+		int linkToParetJointId;
 
         public Vector2 Position
         {
@@ -44,51 +35,45 @@ namespace Gnomic.Anim
         public ClipInstance(Clip clip)
         {
             Clip = clip;
-            JointStates = new JointState[clip.Joints.Length];
+            JointStates = new SpriteState[clip.Joints.Length];
             AbsoluteTransforms = new Transform2D[clip.Joints.Length];
-
-            // There are potentially 3 types of animation per joint
-            JointAnimStates = new JointAnimState<JointAnim>[clip.Joints.Length * 3];
-
-            for (int i = 0; i < JointStates.Length; ++i)
-            {
-                JointStates[i].Color = Color.White;
-                JointStates[i].Transform = clip.Joints[i].Transform;
-                JointStates[i].Texture = clip.Joints[i].Texture;
-                JointStates[i].TextureRect = clip.Joints[i].TextureRect;
-                JointStates[i].FlipState = clip.Joints[i].FlipState;
-                JointStates[i].Origin = clip.Joints[i].Origin;
-                JointStates[i].Visible = true;
-            }
-            ComputeAbsoluteTransforms();
+			JointStates[0].Transform = Transform2D.Identity;
+            currentAnim = new ClipAnimInstance(this);
+			Play(clip.AnimSet.Anims[0]);
+			Update(0.0f);
         }
+
+		public void LinkToParentClipInstance(ClipInstance parentClipInstance, int parentJointId)
+		{
+			linkToParentClipInstance = parentClipInstance;
+			linkToParetJointId = parentJointId;
+		}
 
         public void Play(ClipAnim anim)
         {
-            currentAnim = anim;
-            for (int i = 0; i < currentAnim.JointAnims.Count; ++i)
-            {
-                JointAnimStates[i] = currentAnim.JointAnims[i].CreateState();
-            }
+            Play(anim, true);
+        }
+
+        public void Play(ClipAnim anim, bool loop)
+        {
+            currentAnim.Play(anim, loop);
         }
 
         public void Play(string animName)
         {
+            Play(animName, true);
+        }
+
+        public void Play(string animName, bool loop)
+        {
             ClipAnim animToPlay = Clip.AnimSet[animName];
-            System.Diagnostics.Debug.Assert(animToPlay != null);
-            Play(animToPlay);
+            System.Diagnostics.Trace.Assert(animToPlay != null);
+            Play(animToPlay, loop);
         }
 
         public void Update(float dt)
         {
-            if (currentAnim != null)
-            {
-                for (int i = 0; i < currentAnim.JointAnims.Count; ++i)
-                {
-                    JointAnimStates[i].Update(dt, ref JointStates[JointAnimStates[i].JointAnim.JointId]);
-                }
-            }
-
+            currentAnim.Update(dt);
             ComputeAbsoluteTransforms();
         }
         
@@ -98,16 +83,19 @@ namespace Gnomic.Anim
             {
                 Joint joint = Clip.Joints[i];
                 if (joint.ParentId < 0)
-                    AbsoluteTransforms[i] = JointStates[i].Transform; //.Translate(JointStates[i].Origin);
+				{
+					if (i == 0 && linkToParentClipInstance != null)
+					{
+						Transform2D.Compose(ref linkToParentClipInstance.AbsoluteTransforms[linkToParetJointId], ref JointStates[0].Transform, out AbsoluteTransforms[0]);
+					}
+					else
+					{
+						AbsoluteTransforms[i] = JointStates[i].Transform;
+					}
+				}
                 else
                 {
-                    Transform2D combinedTransform;
-                    // Translate current local transform to origin
-                    Transform2D thisAtOrigin = JointStates[i].Transform.Translate(-JointStates[i].Origin);
-                    // Compose with parent absolute transform
-                    Transform2D.Compose(ref AbsoluteTransforms[joint.ParentId], ref thisAtOrigin, out combinedTransform);
-                    // Move back to original position, but with parent scale applied
-                    AbsoluteTransforms[i] = combinedTransform.Translate(JointStates[i].Origin * AbsoluteTransforms[joint.ParentId].Scale);
+					Transform2D.Compose(ref AbsoluteTransforms[joint.ParentId], ref JointStates[i].Transform, out AbsoluteTransforms[i]);
                 }
             }
         }
@@ -117,17 +105,18 @@ namespace Gnomic.Anim
             for (int i = 0; i < Clip.DrawOrder.Length; ++i)
             {
                 int index = Clip.DrawOrder[i];
-                JointState js = JointStates[index];
+                SpriteState js = JointStates[index];
                 if (js.Texture != null && js.Visible)
                 {
+                    Transform2D xform = AbsoluteTransforms[index];
                     spriteBatch.Draw(
                         js.Texture,
-                        AbsoluteTransforms[index].Pos, 
+                        new Vector2((int)xform.Pos.X, (int)xform.Pos.Y), 
                         new Rectangle?(js.TextureRect), 
-                        js.Color, 
-                        AbsoluteTransforms[index].Rot, 
-                        js.Origin, 
-                        AbsoluteTransforms[index].Scale, 
+                        js.Color,
+                        xform.Rot,
+						xform.Origin,
+                        xform.Scale, 
                         js.FlipState, 
                         0.0f);
                 }

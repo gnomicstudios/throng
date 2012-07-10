@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectGuid>{660570b0-6f4b-4122-b6a0-a40d471043f4}</ProjectGuid>
+    <ProjectGuid>{660570B0-6F4B-4122-B6A0-A40D471043F4}</ProjectGuid>
     <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">Windows Phone</Platform>
@@ -50,6 +50,7 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="Gnomic.Anim\ClipAnimInstance.cs" />
     <Compile Include="Gnomic.Anim\ClipAnimSet.cs" />
     <Compile Include="Gnomic.Anim\ClipAnim.cs" />
     <Compile Include="Gnomic.Anim\Clip.cs" />

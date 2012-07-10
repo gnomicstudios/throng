@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectGuid>{4B690FC6-3B86-43C4-A3F8-57ECFB3973D0}</ProjectGuid>
@@ -37,16 +37,6 @@
     </Compile>
     <Compile Include="background.png">
       <Name>background</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="eggSheet.png">
-      <Name>eggSheet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="enemySheet.png">
-      <Name>enemySheet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -120,22 +110,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="egg.clipxml">
-      <Name>egg</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
-    <Compile Include="enemy.clipxml">
-      <Name>enemy</Name>
+    <ProjectReference Include="..\..\Gnomic.Anim\Gnomic.Anim.csproj">
+      <Project>{B670D9A3-79F0-4501-9D79-43183346F011}</Project>
+      <Name>Gnomic.Anim</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="alien.clipxml">
+      <Name>alien</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Gnomic.Anim\Gnomic.Anim.csproj">
-      <Project>{B670D9A3-79F0-4501-9D79-43183346F011}</Project>
-      <Name>Gnomic.Anim</Name>
-    </ProjectReference>
+    <Compile Include="alienSheet.png">
+      <Name>alienSheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_TextureFormat>NoChange</ProcessorParameters_TextureFormat>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

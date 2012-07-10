@@ -24,7 +24,7 @@ namespace Throng
         //        public static float SUCK_SPEED_MULTIPLIER = 50.0f;
 
         //defaults to 1, 5 is very big
-        public static float SUCK_AREA_MULTIPLER = 1.0f;
+        public static float MELEE_AREA_MULTIPLER = 1.0f;
         //        public static float SUCK_AREA_MULTIPLER = 5.0f;
 
         //defaults to 1
@@ -44,7 +44,7 @@ namespace Throng
            {
                MOVEMENT_FORCE = 50.0f;
                SUCK_SPEED_MULTIPLIER = 50.0f;
-               SUCK_AREA_MULTIPLER = 5.0f;
+               MELEE_AREA_MULTIPLER = 5.0f;
                STARTING_EGGS = 10;
            }
        }

@@ -11,7 +11,8 @@ namespace Throng
 		Down,
 		Left,
         Right,
-        Suck,
+        Attack1,
+        Attack2,
 		Select
 	}
 }

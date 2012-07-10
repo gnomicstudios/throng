@@ -6,16 +6,13 @@ namespace Gnomic.Anim
 {
     public class ClipAnimSet
     {
-        [ContentSerializer(FlattenContent = true, CollectionItemName = "Anim")] 
-        public List<ClipAnim> Anims;
+        static Random s_rnd = new Random();
 
-        public void Init(ContentManager content, Clip clip)
-        {
-            foreach (ClipAnim ca in Anims)
-            {
-                ca.Init(content, clip);
-            }
-        }
+        [ContentSerializer(FlattenContent = true, CollectionItemName = "Anim")] 
+        public List<ClipAnim> Anims = new List<ClipAnim>();
+
+        private int animId = 0;
+        private bool nextAnimRandom = false;
 
         public ClipAnim this[string animName]
         {
@@ -28,6 +25,65 @@ namespace Gnomic.Anim
                 }
                 return null;
             }
+        }
+        
+        public ClipAnimSet CreateSingleAnimSet(string animName)
+        {
+            ClipAnimSet set = new ClipAnimSet();
+            set.Anims.Add(this[animName]);
+            return set;
+        }
+
+        public ClipAnimSet CreateSubSet(bool playRandomly, params string[] animNames)
+        {
+            nextAnimRandom = playRandomly;
+            ClipAnimSet set = new ClipAnimSet();
+            foreach (string an in animNames)
+            {
+                set.Anims.Add(this[an]);
+            }
+            return set;
+        }
+
+        [ContentSerializerIgnore()]
+        public ClipAnim CurrentAnim
+        {
+            get { return Anims[animId]; }
+        }
+
+        public ClipAnim GetNextAnim()
+        {
+            if (nextAnimRandom)
+            {
+                return GetRandomAnim(true);
+            }
+            else
+            {
+                if (Anims == null || Anims.Count == 0)
+                    return null;
+
+                animId++;
+                animId %= Anims.Count;
+                return Anims[animId];
+            }
+        }
+
+        public ClipAnim GetRandomAnim(bool allowSameAsLast)
+        {
+            if (!allowSameAsLast)
+            {
+                int animIdLast = animId;
+                while (animIdLast == animId)
+                {
+                    animId = s_rnd.Next(Anims.Count);
+                }
+            }
+            else
+            {
+                animId = s_rnd.Next(Anims.Count);
+            }
+
+            return Anims[animId];
         }
     }
 }
