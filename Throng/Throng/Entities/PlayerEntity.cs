@@ -408,7 +408,7 @@ namespace Throng
 
             SetupAnimations(clip);
 
-            //SwitchToMoving();
+            SwitchToIdle();
          }
 
         private void LoadSounds(ContentManager content)
