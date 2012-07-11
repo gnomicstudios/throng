@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;ANDROID</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -44,14 +44,17 @@
   <ItemGroup>
     <Compile Include="Gnomic.Anim\Clip.cs" />
     <Compile Include="Gnomic.Anim\ClipAnim.cs" />
+    <Compile Include="Gnomic.Anim\ClipAnimInstance.cs" />
     <Compile Include="Gnomic.Anim\ClipAnimSet.cs" />
     <Compile Include="Gnomic.Anim\ClipInstance.cs" />
+    <Compile Include="Gnomic.Anim\EasingFunctions.cs" />
     <Compile Include="Gnomic.Anim\Joint.cs" />
     <Compile Include="Gnomic.Anim\JointAnim.cs" />
     <Compile Include="Gnomic.Anim\JointAnimColour.cs" />
     <Compile Include="Gnomic.Anim\JointAnimSpatial.cs" />
     <Compile Include="Gnomic.Anim\JointAnimState.cs" />
     <Compile Include="Gnomic.Anim\JointAnimTexture.cs" />
+    <Compile Include="Gnomic.Anim\SpriteState.cs" />
     <Compile Include="Gnomic.Anim\Transform2D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

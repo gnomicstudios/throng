@@ -102,6 +102,9 @@
     <Compile Include="..\Throng\Throng\StartScreen.cs">
       <Link>StartScreen.cs</Link>
     </Compile>
+    <Compile Include="..\Throng\Throng\Tweak.cs">
+      <Link>Tweak.cs</Link>
+    </Compile>
     <Compile Include="Activity1.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,22 +116,6 @@
     </AndroidAsset>
     <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\background.xnb">
       <Link>Assets\Content\background.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\egg.xnb">
-      <Link>Assets\Content\egg.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\eggSheet.xnb">
-      <Link>Assets\Content\eggSheet.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\enemy.xnb">
-      <Link>Assets\Content\enemy.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\enemySheet.xnb">
-      <Link>Assets\Content\enemySheet.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
     <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\font.xnb">
@@ -187,6 +174,12 @@
       <Link>Assets\Content\startScreen.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\alien.xnb">
+      <Link>Assets\Content\alien.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\alienSheet.xnb">
+      <Link>Assets\Content\alienSheet.xnb</Link>
+    </AndroidAsset>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
@@ -205,7 +198,28 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\MonoGame\MonoGame.Framework\MonoGame.Framework.Android.csproj">
+      <Project>{BA9476CF-99BA-4D03-92F2-73D2C5E58883}</Project>
+      <Name>MonoGame.Framework.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MonoGame\ThirdParty\Lidgren.Network\Lidgren.Network.Android.csproj">
+      <Project>{565129E0-4EE5-4F6F-B403-C3484C9740BE}</Project>
+      <Name>Lidgren.Network.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Farseer Physics Engine 3.3.1 XNA\Farseer Physics XNA.M4A.csproj">
+      <Project>{32F502AE-41EA-4CAA-AB93-B472202B92C8}</Project>
+      <Name>Farseer Physics XNA.M4A</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gnomic.Anim\Gnomic.Anim.M4A.csproj">
+      <Project>{A69EA583-9424-487C-B6E7-A60033AE95C2}</Project>
+      <Name>Gnomic.Anim.M4A</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gnomic.Core\Gnomic.Core.M4A.csproj">
+      <Project>{6956D64A-4911-419D-800B-06257B98B716}</Project>
+      <Name>Gnomic.Core.M4A</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.

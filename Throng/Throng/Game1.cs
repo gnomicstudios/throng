@@ -49,8 +49,12 @@ namespace Throng
 			GameState = State.Start;
 
             graphics = new GraphicsDeviceManager(this);
+#if WINDOWS
             graphics.PreferredBackBufferWidth = 1280;
             graphics.PreferredBackBufferHeight = 720;
+#else
+            graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft;
+#endif
 
             //Content = new Arands.Content.ContentTracker(this.Services);
             //((Arands.Content.ContentTracker)Content).UseSourceAssets = true;
@@ -146,8 +150,7 @@ namespace Throng
         {
             // TODO: Add your initialization logic here
 			Camera = new Camera2D(
-				GraphicsDevice.Viewport, 
-				new Vector2(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight));
+				GraphicsDevice.Viewport, ScreenSizeDefault);
 
             InitialiseGameScreens();
 

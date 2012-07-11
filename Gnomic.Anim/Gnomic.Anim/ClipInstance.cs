@@ -67,7 +67,9 @@ namespace Gnomic.Anim
         public void Play(string animName, bool loop)
         {
             ClipAnim animToPlay = Clip.AnimSet[animName];
-            System.Diagnostics.Trace.Assert(animToPlay != null);
+#if !ANDROID
+            System.Trace.Assert(animToPlay != null);
+#endif
             Play(animToPlay, loop);
         }
 
