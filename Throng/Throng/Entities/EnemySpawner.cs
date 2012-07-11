@@ -21,6 +21,7 @@ namespace Throng
     {
         private const float SPAWN_INTERVAL_DEFAULT = 5.0f;
         private const float SPAWN_INTERVAL_MIN = 1.0f;
+        private const int MAX_ENEMIES = 10;
 
         private ThrongGameScreen _gameScreen;
         private Random _rand;
@@ -59,14 +60,17 @@ namespace Throng
 
         public void Tick(GameTime gameTime)
         {
-            SpawnInterval -= (0.05f * (float)gameTime.ElapsedGameTime.TotalSeconds);
+            SpawnInterval -= (0.03f * (float)gameTime.ElapsedGameTime.TotalSeconds);
             SpawnInterval = Math.Max(SPAWN_INTERVAL_MIN, SpawnInterval);
 
             _secondsSinceLastSpawn += (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (_secondsSinceLastSpawn > SpawnInterval)
             {
                 _secondsSinceLastSpawn = 0f;
-                SpawnEnemyRandomly();
+                if (_gameScreen.Enemies.Count < MAX_ENEMIES)
+                {
+                    SpawnEnemyRandomly();
+                }
             }
         }
 
@@ -114,10 +118,6 @@ namespace Throng
             {
                 EnemyEntity enemy = new EnemyEntity(_gameScreen, _clip, spawnPoint);
                 enemy.AttackPlayerWeight = 1f;
-                //if (_gameScreen.RandomNum.NextDouble() > 0.5)
-                //{
-                //    enemy.AttackEggWeight = 0.75f;
-                //}
                 _gameScreen.AddEnemy(enemy);
             }
         }

@@ -216,7 +216,6 @@ namespace Throng
             STARTING_EGGS = Tweak.STARTING_EGGS;
 
             _eggCounterCurrent = 0;
-            SpawnSomeEggs(STARTING_EGGS-1);
             _levelActiveTime = 0;
 
             _enemySpawner.Reset();
@@ -224,29 +223,6 @@ namespace Throng
             // spawn first egg here
             Vector2 spawn = ScreenCenter;
             spawn.Y += ScreenSizeDefault.Y / 2.25f;
-            //AddEgg(spawn);
-        }
-
-        // spawn some eggs around the player
-        private void SpawnSomeEggs(int numEggs)
-        {
-            if (numEggs <= 0)
-                return;
-
-            //for (int i = 0; i < numEggs; i++)
-            //{
-            //    Vector2 spawn = new Vector2(0f);
-            //    spawn.X = ((float)RandomNum.NextDouble() * 2f) - 1f;
-            //    spawn.Y = ((float)RandomNum.NextDouble() * 2f) - 1f;
-            //    spawn.Normalize();
-
-            //    float range = EGG_SPAWN_MAX_DIST - EGG_SPAWN_MIN_DIST;
-            //    float dist = EGG_SPAWN_MIN_DIST +
-            //        ((float)RandomNum.NextDouble()) * range;
-            //    spawn = Player.Position + (spawn * dist);
-
-            //    AddEgg(spawn);
-            //}
         }
 
         // removes all entities from the game
@@ -331,13 +307,6 @@ namespace Throng
             
             UpdateBackground();
 
-            //if (Eggs.Count == 0)
-            //{
-            //    _eggtastic.GameOver();
-            //}
-
-			UpdateEggPhysics();
-
 			// Follow player with camera
             Vector2 cameraTarget = new Vector2(Player.Position.X - ScreenSizeDefault.X * 0.5f, 0.0f);
             Camera.Position = cameraTarget;
@@ -374,44 +343,13 @@ namespace Throng
             _bgSprite2.Position = new Vector2(ScreenCenter.X + (xBlock + 1) * ScreenSizeDefault.X, ScreenCenter.Y);
         }
 
-		// Constants to be tuned in UpdateEggPhysics()
-		const float TARGET_EGG_DIST_SQR = 400; // 20 (in default 1280 width size)
-		const float MAX_EGG_DIST_SQR = 20000;
-		const float MAX_EGG_FORCE = 8;
-
-		/// <summary>
-		/// Apply a follow mechanic to the eggs. The first egg follows the player and
-		/// the rest of the eggs follow the previous egg in the list
-		/// </summary>
-		private void UpdateEggPhysics()
-		{
-			Vector2 previousEggPos = Player.Position;
-
-			for (int i = 0; i < Eggs.Count; ++i)
-			{
-				Vector2 eggPos = Eggs[i].Position;
-				float eggDistSqr = Vector2.DistanceSquared(previousEggPos, eggPos);
-
-				// Get direction egg should travel
-				Vector2 eggAt = previousEggPos - eggPos;
-				eggAt.Normalize();
-
-				if (eggDistSqr > TARGET_EGG_DIST_SQR)
-				{
-					float eggForceMultiplier = Math.Min(MAX_EGG_FORCE, MAX_EGG_FORCE * ((eggDistSqr - TARGET_EGG_DIST_SQR) / (MAX_EGG_DIST_SQR - TARGET_EGG_DIST_SQR)));
-					Eggs[i].DynamicBody.ApplyForce(eggAt * eggForceMultiplier);
-				}
-				previousEggPos = eggPos;
-			}
-		}
-
         public override void Draw()
         {
             base.Draw();
 
-            spriteBatch.Begin();
-            spriteBatch.DrawString(gameFont, _eggCounterString, new Vector2(10.0f, 10.0f), Color.White);
-            spriteBatch.End();
+            //spriteBatch.Begin();
+            //spriteBatch.DrawString(gameFont, _eggCounterString, new Vector2(10.0f, 10.0f), Color.White);
+            //spriteBatch.End();
 
             DebugView.RenderDebugData(ref projection);
         }

@@ -104,14 +104,14 @@ namespace Throng
 
         private void PlayNewEggAnimation()
         {
-            ClipAnim newAnim = null;
-            if (_animations.TryGetValue(CurrentState, out newAnim))
-            {
-                if (newAnim != ClipInstance.CurrentAnim)
-                {
-                    ClipInstance.Play(newAnim);
-                }
-            }
+            //ClipAnim newAnim = null;
+            //if (_animations.TryGetValue(CurrentState, out newAnim))
+            //{
+            //    if (newAnim != ClipInstance.CurrentAnim)
+            //    {
+            //        ClipInstance.Play(newAnim);
+            //    }
+            //}
         }
 
         private void InitialiseAnimations()

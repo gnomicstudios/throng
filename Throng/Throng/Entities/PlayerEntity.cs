@@ -133,16 +133,11 @@ namespace Throng
 
         public bool OnSensorCollision(Fixture f1, Fixture f2, Contact contact)
         {
-            //EnemyEntity enemy = f2.Body.UserData as EnemyEntity;
-            //if (enemy != null)
-            //{
-            //    if (enemy.CurrentState != EnemyEntity.State.Attack)
-            //    {
-            //        enemy.CurrentState = EnemyEntity.State.Attack;
-            //        enemy.MovementSpeed = 0.3f;
-            //        enemy.Target = this;
-            //    }
-            //}
+            EnemyEntity enemy = f2.Body.UserData as EnemyEntity;
+            if (enemy != null)
+            {
+                enemy.DoDamage(30);
+            }
             return true;
         }
         
@@ -175,7 +170,7 @@ namespace Throng
         {
             CurrentState = State.Attack;
             PlayNewCharacterAnimation();
-            //_sensor.Enabled = true;
+            _sensor.Enabled = true;
 
             //PlayLoopingSound(_sfxSuck, 0.9f, ref _sfxInstSuck);
             //StopLoopingSound(_sfxInstMove);
@@ -185,7 +180,7 @@ namespace Throng
         {
             CurrentState = State.Run;
             PlayNewCharacterAnimation();
-            //_sensor.Enabled = false;
+            _sensor.Enabled = false;
 
             //PlayLoopingSound(_sfxMove, 0.6f, ref _sfxInstMove);
             //StopLoopingSound(_sfxInstSuck);
@@ -195,7 +190,7 @@ namespace Throng
         {
             CurrentState = State.Idle;
             PlayNewCharacterAnimation();
-            //_sensor.Enabled = false;
+            _sensor.Enabled = false;
 
             //StopLoopingSound(_sfxInstMove);
             //StopLoopingSound(_sfxInstSuck);

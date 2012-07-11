@@ -23,7 +23,7 @@ namespace Throng
         private const float FAST_SPEED = 10.0f;
         private const float RETREAT_SPEED = 6.5f;
         private const float SLOW_SPEED = 2.5f;
-        private const float TARGET_AGGRO_RADIUS = 300f;
+        private const float TARGET_ATTACK_RADIUS = 100f;
         private const float RETREAT_DISTANCE = 200f;
         private const float DIRECTION_CHANGE_THRESHOLD = 0.2f;
         private const float UPDATE_HEADING_INTERVAL = 0.5f;
@@ -39,10 +39,13 @@ namespace Throng
         private AnimationDirection _animDirection;
         private float _aimlessTime = 0f;
         private float _headingTime = 0f;
+        private float _health = 100.0f;
+        private float _stateTransitionCountdown = -1.0f;
 
         public float MovementSpeed { get; set; }
         public bool HitPlayer { get; set; }
         public bool HitEgg { get; set; }
+        public float Health { get { return _health; } }
 
         public enum State
         {
@@ -123,6 +126,8 @@ namespace Throng
                     return AnimState.Attack;
                 case State.Retreat:
                     return AnimState.Run;
+                case State.Hit:
+                    return AnimState.Hit;
                 case State.Death:
                     return AnimState.Death;
                 default:
@@ -133,7 +138,7 @@ namespace Throng
         private bool TargetIsClose()
         {
             float distance = Math.Abs((Target.Position - Position).Length());
-            if (distance < TARGET_AGGRO_RADIUS)
+            if (distance < TARGET_ATTACK_RADIUS)
             {
                 return true;
             }
@@ -204,26 +209,19 @@ namespace Throng
 
         private void Attacking(GameTime gameTime)
         {
-            if (!Target.IsValid || HitEgg)
+            _stateTransitionCountdown -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (_stateTransitionCountdown <= 0.0f)
             {
-                SwitchToWanderAimless();
-                return;
+                CalculateTowardsHeading();
+                if (TargetIsClose())
+                {
+                    SwitchToAttacking();
+                }
+                else
+                {
+                    SwitchToWanderAimless();
+                }
             }
-            else if (HitPlayer)
-            {
-                CurrentState = State.Retreat;
-                MovementSpeed = RETREAT_SPEED;
-                return;
-            }
-
-            _headingTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
-            if (_headingTime > UPDATE_ATTACK_HEADING_INTERVAL)
-            {
-                CalculateApproachHeading();
-                _headingTime = 0.0f;
-            }
-            
-            MoveTowards(_heading);
         }
 
         private void Retreating(GameTime gameTime)
@@ -248,6 +246,7 @@ namespace Throng
         {
             CurrentState = State.Attack;
             MovementSpeed = 0.0f;
+            _stateTransitionCountdown = PlayNewEnemyAnimation();
         }
 
         private void SwitchToRetreating()
@@ -287,20 +286,18 @@ namespace Throng
                 case State.Attack:
                     Attacking(gameTime);
                     break;
-                case State.Hit:
-                    BeingHit(gameTime);
-                    break;
                 case State.Retreat:
                     Retreating(gameTime);
+                    break;
+                case State.Hit:
+                    Hit(gameTime);
+                    break;
+                case State.Death:
+                    Death(gameTime);
                     break;
             }
 
             UpdateDirectionBasedOnVelocity();
-        }
-
-        private void BeingHit(GameTime gameTime)
-        {
-            
         }
 
         public EnemyEntity(ThrongGameScreen gameScreen, Clip clip)
@@ -350,7 +347,7 @@ namespace Throng
         }
 
         ClipAnimSet currentAnimSet = null;
-        void PlayNewEnemyAnimation()
+        float PlayNewEnemyAnimation()
         {
             ClipAnimSet newAnimSet = null;
             AnimKey key = new AnimKey(GetAnimState(), _animDirection);
@@ -358,10 +355,21 @@ namespace Throng
             {
                 if (newAnimSet != currentAnimSet)
                 {
-                    ClipInstance.Play(newAnimSet.GetNextAnim(), key.State == AnimState.Idle || key.State == AnimState.Run || key.State == AnimState.Attack);
+                    bool isLooping = key.State == AnimState.Idle || key.State == AnimState.Run || key.State == AnimState.Attack;
+                    ClipAnim newAnim = newAnimSet.GetNextAnim();
+                    if (newAnim == null)
+                    {
+                        throw new InvalidOperationException("Could not find Enemy animation for " + key.State.ToString() + "-" + key.Direction.ToString());
+                    }
+                    else
+                    {
+                        ClipInstance.Play(newAnim, isLooping);
+                    }
                     currentAnimSet = newAnimSet;
                 }
+                return ClipInstance.CurrentAnim.DurationInSecondsRemaining;
             }
+            return 0.0f;
         }
         
         void UpdateDirectionBasedOnVelocity()
@@ -520,6 +528,52 @@ namespace Throng
             PlayerEntity player = Target as PlayerEntity;
             _heading = 0.25f * (player.Position - Position);
 			_heading.Normalize();
+        }
+
+        public void DoDamage(float hp)
+        {
+            if (CurrentState != State.Hit)
+            {
+                _health -= hp;
+                if (_health > 0.0f)
+                {
+                    SwitchToHit();
+                }
+                else
+                {
+                    SwitchToDeath();
+                }
+            }
+        }
+
+
+        private void SwitchToHit()
+        {
+            CurrentState = State.Hit;
+            _stateTransitionCountdown = PlayNewEnemyAnimation();
+
+        }
+        private void Hit(GameTime gameTime)
+        {
+            _stateTransitionCountdown -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (_stateTransitionCountdown <= 0.0f)
+            {
+                SwitchToRetreating();
+            }
+        }
+
+        private void SwitchToDeath()
+        {
+            CurrentState = State.Death;
+            _stateTransitionCountdown = PlayNewEnemyAnimation() + 2.0f;
+        }
+        private void Death(GameTime gameTime)
+        {
+            _stateTransitionCountdown -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (_stateTransitionCountdown <= 0.0f)
+            {
+                GameScreen.DestroyEnemy(this);
+            }
         }
     }
 }

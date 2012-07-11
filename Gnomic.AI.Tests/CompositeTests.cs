@@ -32,7 +32,7 @@ namespace Gnomic.AI.Tests
 
             Assert.AreEqual(1, composite.Children.Count());
             
-            child.Success(search);
+            //child.Success(search);
             composite.Received().OnChildSuccess(search);
         }
 

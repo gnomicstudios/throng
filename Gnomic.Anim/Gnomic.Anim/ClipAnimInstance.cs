@@ -14,6 +14,7 @@ namespace Gnomic.Anim
 
     public class ClipAnimInstance
     {
+        const float ENDPOINT_EPSILON = 0.0001f;
         public ClipAnim Anim;
         public float AnimPos;
         public bool Loop;
@@ -23,6 +24,16 @@ namespace Gnomic.Anim
         public float DurationInSeconds
         {
             get { return durationInSeconds; }
+        }
+        public float DurationInSecondsRemaining
+        {
+            get 
+            {
+                if (playingState == AnimPlayingState.PlayingInReverse)
+                    return AnimPos;
+                else
+                    return durationInSeconds - AnimPos; 
+            }
         }
 
         ClipInstance parentClipInstance;
@@ -36,13 +47,21 @@ namespace Gnomic.Anim
             JointAnimStates = new JointAnimState<JointAnim>[parentClipInstance.Clip.Joints.Length * 3];
         }
 
+        public void Play(ClipAnim anim)
+        {
+            Play(anim, true);
+        }
         public void Play(ClipAnim anim, bool loop)
+        {
+            Play(anim, loop, true);
+        }
+        public void Play(ClipAnim anim, bool loop, bool forwards)
         {
             Anim = anim;
             AnimPos = 0.0f;
             Loop = loop;
-            durationInSeconds = Anim.Duration * Anim.Framerate;
-            playingState = AnimPlayingState.Playing;
+            durationInSeconds = (float)Anim.Duration / Anim.Framerate;
+            playingState = forwards ? AnimPlayingState.Playing : AnimPlayingState.PlayingInReverse;
 
             for (int i = 0; i < Anim.JointAnims.Count; ++i)
             {
@@ -54,6 +73,9 @@ namespace Gnomic.Anim
         {
             if (Anim != null)
             {
+                if (playingState == AnimPlayingState.Stopped)
+                    return;
+
                 if (playingState == AnimPlayingState.Playing)
                 {
                     AnimPos += dt;
@@ -61,11 +83,33 @@ namespace Gnomic.Anim
                     {
                         if (Loop)
                         {
-                            AnimPos %= durationInSeconds;
+                            while (AnimPos > durationInSeconds)
+                                AnimPos -= durationInSeconds;
                         }
                         else
                         {
-                            dt = Math.Max(0.0f, AnimPos - durationInSeconds);
+                            playingState = AnimPlayingState.Stopped;
+                            dt = AnimPos - durationInSeconds - ENDPOINT_EPSILON;
+                            AnimPos = durationInSeconds;
+                        }
+                    }
+                }
+                else if (playingState == AnimPlayingState.PlayingInReverse)
+                {
+                    dt = -dt;
+                    AnimPos += dt;
+                    if (AnimPos < 0.0f)
+                    {
+                        if (Loop)
+                        {
+                            while (AnimPos < 0.0f)
+                                AnimPos += durationInSeconds;
+                        }
+                        else
+                        {
+                            playingState = AnimPlayingState.Stopped;
+                            dt = dt - AnimPos + ENDPOINT_EPSILON;
+                            AnimPos = 0.0f;
                         }
                     }
                 }

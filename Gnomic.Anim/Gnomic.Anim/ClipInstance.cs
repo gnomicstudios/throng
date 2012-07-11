@@ -11,8 +11,8 @@ namespace Gnomic.Anim
         public SpriteState[] JointStates;
         public Transform2D[] AbsoluteTransforms;
         ClipAnimInstance currentAnim;
-        public ClipAnim CurrentAnim { get { return currentAnim.Anim; } }
-        
+        public ClipAnimInstance CurrentAnim { get { return currentAnim; } }
+
 		ClipInstance linkToParentClipInstance;
 		int linkToParetJointId;
 
@@ -67,8 +67,8 @@ namespace Gnomic.Anim
         public void Play(string animName, bool loop)
         {
             ClipAnim animToPlay = Clip.AnimSet[animName];
-#if !ANDROID
-            System.Trace.Assert(animToPlay != null);
+#if WINDOWS
+            System.Diagnostics.Trace.Assert(animToPlay != null);
 #endif
             Play(animToPlay, loop);
         }
