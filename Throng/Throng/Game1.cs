@@ -56,8 +56,10 @@ namespace Throng
             graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft;
 #endif
 
-            //Content = new Arands.Content.ContentTracker(this.Services);
-            //((Arands.Content.ContentTracker)Content).UseSourceAssets = true;
+#if WINDOWS
+            Content = new Gnomic.Core.ContentTracker(this.Services);
+            ((Gnomic.Core.ContentTracker)Content).UseSourceAssets = true;
+#endif
             Content.RootDirectory = "Content";
 
             _activeScreen = null;

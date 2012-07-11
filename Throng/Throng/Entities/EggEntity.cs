@@ -61,7 +61,7 @@ namespace Throng
             InitialiseAnimations();
             PlayNewEggAnimation();
 
-            _sfxExplode = gameScreen.Content.Load<SoundEffect>("Sounds/Explode 1");
+            //_sfxExplode = gameScreen.Content.Load<SoundEffect>("Sounds/Explode 1");
         }
 
         public override void Update(GameTime gameTime)

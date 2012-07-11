@@ -110,10 +110,10 @@ namespace Throng
             gameFont = Content.Load<SpriteFont>("GameFont");
 
 #if !ANDROID
-            BackgroundMusic =
-                Content.Load<Song>("background-music");
-            MediaPlayer.Play(BackgroundMusic);
-            MediaPlayer.Volume = 0.5f;
+            //BackgroundMusic =
+            //    Content.Load<Song>("background-music");
+            //MediaPlayer.Play(BackgroundMusic);
+            //MediaPlayer.Volume = 0.5f;
 #endif
 		    
             Corners = new Vertices(4);
