@@ -24,16 +24,19 @@ namespace Throng
 
         public Vertices Corners{ get; set; }
         
-        public Border(World world, Vector2 worldSize)
+        public Border(World world, Vector2 worldSize, Vector2 offset)
         {
             float simWidth = ConvertUnits.ToSimUnits(worldSize.X);
             float simHeight = ConvertUnits.ToSimUnits(worldSize.Y);
 
+            float simOffsetWidth = ConvertUnits.ToSimUnits(offset.X);
+            float simOffsetHeight = ConvertUnits.ToSimUnits(offset.Y);
+
             Corners = new Vertices(4);
-            Corners.Add(new Vector2(0f, 0f));
-            Corners.Add(new Vector2(simWidth, 0f));
-            Corners.Add(new Vector2(simWidth, simHeight));
-            Corners.Add(new Vector2(0f, simHeight));
+            Corners.Add(new Vector2(.0f + simOffsetWidth, .0f + simOffsetHeight));
+            Corners.Add(new Vector2(simWidth + simOffsetWidth, .0f + simOffsetHeight));
+            Corners.Add(new Vector2(simWidth + simOffsetWidth, simHeight + simOffsetHeight));
+            Corners.Add(new Vector2(.0f + simOffsetWidth, simHeight + +simOffsetHeight));
 
             _anchor = BodyFactory.CreateLoopShape(world, Corners);
             _anchor.CollisionCategories =

@@ -29,6 +29,8 @@ namespace Throng
         private const float EGG_SPAWN_MAX_DIST = 200f;
         private const float INITIAL_NO_INPUT_TIME = 1f;
         private const int PLAY_AREA_WIDTH_IN_SCREENS = 200;
+        private const int BUILDINGS_BOUNDARY = 80;
+        private const int BOTTOM_BOUNDARY = 80;
 
         private int _eggCounterLast = -1;
         private int _eggCounterCurrent = 0;
@@ -142,8 +144,8 @@ namespace Throng
             _enemySpawner = new EnemySpawner(this, Clips["enemy"]);
 
             // World is 1 screen high, N screens wide
-            _border = new Border(World, new Vector2(ScreenSizeDefault.X * PLAY_AREA_WIDTH_IN_SCREENS, ScreenSizeDefault.Y));
-
+            _border = new Border(World, new Vector2(ScreenSizeDefault.X * PLAY_AREA_WIDTH_IN_SCREENS, ScreenSizeDefault.Y - BUILDINGS_BOUNDARY - BOTTOM_BOUNDARY), new Vector2(.0f, BUILDINGS_BOUNDARY));
+            
             InitialiseLevel();
         }
 
