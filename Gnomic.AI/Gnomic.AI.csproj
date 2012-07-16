@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Behaviour.cs" />
+    <Compile Include="Blackboard\Blackboard.cs" />
+    <Compile Include="Blackboard\DataObject.cs" />
     <Compile Include="Composite.cs" />
     <Compile Include="IActor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
