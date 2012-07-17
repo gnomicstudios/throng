@@ -45,6 +45,8 @@
     <Compile Include="Blackboard\DataObject.cs" />
     <Compile Include="Composite.cs" />
     <Compile Include="IActor.cs" />
+    <Compile Include="PerceptionSystem\Percept.cs" />
+    <Compile Include="PerceptionSystem\PerceptObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Search.cs" />
     <Compile Include="SensorySystem\ISensor.cs" />
