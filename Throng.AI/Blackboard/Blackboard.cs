@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Gnomic.AI
+namespace Throng.AI
 {
     public sealed class Blackboard
     {

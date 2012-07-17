@@ -1,7 +1,7 @@
 ﻿// SensorObject.cs
 //
 
-namespace Gnomic.AI
+namespace Throng.AI
 {
     public class SensorObject
     {

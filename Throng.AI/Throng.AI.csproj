@@ -8,8 +8,8 @@
     <ProjectGuid>{79EC2569-3C47-4EE5-A453-79437C2F065D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gnomic.AI</RootNamespace>
-    <AssemblyName>Gnomic.AI</AssemblyName>
+    <RootNamespace>Throng.AI</RootNamespace>
+    <AssemblyName>Throng.AI</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

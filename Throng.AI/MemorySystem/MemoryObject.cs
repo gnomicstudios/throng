@@ -1,7 +1,7 @@
 ﻿// MemoryObject.cs
 //
 
-namespace Gnomic.AI
+namespace Throng.AI
 {
     public abstract class MemoryObject
     {

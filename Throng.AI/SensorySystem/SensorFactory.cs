@@ -1,7 +1,7 @@
 ﻿// SensorFactory.cs
 //
 
-namespace Gnomic.AI
+namespace Throng.AI
 {
     public static class SensorFactory
     {

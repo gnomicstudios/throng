@@ -1,7 +1,7 @@
 ﻿// ISensor.cs
 //
 
-namespace Gnomic.AI
+namespace Throng.AI
 {
     public interface ISensor
     {

@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Gnomic.AI
+namespace Throng.AI
 {
     public sealed class WorkingMemory
     {
