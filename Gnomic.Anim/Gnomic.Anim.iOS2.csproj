@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE6EB726-2DF5-48A7-B8AF-A806F538E4E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Gnomic.Anim.iOS</RootNamespace>
+    <AssemblyName>Gnomic.Anim.iOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Gnomic.Anim\Clip.cs" />
+    <Compile Include="Gnomic.Anim\ClipAnim.cs" />
+    <Compile Include="Gnomic.Anim\ClipAnimInstance.cs" />
+    <Compile Include="Gnomic.Anim\ClipAnimSet.cs" />
+    <Compile Include="Gnomic.Anim\ClipInstance.cs" />
+    <Compile Include="Gnomic.Anim\EasingFunctions.cs" />
+    <Compile Include="Gnomic.Anim\Joint.cs" />
+    <Compile Include="Gnomic.Anim\JointAnim.cs" />
+    <Compile Include="Gnomic.Anim\JointAnimColour.cs" />
+    <Compile Include="Gnomic.Anim\JointAnimSpatial.cs" />
+    <Compile Include="Gnomic.Anim\JointAnimState.cs" />
+    <Compile Include="Gnomic.Anim\JointAnimTexture.cs" />
+    <Compile Include="Gnomic.Anim\SpriteState.cs" />
+    <Compile Include="Gnomic.Anim\Transform2D.cs" />
+  </ItemGroup>
+</Project>
