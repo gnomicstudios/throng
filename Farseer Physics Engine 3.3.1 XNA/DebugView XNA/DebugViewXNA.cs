@@ -828,11 +828,16 @@ namespace FarseerPhysics.DebugViews
 
         public void LoadContent(GraphicsDevice device, ContentManager content)
         {
+            LoadContent(device, content, "font");
+        }
+
+        public void LoadContent(GraphicsDevice device, ContentManager content, string fontName)
+        {
             // Create a new SpriteBatch, which can be used to draw textures.
             _device = device;
             _batch = new SpriteBatch(_device);
             _primitiveBatch = new PrimitiveBatch(_device, 1000);
-            _font = content.Load<SpriteFont>("font");
+            _font = content.Load<SpriteFont>(fontName);
             _stringData = new List<StringData>();
 
             _localProjection = Matrix.CreateOrthographicOffCenter(0f, _device.Viewport.Width, _device.Viewport.Height,

@@ -133,7 +133,7 @@ namespace Throng
             DebugView.RemoveFlags(DebugViewFlags.Shape);
             DebugView.DefaultShapeColor = Color.White;
             DebugView.SleepingShapeColor = Color.LightGray;
-            DebugView.LoadContent(GraphicsDevice, Content);
+            DebugView.LoadContent(GraphicsDevice, Content, "GameFont");
 
             if (Tweak.SHOW_PHYSICS_ON_START)
                 EnableOrDisableFlag(DebugViewFlags.Shape);
