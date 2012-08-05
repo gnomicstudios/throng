@@ -112,7 +112,6 @@
     <Compile Include="Controllers\VelocityLimitController.cs" />
     <Compile Include="DebugView XNA\DebugViewXNA.cs" />
     <Compile Include="DebugView XNA\PrimitiveBatch.cs" />
-    <Compile Include="DebugView XNA\Properties\AssemblyInfo.cs" />
     <Compile Include="DebugView.cs" />
     <Compile Include="Dynamics\Body.cs" />
     <Compile Include="Dynamics\BreakableBody.cs" />
@@ -150,95 +149,6 @@
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DebugView XNA\bin\Windows Phone\Debug\DebugViewXNA.dll" />
-    <Content Include="DebugView XNA\bin\Windows Phone\Debug\DebugViewXNA.pdb" />
-    <Content Include="DebugView XNA\bin\Windows Phone\Debug\FarseerPhysicsXNA.dll" />
-    <Content Include="DebugView XNA\bin\Windows Phone\Debug\FarseerPhysicsXNA.pdb" />
-    <Content Include="DebugView XNA\bin\Windows Phone\Release\DebugViewXNA.dll" />
-    <Content Include="DebugView XNA\bin\Windows Phone\Release\DebugViewXNA.pdb" />
-    <Content Include="DebugView XNA\bin\Windows Phone\Release\FarseerPhysicsXNA.dll" />
-    <Content Include="DebugView XNA\bin\Windows Phone\Release\FarseerPhysicsXNA.pdb" />
-    <Content Include="DebugView XNA\bin\x86\Debug\DebugViewXNA.dll" />
-    <Content Include="DebugView XNA\bin\x86\Debug\DebugViewXNA.pdb" />
-    <Content Include="DebugView XNA\bin\x86\Debug\DebugViewXNA.XML" />
-    <Content Include="DebugView XNA\bin\x86\Debug\FarseerPhysicsXNA.dll" />
-    <Content Include="DebugView XNA\bin\x86\Debug\FarseerPhysicsXNA.pdb" />
-    <Content Include="DebugView XNA\bin\x86\Debug\FarseerPhysicsXNA.xml" />
-    <Content Include="DebugView XNA\bin\x86\Release\DebugViewXNA.dll" />
-    <Content Include="DebugView XNA\bin\x86\Release\DebugViewXNA.pdb" />
-    <Content Include="DebugView XNA\bin\x86\Release\FarseerPhysicsXNA.dll" />
-    <Content Include="DebugView XNA\bin\x86\Release\FarseerPhysicsXNA.pdb" />
-    <Content Include="DebugView XNA\bin\x86\Release\FarseerPhysicsXNA.xml" />
-    <Content Include="DebugView XNA\Content\obj\Windows Phone\Debug\DebugView XNA Content.contentproj.FileListAbsolute.txt" />
-    <Content Include="DebugView XNA\Content\obj\Windows Phone\Release\DebugView XNA Content.contentproj.FileListAbsolute.txt" />
-    <Content Include="DebugView XNA\Content\obj\x86\Debug\DebugView XNA Content.contentproj.FileListAbsolute.txt" />
-    <Content Include="DebugView XNA\Content\obj\x86\Release\DebugView XNA Content.contentproj.FileListAbsolute.txt" />
-    <Content Include="DebugView XNA\DebugView XNA WP7.csproj" />
-    <Content Include="DebugView XNA\DebugView XNA Xbox360.csproj" />
-    <Content Include="DebugView XNA\DebugView XNA.csproj" />
-    <Content Include="DebugView XNA\DebugView XNA.WP7.csproj" />
-    <Content Include="DebugView XNA\obj\Windows Phone\Debug\cachefile-{AC26EDE1-2A42-4A57-BEEE-9603FCAC9317}-targetpath.txt" />
-    <Content Include="DebugView XNA\obj\Windows Phone\Debug\ContentPipeline-{AC26EDE1-2A42-4A57-BEEE-9603FCAC9317}.xml" />
-    <Content Include="DebugView XNA\obj\Windows Phone\Debug\DebugView XNA.WP7.csproj.FileListAbsolute.txt" />
-    <Content Include="DebugView XNA\obj\Windows Phone\Debug\DebugViewXNA.dll" />
-    <Content Include="DebugView XNA\obj\Windows Phone\Debug\DebugViewXNA.pdb" />
-    <Content Include="DebugView XNA\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt" />
-    <Content Include="DebugView XNA\obj\Windows Phone\Release\cachefile-{AC26EDE1-2A42-4A57-BEEE-9603FCAC9317}-targetpath.txt" />
-    <Content Include="DebugView XNA\obj\Windows Phone\Release\ContentPipeline-{AC26EDE1-2A42-4A57-BEEE-9603FCAC9317}.xml" />
-    <Content Include="DebugView XNA\obj\Windows Phone\Release\DebugView XNA.WP7.csproj.FileListAbsolute.txt" />
-    <Content Include="DebugView XNA\obj\Windows Phone\Release\DebugViewXNA.dll" />
-    <Content Include="DebugView XNA\obj\Windows Phone\Release\DebugViewXNA.pdb" />
-    <Content Include="DebugView XNA\obj\Windows Phone\Release\Microsoft.Xna.Framework.RuntimeProfile.txt" />
-    <Content Include="DebugView XNA\obj\x86\Debug\cachefile-{AC26EDE1-2A42-4A57-BEEE-9603FCAC9317}-targetpath.txt" />
-    <Content Include="DebugView XNA\obj\x86\Debug\ContentPipeline-{AC26EDE1-2A42-4A57-BEEE-9603FCAC9317}.xml" />
-    <Content Include="DebugView XNA\obj\x86\Debug\DebugView XNA.csproj.FileListAbsolute.txt" />
-    <Content Include="DebugView XNA\obj\x86\Debug\DebugViewXNA.dll" />
-    <Content Include="DebugView XNA\obj\x86\Debug\DebugViewXNA.pdb" />
-    <Content Include="DebugView XNA\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt" />
-    <Content Include="DebugView XNA\obj\x86\Release\cachefile-{AC26EDE1-2A42-4A57-BEEE-9603FCAC9317}-targetpath.txt" />
-    <Content Include="DebugView XNA\obj\x86\Release\ContentPipeline-{AC26EDE1-2A42-4A57-BEEE-9603FCAC9317}.xml" />
-    <Content Include="DebugView XNA\obj\x86\Release\DebugView XNA.csproj.FileListAbsolute.txt" />
-    <Content Include="DebugView XNA\obj\x86\Release\DebugViewXNA.dll" />
-    <Content Include="DebugView XNA\obj\x86\Release\DebugViewXNA.pdb" />
-    <Content Include="DebugView XNA\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt" />
-    <Content Include="DebugView XNA\Properties\AppManifest.xml" />
-    <Content Include="DebugView XNA\Properties\WMAppManifest.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="DebugView XNA\bin\Windows Phone\Debug\Content\font.xnb" />
-    <None Include="DebugView XNA\bin\Windows Phone\Release\Content\font.xnb" />
-    <None Include="DebugView XNA\bin\x86\Debug\Content\font.xnb" />
-    <None Include="DebugView XNA\bin\x86\Release\Content\font.xnb" />
-    <None Include="DebugView XNA\Content\DebugView XNA Content.contentproj" />
-    <None Include="DebugView XNA\Content\font.spritefont" />
-    <None Include="DebugView XNA\Content\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="DebugView XNA\Content\obj\Windows Phone\Debug\ResolveAssemblyReference.cache" />
-    <None Include="DebugView XNA\Content\obj\x86\Debug\ResolveAssemblyReference.cache" />
-    <None Include="DebugView XNA\Content\obj\x86\Release\ResolveAssemblyReference.cache" />
-    <None Include="DebugView XNA\DebugView XNA.csproj.Debug.cachefile" />
-    <None Include="DebugView XNA\DebugView XNA.csproj.Release.cachefile" />
-    <None Include="DebugView XNA\DebugView XNA.WP7.csproj.Debug.cachefile" />
-    <None Include="DebugView XNA\DebugView XNA.WP7.csproj.Release.cachefile" />
-    <None Include="DebugView XNA\obj\Windows Phone\Debug\build.force" />
-    <None Include="DebugView XNA\obj\Windows Phone\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="DebugView XNA\obj\Windows Phone\Debug\ResolveAssemblyReference.cache" />
-    <None Include="DebugView XNA\obj\Windows Phone\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="DebugView XNA\obj\x86\Debug\build.force" />
-    <None Include="DebugView XNA\obj\x86\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="DebugView XNA\obj\x86\Debug\ResolveAssemblyReference.cache" />
-    <None Include="DebugView XNA\obj\x86\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DebugView XNA\Content\bin\AnyCPU\Debug\" />
-    <Folder Include="DebugView XNA\Content\bin\Windows Phone\Debug\" />
-    <Folder Include="DebugView XNA\Content\bin\Windows Phone\Release\" />
-    <Folder Include="DebugView XNA\Content\bin\x86\Debug\" />
-    <Folder Include="DebugView XNA\Content\bin\x86\Release\" />
-    <Folder Include="DebugView XNA\Content\obj\Debug\TempPE\" />
-    <Folder Include="DebugView XNA\obj\Windows Phone\Debug\TempPE\" />
-    <Folder Include="DebugView XNA\obj\Windows Phone\Release\TempPE\" />
-    <Folder Include="DebugView XNA\obj\x86\Debug\TempPE\" />
-    <Folder Include="DebugView XNA\obj\x86\Release\TempPE\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
