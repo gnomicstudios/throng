@@ -2,6 +2,7 @@
 
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
@@ -10,7 +11,7 @@ using Microsoft.Xna.Framework;
 
 namespace Throng.M4A
 {
-	[Activity(Label = "Throng", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity(Label = "Throng", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Landscape)]
 	public class Activity1 : AndroidGameActivity
 	{
 		Throng.Game1 game;

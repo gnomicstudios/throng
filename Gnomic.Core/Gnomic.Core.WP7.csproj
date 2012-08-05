@@ -48,7 +48,16 @@
     <DefineConstants>DEBUG;TRACE;WINDOWS_PHONE</DefineConstants>
     <XnaCompressContent>false</XnaCompressContent>
   </PropertyGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Farseer Physics Engine 3.3.1 XNA\Farseer Physics XNA.WP7.csproj">
+      <Project>{D6BB070C-8BCC-4664-8EEE-3A66DAF9D6AB}</Project>
+      <Name>Farseer Physics XNA.WP7</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gnomic.Anim\Gnomic.Anim.WP7.csproj">
+      <Project>{660570B0-6F4B-4122-B6A0-A40D471043F4}</Project>
+      <Name>Gnomic.Anim.WP7</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
     <Compile Include="Camera2D.cs" />

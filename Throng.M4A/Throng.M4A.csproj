@@ -110,75 +110,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\background-music.xnb">
-      <Link>Assets\Content\background-music.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\background.xnb">
-      <Link>Assets\Content\background.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\font.xnb">
-      <Link>Assets\Content\font.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\GameFont.xnb">
-      <Link>Assets\Content\GameFont.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\gameOverScreen.xnb">
-      <Link>Assets\Content\gameOverScreen.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\player.xnb">
-      <Link>Assets\Content\player.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\playerSheet.xnb">
-      <Link>Assets\Content\playerSheet.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\Sounds\Chomp 2.xnb">
-      <Link>Assets\Content\Sounds\Chomp 2.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\Sounds\Explode 1.xnb">
-      <Link>Assets\Content\Sounds\Explode 1.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\Sounds\Fart 4.xnb">
-      <Link>Assets\Content\Sounds\Fart 4.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\Sounds\Full Suck In.xnb">
-      <Link>Assets\Content\Sounds\Full Suck In.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\Sounds\PlayerMove 1.xnb">
-      <Link>Assets\Content\Sounds\PlayerMove 1.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\Sounds\Pop 2.xnb">
-      <Link>Assets\Content\Sounds\Pop 2.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\Sounds\Suck In Loop.xnb">
-      <Link>Assets\Content\Sounds\Suck In Loop.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\Sounds\Swallow.xnb">
-      <Link>Assets\Content\Sounds\Swallow.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\startScreen.xnb">
-      <Link>Assets\Content\startScreen.xnb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\alien.xnb">
+    <AndroidAsset Include="..\Throng\Throng\bin\Windows Phone\Debug\Content\alien.xnb">
       <Link>Assets\Content\alien.xnb</Link>
     </AndroidAsset>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\alienSheet.xnb">
-      <Link>Assets\Content\alienSheet.xnb</Link>
+    <AndroidAsset Include="..\Throng\Throng\bin\Windows Phone\Debug\Content\player.xnb">
+      <Link>Assets\Content\player.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Throng\Throng\bin\Windows Phone\Debug\Content\GameFont.xnb">
+      <Link>Assets\Content\GameFont.xnb</Link>
     </AndroidAsset>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
@@ -191,12 +130,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\Icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="..\Throng\Throng\bin\x86\Debug\Content\background-music.wma">
-      <Link>Assets\Content\background-music.wma</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\MonoGame\MonoGame.Framework\MonoGame.Framework.Android.csproj">
@@ -219,6 +152,23 @@
       <Project>{6956D64A-4911-419D-800B-06257B98B716}</Project>
       <Name>Gnomic.Core.M4A</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="..\Throng\ThrongContent\alienSheet.png">
+      <Link>Assets\Content\alienSheet.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Throng\ThrongContent\background.png">
+      <Link>Assets\Content\background.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Throng\ThrongContent\gameOverScreen.png">
+      <Link>Assets\Content\gameOverScreen.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Throng\ThrongContent\playerSheet.png">
+      <Link>Assets\Content\playerSheet.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Throng\ThrongContent\startScreen.png">
+      <Link>Assets\Content\startScreen.png</Link>
+    </AndroidAsset>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
