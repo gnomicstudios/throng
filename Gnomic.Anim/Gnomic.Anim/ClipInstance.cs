@@ -67,9 +67,8 @@ namespace Gnomic.Anim
         public void Play(string animName, bool loop)
         {
             ClipAnim animToPlay = Clip.AnimSet[animName];
-#if WINDOWS
-            System.Diagnostics.Trace.Assert(animToPlay != null);
-#endif
+            System.Diagnostics.Debug.Assert(animToPlay != null);
+
             Play(animToPlay, loop);
         }
 
@@ -108,7 +107,7 @@ namespace Gnomic.Anim
             {
                 int index = Clip.DrawOrder[i];
                 SpriteState js = JointStates[index];
-                if (js.Texture != null && js.Visible)
+                if ((js.Texture != null) && js.Visible)
                 {
                     Transform2D xform = AbsoluteTransforms[index];
                     spriteBatch.Draw(

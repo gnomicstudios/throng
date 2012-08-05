@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{278929B2-1BE5-4381-8FDB-3B5D8D66BE44}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Throng.iOS</RootNamespace>
+    <AssemblyName>ThrongiOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchProfiling>true</MtouchProfiling>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <BuildIpa>true</BuildIpa>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="..\Throng\Throng\Entities\CharacterEntity.cs">
+      <Link>Entities\CharacterEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\Throng\Throng\Entities\EggEntity.cs">
+      <Link>Entities\EggEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\Throng\Throng\Entities\EnemyEntity.cs">
+      <Link>Entities\EnemyEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\Throng\Throng\Entities\EnemySpawner.cs">
+      <Link>Entities\EnemySpawner.cs</Link>
+    </Compile>
+    <Compile Include="..\Throng\Throng\Entities\PlayerEntity.cs">
+      <Link>Entities\PlayerEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\Throng\Throng\Entities\SpriteEntity.cs">
+      <Link>Entities\SpriteEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\Throng\Throng\DirectionHelper.cs">
+      <Link>DirectionHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Throng\Throng\Game1.cs">
+      <Link>Game1.cs</Link>
+    </Compile>
+    <Compile Include="..\Throng\Throng\GameOverScreen.cs">
+      <Link>GameOverScreen.cs</Link>
+    </Compile>
+    <Compile Include="..\Throng\Throng\PauseScreen.cs">
+      <Link>PauseScreen.cs</Link>
+    </Compile>
+    <Compile Include="..\Throng\Throng\StartScreen.cs">
+      <Link>StartScreen.cs</Link>
+    </Compile>
+    <Compile Include="..\Throng\Throng\ThrongControls.cs">
+      <Link>ThrongControls.cs</Link>
+    </Compile>
+    <Compile Include="..\Throng\Throng\ThrongDefines.cs">
+      <Link>ThrongDefines.cs</Link>
+    </Compile>
+    <Compile Include="..\Throng\Throng\ThrongGameScreen.cs">
+      <Link>ThrongGameScreen.cs</Link>
+    </Compile>
+    <Compile Include="..\Throng\Throng\Tweak.cs">
+      <Link>Tweak.cs</Link>
+    </Compile>
+    <Compile Include="..\Throng\Throng\Physics\Border.cs">
+      <Link>Physics\Border.cs</Link>
+    </Compile>
+    <Compile Include="..\Throng\Throng\Physics\ConvertUnits.cs">
+      <Link>Physics\ConvertUnits.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Farseer Physics Engine 3.3.1 XNA\FarseerPhysicsXNA.iOS.csproj">
+      <Project>{B0371ED2-3C69-4755-99C6-2F3695C3444A}</Project>
+      <Name>FarseerPhysicsXNA.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gnomic.Anim\Gnomic.Anim.iOS.csproj">
+      <Project>{0CC6FF70-41B3-4B37-90A3-9DDC7C87BB7B}</Project>
+      <Name>Gnomic.Anim.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gnomic.Core\Gnomic.Core.iOS.csproj">
+      <Project>{FE4AC09C-3B3A-49EC-B89E-5EC6DF81A177}</Project>
+      <Name>Gnomic.Core.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MonoGame\MonoGame.Framework\MonoGame.Framework.iOS.csproj">
+      <Project>{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}</Project>
+      <Name>MonoGame.Framework.iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\" />
+    <Folder Include="Physics\" />
+  </ItemGroup>
+</Project>
