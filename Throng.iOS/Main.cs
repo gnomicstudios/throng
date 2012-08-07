@@ -5,10 +5,19 @@ using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
-namespace Throng.iOS
+namespace Throng
 {
-	public class Application
+	[Register("AppDelegate")]
+	public class Application : UIApplicationDelegate
 	{
+		Game1 game;
+        public override void FinishedLaunching(UIApplication app)
+        {
+            // Fun begins..
+            game = new Game1();
+            game.Run();
+        }
+
 		// This is the main entry point of the application.
 		static void Main (string[] args)
 		{
