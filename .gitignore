@@ -9,3 +9,7 @@
 bin/
 obj/
 
+
+*.userprefs
+
+Throng.iOS.userprefs
