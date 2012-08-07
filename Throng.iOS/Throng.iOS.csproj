@@ -161,5 +161,28 @@
   <ItemGroup>
     <Folder Include="Entities\" />
     <Folder Include="Physics\" />
+    <Folder Include="Content\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Throng\ThrongContent\alienSheet.png">
+      <Link>Content\alienSheet.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Throng\ThrongContent\background.png">
+      <Link>Content\background.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Throng\ThrongContent\gameOverScreen.png">
+      <Link>Content\gameOverScreen.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Throng\ThrongContent\playerSheet.png">
+      <Link>Content\playerSheet.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Throng\ThrongContent\startScreen.png">
+      <Link>Content\startScreen.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>
