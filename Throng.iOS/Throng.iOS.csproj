@@ -81,15 +81,6 @@
     <Reference Include="monotouch" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\DummyIOS\DummyIOS\bin\x86\Debug\Content\alien.xnb">
-      <Link>Content\alien.xnb</Link>
-    </None>
-    <None Include="..\DummyIOS\DummyIOS\bin\x86\Debug\Content\GameFont.xnb">
-      <Link>Content\GameFont.xnb</Link>
-    </None>
-    <None Include="..\DummyIOS\DummyIOS\bin\x86\Debug\Content\player.xnb">
-      <Link>Content\player.xnb</Link>
-    </None>
     <None Include="Info.plist" />
   </ItemGroup>
   <ItemGroup>
@@ -172,22 +163,42 @@
     <Content Include="..\Throng\ThrongContent\alienSheet.png">
       <Link>Content\alienSheet.png</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
     </Content>
     <Content Include="..\Throng\ThrongContent\background.png">
       <Link>Content\background.png</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
     </Content>
     <Content Include="..\Throng\ThrongContent\gameOverScreen.png">
       <Link>Content\gameOverScreen.png</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
     </Content>
     <Content Include="..\Throng\ThrongContent\playerSheet.png">
       <Link>Content\playerSheet.png</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
     </Content>
     <Content Include="..\Throng\ThrongContent\startScreen.png">
       <Link>Content\startScreen.png</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </Content>
+    <Content Include="..\DummyIOS\DummyIOS\bin\x86\Debug\Content\alien.xnb">
+      <Link>Content\alien.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </Content>
+    <Content Include="..\DummyIOS\DummyIOS\bin\x86\Debug\Content\GameFont.xnb">
+      <Link>Content\GameFont.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </Content>
+    <Content Include="..\DummyIOS\DummyIOS\bin\x86\Debug\Content\player.xnb">
+      <Link>Content\player.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
     </Content>
   </ItemGroup>
 </Project>
