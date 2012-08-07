@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyIOS", "DummyIOS\DummyI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyIOSContent", "DummyIOS\DummyIOSContent\DummyIOSContent.contentproj", "{86CBE0BC-C2DE-44DA-A60B-A97C8844411C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gnomic.Anim", "Gnomic.Anim\Gnomic.Anim.csproj", "{B670D9A3-79F0-4501-9D79-43183346F011}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|iPhone = Ad-Hoc|iPhone
@@ -217,6 +219,30 @@ Global
 		{86CBE0BC-C2DE-44DA-A60B-A97C8844411C}.Release|iPhoneSimulator.ActiveCfg = Release|x86
 		{86CBE0BC-C2DE-44DA-A60B-A97C8844411C}.Release|Mixed Platforms.ActiveCfg = Release|x86
 		{86CBE0BC-C2DE-44DA-A60B-A97C8844411C}.Release|x86.ActiveCfg = Release|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.Ad-Hoc|iPhone.ActiveCfg = Release|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Release|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.Ad-Hoc|Mixed Platforms.ActiveCfg = Release|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.Ad-Hoc|Mixed Platforms.Build.0 = Release|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.Ad-Hoc|x86.ActiveCfg = Release|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.Ad-Hoc|x86.Build.0 = Release|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.AppStore|iPhone.ActiveCfg = Release|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.AppStore|iPhoneSimulator.ActiveCfg = Release|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.AppStore|Mixed Platforms.ActiveCfg = Release|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.AppStore|Mixed Platforms.Build.0 = Release|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.AppStore|x86.ActiveCfg = Release|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.AppStore|x86.Build.0 = Release|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.Debug|iPhone.ActiveCfg = Debug|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.Debug|iPhoneSimulator.ActiveCfg = Debug|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.Debug|x86.ActiveCfg = Debug|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.Debug|x86.Build.0 = Debug|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.Release|iPhone.ActiveCfg = Release|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.Release|iPhoneSimulator.ActiveCfg = Release|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.Release|Mixed Platforms.Build.0 = Release|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.Release|x86.ActiveCfg = Release|x86
+		{B670D9A3-79F0-4501-9D79-43183346F011}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

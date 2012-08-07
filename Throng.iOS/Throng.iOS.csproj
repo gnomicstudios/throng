@@ -81,6 +81,15 @@
     <Reference Include="monotouch" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\DummyIOS\DummyIOS\bin\x86\Debug\Content\alien.xnb">
+      <Link>Content\alien.xnb</Link>
+    </None>
+    <None Include="..\DummyIOS\DummyIOS\bin\x86\Debug\Content\GameFont.xnb">
+      <Link>Content\GameFont.xnb</Link>
+    </None>
+    <None Include="..\DummyIOS\DummyIOS\bin\x86\Debug\Content\player.xnb">
+      <Link>Content\player.xnb</Link>
+    </None>
     <None Include="Info.plist" />
   </ItemGroup>
   <ItemGroup>
@@ -158,11 +167,7 @@
       <Name>MonoGame.Framework.iOS</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="Physics\" />
-    <Folder Include="Content\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="..\Throng\ThrongContent\alienSheet.png">
       <Link>Content\alienSheet.png</Link>

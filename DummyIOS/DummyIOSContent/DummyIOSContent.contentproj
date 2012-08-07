@@ -42,6 +42,26 @@
       <Processor>MGSpriteFontDescriptionProcessor</Processor>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Throng\ThrongContent\alien.clipxml">
+      <Link>alien.clipxml</Link>
+      <Name>alien</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="..\..\Throng\ThrongContent\player.clipxml">
+      <Link>player.clipxml</Link>
+      <Name>player</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Gnomic.Anim\Gnomic.Anim.csproj">
+      <Project>{B670D9A3-79F0-4501-9D79-43183346F011}</Project>
+      <Name>Gnomic.Anim</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
